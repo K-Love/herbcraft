@@ -1,0 +1,29 @@
+{
+  "name": "herbcraft",
+  "version": "0.1.0",
+  "description": "AI-powered herbal knowledge platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "dev": "npx http-server -p 8080 -c-1",
+    "test": "echo \"No tests yet\"",
+    "lint": "echo \"No linting configured yet\"",
+    "build": "echo \"Static site - no build needed\""
+  },
+  "keywords": [
+    "herbs",
+    "wellness",
+    "ai",
+    "natural-health",
+    "recipes"
+  ],
+  "author": "HerbCraft Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/herbcraft.git"
+  }
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Herbal Advisor - HerbCraft</title>
+    <meta name="description" content="Get personalized herbal recommendations from our AI-powered advisor. Ask about symptoms, herbs, or wellness goals.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        .chat-container {
+            height: calc(100vh - 200px);
+            min-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-green-700">
+                        🌿 HerbCraft
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/herbs.html" class="text-gray-700 hover:text-green-700 transition">Herbs</a>
+                    <a href="/recipes.html" class="text-gray-700 hover:text-green-700 transition">Recipes</a>
+                    <a href="/ai-advisor.html" class="text-green-700 font-semibold">AI Advisor</a>
+                    <a href="/#about" class="text-gray-700 hover:text-green-700 transition">About</a>
+                </div>
+                
+                <button class="md:hidden" x-data @click="$dispatch('toggle-menu')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden" x-data="{ open: false }" @toggle-menu.window="open = !open" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="/herbs.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Herbs</a>
+                <a href="/recipes.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Recipes</a>
+                <a href="/ai-advisor.html" class="block px-3 py-2 text-green-700 font-semibold">AI Advisor</a>
+                <a href="/#about" class="block px-3 py-2 text-gray-700 hover:text-green-700">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Chat Interface -->
+    <div class="container mx-auto px-4 py-8" x-data="aiAdvisor()">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">AI Herbal Advisor</h1>
+                <p class="text-gray-600">Ask me about herbs, symptoms, or wellness goals</p>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <!-- Messages Area -->
+                <div class="chat-container overflow-y-auto p-6 space-y-4" id="chat-messages">
+                    <!-- Welcome Message -->
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                            AI
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-gray-100 rounded-lg p-4 max-w-lg">
+                                <p class="text-gray-800">
+                                    Hello! I'm your AI Herbal Advisor. I can help you with:
+                                </p>
+                                <ul class="mt-2 space-y-1 text-sm text-gray-700">
+                                    <li>• Finding herbs for specific symptoms</li>
+                                    <li>• Learning about herb properties and uses</li>
+                                    <li>• Suggesting herbal recipes and remedies</li>
+                                    <li>• Answering questions about natural wellness</li>
+                                </ul>
+                                <p class="mt-3 text-sm text-gray-600 italic">
+                                    Please note: I provide educational information only. Always consult with a healthcare professional before using herbs medicinally.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic messages will be added here -->
+                    <template x-for="message in messages" :key="message.id">
+                        <div class="flex items-start gap-3" :class="message.role === 'user' ? 'flex-row-reverse' : ''">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold"
+                                 :class="message.role === 'user' ? 'bg-blue-600 text-white' : 'bg-green-600 text-white'">
+                                <span x-text="message.role === 'user' ? 'You' : 'AI'"></span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="rounded-lg p-4 max-w-lg"
+                                     :class="message.role === 'user' ? 'bg-blue-100 ml-auto' : 'bg-gray-100'">
+                                    <p class="text-gray-800" x-html="message.content"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Loading indicator -->
+                    <div x-show="isLoading" class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                            AI
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-gray-100 rounded-lg p-4 max-w-lg">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="border-t p-4">
+                    <form @submit.prevent="sendMessage" class="flex gap-2">
+                        <input 
+                            type="text" 
+                            x-model="userInput"
+                            placeholder="Ask about herbs, symptoms, or wellness..."
+                            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
+                            :disabled="isLoading"
+                        >
+                        <button 
+                            type="submit"
+                            class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition disabled:opacity-50"
+                            :disabled="isLoading || !userInput.trim()"
+                        >
+                            Send
+                        </button>
+                    </form>
+
+                    <!-- Suggested Questions -->
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <button 
+                            @click="askSuggestion('What herbs help with anxiety?')"
+                            class="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition"
+                        >
+                            What herbs help with anxiety?
+                        </button>
+                        <button 
+                            @click="askSuggestion('Natural remedies for better sleep')"
+                            class="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition"
+                        >
+                            Natural remedies for better sleep
+                        </button>
+                        <button 
+                            @click="askSuggestion('Herbs for digestive health')"
+                            class="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition"
+                        >
+                            Herbs for digestive health
+                        </button>
+                        <button 
+                            @click="askSuggestion('How to make herbal tea')"
+                            class="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition"
+                        >
+                            How to make herbal tea
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p class="text-sm text-yellow-800">
+                    <strong>Medical Disclaimer:</strong> The information provided by our AI advisor is for educational purposes only and should not replace professional medical advice. Always consult with a qualified healthcare provider before using herbs for medicinal purposes, especially if you have existing health conditions or are taking medications.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌿 HerbCraft</h3>
+                    <p class="text-gray-400">Your AI-powered herbal knowledge platform</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/herbs.html" class="hover:text-white">Herb Database</a></li>
+                        <li><a href="/recipes.html" class="hover:text-white">Recipes</a></li>
+                        <li><a href="/ai-advisor.html" class="hover:text-white">AI Advisor</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Forums</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="/disclaimer.html" class="hover:text-white">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HerbCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function aiAdvisor() {
+            return {
+                messages: [],
+                userInput: '',
+                isLoading: false,
+                messageId: 0,
+
+                async sendMessage() {
+                    if (!this.userInput.trim() || this.isLoading) return;
+
+                    const userMessage = this.userInput.trim();
+                    this.userInput = '';
+
+                    // Add user message
+                    this.messages.push({
+                        id: ++this.messageId,
+                        role: 'user',
+                        content: userMessage
+                    });
+
+                    // Scroll to bottom
+                    this.$nextTick(() => {
+                        const chatContainer = document.getElementById('chat-messages');
+                        chatContainer.scrollTop = chatContainer.scrollHeight;
+                    });
+
+                    // Show loading
+                    this.isLoading = true;
+
+                    try {
+                        // In production, this would call the actual API
+                        // For now, we'll simulate a response
+                        await this.simulateAIResponse(userMessage);
+                    } catch (error) {
+                        this.messages.push({
+                            id: ++this.messageId,
+                            role: 'assistant',
+                            content: 'Sorry, I encountered an error. Please try again later.'
+                        });
+                    } finally {
+                        this.isLoading = false;
+                        this.$nextTick(() => {
+                            const chatContainer = document.getElementById('chat-messages');
+                            chatContainer.scrollTop = chatContainer.scrollHeight;
+                        });
+                    }
+                },
+
+                askSuggestion(question) {
+                    this.userInput = question;
+                    this.sendMessage();
+                },
+
+                async simulateAIResponse(userMessage) {
+                    // Simulate API delay
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+
+                    // Simple response logic for demo
+                    let response = '';
+
+                    if (userMessage.toLowerCase().includes('anxiety')) {
+                        response = `For anxiety relief, I recommend these calming herbs:
+
+<strong>1. Chamomile</strong> - Known for its gentle calming effects
+<strong>2. Lavender</strong> - Reduces stress and promotes relaxation
+<strong>3. Passionflower</strong> - Traditionally used for anxiety and insomnia
+<strong>4. Lemon Balm</strong> - Helps calm the nervous system
+
+You can try these as teas, tinctures, or in aromatherapy. Start with chamomile tea in the evening to experience its soothing effects.
+
+Would you like specific recipes or dosage information for any of these herbs?`;
+                    } else if (userMessage.toLowerCase().includes('sleep')) {
+                        response = `Here are excellent herbs for better sleep:
+
+<strong>1. Valerian Root</strong> - Powerful sleep aid, take 30-60 minutes before bed
+<strong>2. Chamomile</strong> - Gentle and safe for nightly use
+<strong>3. Passionflower</strong> - Helps quiet racing thoughts
+<strong>4. Lavender</strong> - Use in tea or aromatherapy
+
+Try a bedtime tea blend with equal parts chamomile and passionflower. Add honey for taste.
+
+Remember to establish a calming bedtime routine along with herbal support.`;
+                    } else if (userMessage.toLowerCase().includes('digestive')) {
+                        response = `For digestive health, these herbs are particularly helpful:
+
+<strong>1. Peppermint</strong> - Soothes stomach upset and aids digestion
+<strong>2. Ginger</strong> - Reduces nausea and improves digestion
+<strong>3. Fennel</strong> - Relieves gas and bloating
+<strong>4. Chamomile</strong> - Calms digestive inflammation
+
+Try peppermint tea after meals or ginger tea before eating. Fennel seeds can be chewed after meals for immediate relief.
+
+What specific digestive issues are you looking to address?`;
+                    } else if (userMessage.toLowerCase().includes('tea')) {
+                        response = `Here's how to make a perfect herbal tea:
+
+<strong>Basic Method:</strong>
+1. Use 1-2 teaspoons of dried herbs (or 2-3 teaspoons fresh) per cup
+2. Heat water to just below boiling (around 200°F/93°C)
+3. Steep for 5-10 minutes for leaves/flowers, 10-15 for roots/bark
+4. Strain and enjoy
+
+<strong>Tips:</strong>
+• Cover while steeping to preserve volatile oils
+• Add honey or lemon to taste
+• Make larger batches and store in the fridge for iced tea
+
+Would you like a specific recipe for any particular health benefit?`;
+                    } else {
+                        response = `I'd be happy to help you explore herbal remedies! 
+
+Could you tell me more about:
+• Any specific symptoms or health goals you have?
+• Whether you're looking for teas, tinctures, or other preparations?
+• Any herbs you're particularly interested in?
+
+Feel free to ask about specific herbs, health conditions, recipes, or general wellness advice. I'm here to help guide your herbal journey!`;
+                    }
+
+                    this.messages.push({
+                        id: ++this.messageId,
+                        role: 'assistant',
+                        content: response
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>

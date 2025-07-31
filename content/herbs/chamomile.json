@@ -1,0 +1,67 @@
+{
+  "id": "chamomile",
+  "name": "Chamomile",
+  "scientificName": "Matricaria chamomilla",
+  "otherNames": ["German Chamomile", "Wild Chamomile", "Scented Mayweed"],
+  "family": "Asteraceae",
+  "description": "Chamomile is one of the most popular and versatile herbs in traditional medicine. Known for its gentle, calming properties, it has been used for thousands of years to promote relaxation, aid digestion, and soothe various ailments.",
+  "origin": ["Europe", "Western Asia"],
+  "properties": {
+    "taste": ["bitter", "sweet"],
+    "energetics": ["cooling", "drying"],
+    "actions": [
+      "anti-inflammatory",
+      "antispasmodic",
+      "carminative",
+      "nervine",
+      "mild sedative"
+    ]
+  },
+  "uses": {
+    "medicinal": [
+      "Promotes relaxation and sleep",
+      "Eases digestive discomfort",
+      "Reduces inflammation",
+      "Soothes skin irritations",
+      "Relieves menstrual cramps"
+    ],
+    "culinary": [
+      "Herbal tea",
+      "Flavoring for desserts",
+      "Infused honey",
+      "Cocktail ingredient"
+    ]
+  },
+  "preparation": {
+    "tea": {
+      "instructions": "Steep 1-2 teaspoons of dried flowers in hot water for 5-10 minutes",
+      "dosage": "1-3 cups daily"
+    },
+    "tincture": {
+      "instructions": "1:5 ratio in 45% alcohol",
+      "dosage": "2-4 ml, 3 times daily"
+    },
+    "compress": {
+      "instructions": "Strong tea applied topically",
+      "dosage": "As needed for skin conditions"
+    }
+  },
+  "safety": {
+    "contraindications": [
+      "Allergy to plants in the Asteraceae family",
+      "May interact with blood-thinning medications"
+    ],
+    "sideEffects": [
+      "Rare allergic reactions",
+      "Contact dermatitis in sensitive individuals"
+    ],
+    "pregnancy": "Generally considered safe in moderate amounts"
+  },
+  "growing": {
+    "climate": "Temperate",
+    "soil": "Well-drained, slightly acidic to neutral",
+    "sunlight": "Full sun to partial shade",
+    "watering": "Moderate, avoid overwatering",
+    "harvest": "Flowers when fully open"
+  }
+}

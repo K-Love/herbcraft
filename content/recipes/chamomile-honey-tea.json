@@ -1,0 +1,85 @@
+{
+  "id": "chamomile-honey-tea",
+  "title": "Soothing Chamomile Honey Tea",
+  "description": "A calming bedtime tea that combines the gentle properties of chamomile with the sweetness of honey. Perfect for relaxation and better sleep.",
+  "category": "tea",
+  "cuisine": "herbal",
+  "difficulty": "easy",
+  "prepTime": 5,
+  "cookTime": 10,
+  "totalTime": 15,
+  "servings": 2,
+  "ingredients": [
+    {
+      "item": "Dried chamomile flowers",
+      "amount": "2",
+      "unit": "tablespoons"
+    },
+    {
+      "item": "Raw honey",
+      "amount": "2",
+      "unit": "teaspoons"
+    },
+    {
+      "item": "Fresh lemon juice",
+      "amount": "1",
+      "unit": "teaspoon",
+      "optional": true
+    },
+    {
+      "item": "Hot water",
+      "amount": "2",
+      "unit": "cups"
+    }
+  ],
+  "instructions": [
+    {
+      "step": 1,
+      "text": "Heat water to just below boiling (about 200°F/93°C). Boiling water can destroy some of chamomile's beneficial compounds."
+    },
+    {
+      "step": 2,
+      "text": "Place chamomile flowers in a teapot or heat-proof container. If using tea bags, use 2 bags."
+    },
+    {
+      "step": 3,
+      "text": "Pour hot water over the chamomile and cover to preserve the volatile oils."
+    },
+    {
+      "step": 4,
+      "text": "Steep for 5-10 minutes. The longer you steep, the stronger the flavor and effects."
+    },
+    {
+      "step": 5,
+      "text": "Strain the tea into cups, removing all plant material."
+    },
+    {
+      "step": 6,
+      "text": "Add honey to taste while the tea is still warm. Add lemon juice if desired."
+    },
+    {
+      "step": 7,
+      "text": "Enjoy slowly, preferably 30 minutes before bedtime for best sleep benefits."
+    }
+  ],
+  "tips": [
+    "Use organic chamomile for the best quality and to avoid pesticides",
+    "Store dried chamomile in an airtight container away from light",
+    "For a stronger sleep aid, combine with passionflower or valerian",
+    "Can be enjoyed iced - brew double strength and pour over ice"
+  ],
+  "healthBenefits": [
+    "Promotes relaxation and better sleep",
+    "Aids digestion when consumed after meals",
+    "May help reduce anxiety and stress",
+    "Anti-inflammatory properties",
+    "Soothes upset stomach"
+  ],
+  "herbs": ["chamomile"],
+  "tags": ["sleep", "relaxation", "digestive", "bedtime", "calming"],
+  "rating": 4.8,
+  "ratingCount": 127,
+  "author": "HerbCraft Team",
+  "dateCreated": "2024-01-15",
+  "lastModified": "2024-01-15"
+}

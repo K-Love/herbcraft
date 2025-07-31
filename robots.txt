@@ -1,0 +1,22 @@
+# Robots.txt for HerbCraft
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (when added)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.netlify/
+
+# Sitemap location
+Sitemap: https://herbcraft.com/sitemap.xml
+
+# Crawl delay (optional, in seconds)
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
