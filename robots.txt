@@ -1,5 +1,7 @@
 # Robots.txt for HerbCraft
+# https://herbcraft.com
 
+# Allow all crawlers
 User-agent: *
 Allow: /
 
@@ -8,15 +10,46 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /.netlify/
 
+# Crawl delay (be nice to servers)
+Crawl-delay: 1
+
 # Sitemap location
 Sitemap: https://herbcraft.com/sitemap.xml
 
-# Crawl delay (optional, in seconds)
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1
 
-# Specific bot rules
-User-agent: GPTBot
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
 Allow: /
 
-User-agent: ChatGPT-User
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
 Allow: /
