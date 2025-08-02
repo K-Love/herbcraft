@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamomile - Medicinal Herb Guide | HerbCraft</title>
+    <meta name="description" content="Learn about Chamomile (Matricaria chamomilla) - its medicinal properties, uses, preparations, and growing information. Your complete guide to this calming herb.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-green-700">
+                        🌿 HerbCraft
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/herbs.html" class="text-green-700 font-semibold">Herbs</a>
+                    <a href="/recipes.html" class="text-gray-700 hover:text-green-700 transition">Recipes</a>
+                    <a href="/ai-advisor.html" class="text-gray-700 hover:text-green-700 transition">AI Advisor</a>
+                    <a href="/#about" class="text-gray-700 hover:text-green-700 transition">About</a>
+                </div>
+                
+                <button class="md:hidden" x-data @click="$dispatch('toggle-menu')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden" x-data="{ open: false }" @toggle-menu.window="open = !open" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="/herbs.html" class="block px-3 py-2 text-green-700 font-semibold">Herbs</a>
+                <a href="/recipes.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Recipes</a>
+                <a href="/ai-advisor.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">AI Advisor</a>
+                <a href="/#about" class="block px-3 py-2 text-gray-700 hover:text-green-700">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-3">
+        <div class="container mx-auto px-4">
+            <nav class="text-sm">
+                <a href="/" class="text-gray-600 hover:text-green-700">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="/herbs.html" class="text-gray-600 hover:text-green-700">Herbs</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-900">Chamomile</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Herb Header -->
+    <section class="bg-gradient-to-b from-purple-50 to-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/3">
+                        <div class="bg-purple-200 rounded-lg h-64 flex items-center justify-center">
+                            <span class="text-6xl">🌼</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-2">Chamomile</h1>
+                        <p class="text-xl text-gray-600 italic mb-4">Matricaria chamomilla</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Calming</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Digestive</span>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Anti-inflammatory</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Gentle</span>
+                        </div>
+                        <p class="text-lg text-gray-700">
+                            Chamomile is one of the most ancient medicinal herbs known to mankind. This gentle, daisy-like flower has been used for thousands of years to calm nerves, soothe digestive issues, and promote restful sleep.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Cards -->
+    <section class="py-8 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <div class="text-2xl mb-2">☀️</div>
+                    <h3 class="font-semibold text-sm">Sun Requirements</h3>
+                    <p class="text-gray-600 text-sm">Full sun to partial shade</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <div class="text-2xl mb-2">💧</div>
+                    <h3 class="font-semibold text-sm">Water Needs</h3>
+                    <p class="text-gray-600 text-sm">Moderate</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <div class="text-2xl mb-2">🌡️</div>
+                    <h3 class="font-semibold text-sm">Hardiness Zones</h3>
+                    <p class="text-gray-600 text-sm">3-9</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                    <div class="text-2xl mb-2">📏</div>
+                    <h3 class="font-semibold text-sm">Height</h3>
+                    <p class="text-gray-600 text-sm">8-24 inches</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Main Content Column -->
+                    <div class="md:col-span-2 space-y-8">
+                        <!-- Medicinal Uses -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">🏥</span> Medicinal Uses
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <div>
+                                            <strong>Anxiety and Stress Relief:</strong> Chamomile's mild sedative effects help calm nerves and reduce anxiety.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <div>
+                                            <strong>Sleep Aid:</strong> Promotes restful sleep when taken as tea before bedtime.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <div>
+                                            <strong>Digestive Support:</strong> Relieves gas, bloating, and mild stomach upset.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <div>
+                                            <strong>Skin Health:</strong> Applied topically for eczema, wounds, and skin irritations.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <div>
+                                            <strong>Anti-inflammatory:</strong> Reduces inflammation both internally and externally.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Preparations -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">🧪</span> Preparations & Dosage
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6 space-y-4">
+                                <div class="border-l-4 border-purple-500 pl-4">
+                                    <h3 class="font-semibold mb-1">Tea</h3>
+                                    <p class="text-gray-700">1-2 tsp dried flowers per cup, steep 5-10 minutes</p>
+                                    <p class="text-sm text-gray-600 mt-1">Drink 1-4 cups daily</p>
+                                </div>
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h3 class="font-semibold mb-1">Tincture</h3>
+                                    <p class="text-gray-700">2-4 ml, 3 times daily</p>
+                                    <p class="text-sm text-gray-600 mt-1">Can be added to water or juice</p>
+                                </div>
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <h3 class="font-semibold mb-1">Compress</h3>
+                                    <p class="text-gray-700">Strong tea applied topically</p>
+                                    <p class="text-sm text-gray-600 mt-1">For skin conditions and wounds</p>
+                                </div>
+                                <div class="border-l-4 border-yellow-500 pl-4">
+                                    <h3 class="font-semibold mb-1">Bath</h3>
+                                    <p class="text-gray-700">Add 1 cup dried flowers to bath water</p>
+                                    <p class="text-sm text-gray-600 mt-1">For relaxation and skin soothing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Culinary Uses -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">🍴</span> Culinary Uses
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <ul class="space-y-2">
+                                    <li>• Herbal tea - the most popular use</li>
+                                    <li>• Flavoring for keto desserts and baked goods</li>
+                                    <li>• Infused in sugar-free sweeteners</li>
+                                    <li>• Low-carb cocktail ingredient</li>
+                                    <li>• Keto ice cream and sorbet flavoring</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Growing Information -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">🌱</span> Growing Information
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h3 class="font-semibold mb-2">Growing Conditions</h3>
+                                        <ul class="text-gray-700 space-y-1 text-sm">
+                                            <li><strong>Zones:</strong> 3-9</li>
+                                            <li><strong>Sunlight:</strong> Full sun to partial shade</li>
+                                            <li><strong>Soil:</strong> Well-drained, slightly acidic</li>
+                                            <li><strong>Water:</strong> Moderate, avoid overwatering</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-2">Planting Tips</h3>
+                                        <ul class="text-gray-700 space-y-1 text-sm">
+                                            <li>• Start from seed or transplants</li>
+                                            <li>• Self-seeds readily</li>
+                                            <li>• Space plants 8-10 inches apart</li>
+                                            <li>• Harvest flowers when fully open</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                                    <p class="text-sm text-green-800">
+                                        <strong>Harvesting Tip:</strong> Harvest flowers when fully open on a dry morning after dew has evaporated for best quality and potency.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-6">
+                        <!-- Safety & Contraindications -->
+                        <div class="bg-red-50 rounded-lg p-6">
+                            <h3 class="font-bold text-red-800 mb-3 flex items-center">
+                                <span class="mr-2">⚠️</span> Safety & Contraindications
+                            </h3>
+                            <ul class="text-sm text-red-700 space-y-2">
+                                <li>• Allergy to plants in the daisy family</li>
+                                <li>• May interact with blood thinners</li>
+                                <li>• Use caution during pregnancy</li>
+                                <li>• May cause drowsiness</li>
+                            </ul>
+                        </div>
+
+                        <!-- Quick Facts -->
+                        <div class="bg-blue-50 rounded-lg p-6">
+                            <h3 class="font-bold text-blue-800 mb-3">📋 Quick Facts</h3>
+                            <dl class="text-sm space-y-2">
+                                <dt class="font-semibold text-blue-700">Family:</dt>
+                                <dd class="text-blue-600">Asteraceae</dd>
+                                
+                                <dt class="font-semibold text-blue-700">Common Names:</dt>
+                                <dd class="text-blue-600">German Chamomile, Wild Chamomile</dd>
+                                
+                                <dt class="font-semibold text-blue-700">Parts Used:</dt>
+                                <dd class="text-blue-600">Flowers</dd>
+                                
+                                <dt class="font-semibold text-blue-700">Energetics:</dt>
+                                <dd class="text-blue-600">Cooling, drying</dd>
+                            </dl>
+                        </div>
+
+                        <!-- Related Recipes -->
+                        <div class="bg-green-50 rounded-lg p-6">
+                            <h3 class="font-bold text-green-800 mb-3">🍵 Related Recipes</h3>
+                            <ul class="text-sm space-y-2">
+                                <li><a href="/recipes/chamomile-sleep-tea.html" class="text-green-700 hover:text-green-900">Calming Chamomile Sleep Tea</a></li>
+                                <li><a href="/recipes/lavender-lemon-cookies.html" class="text-green-700 hover:text-green-900">Keto Lavender Lemon Cookies</a></li>
+                                <li><a href="/recipes/calendula-healing-salve.html" class="text-green-700 hover:text-green-900">Calendula Healing Salve</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- AI Advisor CTA -->
+                        <div class="bg-purple-50 rounded-lg p-6 text-center">
+                            <h3 class="font-bold text-purple-800 mb-2">Need Personalized Advice?</h3>
+                            <p class="text-sm text-purple-700 mb-4">Ask our AI advisor about using chamomile for your specific needs</p>
+                            <a href="/ai-advisor.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition inline-block">
+                                Ask AI Advisor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌿 HerbCraft</h3>
+                    <p class="text-gray-400">Your AI-powered herbal knowledge platform</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/herbs.html" class="hover:text-white">Herb Database</a></li>
+                        <li><a href="/recipes.html" class="hover:text-white">Recipes</a></li>
+                        <li><a href="/ai-advisor.html" class="hover:text-white">AI Advisor</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Forums</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="/disclaimer.html" class="hover:text-white">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HerbCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load herb data dynamically -->
+    <script>
+        // In production, this would load from the JSON file
+        // For now, we'll use the data directly
+    </script>
+</body>
+</html>

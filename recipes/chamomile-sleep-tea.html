@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calming Chamomile Sleep Tea Recipe - Keto & Sugar-Free | HerbCraft</title>
+    <meta name="description" content="A soothing bedtime tea blend with chamomile, lavender, and passionflower. Sugar-free, keto-friendly recipe that promotes relaxation and restful sleep.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-green-700">
+                        🌿 HerbCraft
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/herbs.html" class="text-gray-700 hover:text-green-700 transition">Herbs</a>
+                    <a href="/recipes.html" class="text-green-700 font-semibold">Recipes</a>
+                    <a href="/ai-advisor.html" class="text-gray-700 hover:text-green-700 transition">AI Advisor</a>
+                    <a href="/#about" class="text-gray-700 hover:text-green-700 transition">About</a>
+                </div>
+                
+                <button class="md:hidden" x-data @click="$dispatch('toggle-menu')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden" x-data="{ open: false }" @toggle-menu.window="open = !open" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="/herbs.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Herbs</a>
+                <a href="/recipes.html" class="block px-3 py-2 text-green-700 font-semibold">Recipes</a>
+                <a href="/ai-advisor.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">AI Advisor</a>
+                <a href="/#about" class="block px-3 py-2 text-gray-700 hover:text-green-700">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-3">
+        <div class="container mx-auto px-4">
+            <nav class="text-sm">
+                <a href="/" class="text-gray-600 hover:text-green-700">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <a href="/recipes.html" class="text-gray-600 hover:text-green-700">Recipes</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-900">Calming Chamomile Sleep Tea</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Recipe Header -->
+    <section class="bg-gradient-to-b from-purple-50 to-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">🌿 Herbal Remedy</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Keto</span>
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Sugar-Free</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Calming Chamomile Sleep Tea</h1>
+                    <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                        A soothing bedtime tea blend that promotes relaxation and restful sleep. Perfect for winding down after a stressful day.
+                    </p>
+                </div>
+
+                <!-- Recipe Image -->
+                <div class="bg-purple-200 rounded-lg h-96 flex items-center justify-center mb-8">
+                    <span class="text-6xl">🍵</span>
+                </div>
+
+                <!-- Quick Info -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-500 text-sm">Prep Time</div>
+                        <div class="font-semibold">5 minutes</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-500 text-sm">Steep Time</div>
+                        <div class="font-semibold">10 minutes</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-500 text-sm">Servings</div>
+                        <div class="font-semibold">1 cup</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-500 text-sm">Difficulty</div>
+                        <div class="font-semibold">Easy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Main Content Column -->
+                    <div class="md:col-span-2 space-y-8">
+                        <!-- Benefits -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">✨</span> Benefits
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Promotes relaxation and reduces anxiety</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Improves sleep quality</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Calms digestive system</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Sugar-free and keto-friendly</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Ingredients -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">🌿</span> Ingredients
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <ul class="space-y-3">
+                                    <li class="flex items-center justify-between">
+                                        <span>Dried chamomile flowers</span>
+                                        <span class="font-medium">1 tablespoon</span>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Dried lavender buds</span>
+                                        <span class="font-medium">1 teaspoon</span>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Dried passionflower</span>
+                                        <span class="font-medium">1 teaspoon</span>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Boiling water</span>
+                                        <span class="font-medium">1 cup</span>
+                                    </li>
+                                    <li class="flex items-center justify-between">
+                                        <span>Stevia or monk fruit sweetener (optional)</span>
+                                        <span class="font-medium">To taste</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                    <p class="text-sm text-blue-800">
+                                        <strong>Herb Sources:</strong> Find these herbs at <a href="/herbs/chamomile.html" class="underline">our herb guide</a> or your local health food store.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructions -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">📝</span> Instructions
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <ol class="space-y-4">
+                                    <li class="flex">
+                                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">1</span>
+                                        <span>Combine all dried herbs in a tea infuser or teapot.</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">2</span>
+                                        <span>Pour boiling water over herbs.</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">3</span>
+                                        <span>Cover and steep for 10 minutes.</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">4</span>
+                                        <span>Strain and add sweetener if desired.</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">5</span>
+                                        <span>Drink 30-60 minutes before bedtime.</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Tips -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                                <span class="text-green-600 mr-2">💡</span> Tips & Variations
+                            </h2>
+                            <div class="bg-white rounded-lg shadow-sm p-6">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="text-yellow-500 mr-2">★</span>
+                                        <span>Make a larger batch and store in the refrigerator for up to 3 days</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-yellow-500 mr-2">★</span>
+                                        <span>Can be enjoyed iced in summer - brew double strength and pour over ice</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-yellow-500 mr-2">★</span>
+                                        <span>Add a splash of unsweetened almond milk for extra comfort</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-yellow-500 mr-2">★</span>
+                                        <span>Try adding valerian root for stronger sleep support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-6">
+                        <!-- Nutrition Info -->
+                        <div class="bg-green-50 rounded-lg p-6">
+                            <h3 class="font-bold text-green-800 mb-3">📊 Nutrition Facts</h3>
+                            <p class="text-sm text-gray-600 mb-3">Per serving (1 cup)</p>
+                            <dl class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <dt>Calories:</dt>
+                                    <dd class="font-medium">5</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt>Net Carbs:</dt>
+                                    <dd class="font-medium">0g</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt>Fat:</dt>
+                                    <dd class="font-medium">0g</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt>Protein:</dt>
+                                    <dd class="font-medium">0g</dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        <!-- Dosage & Precautions -->
+                        <div class="bg-red-50 rounded-lg p-6">
+                            <h3 class="font-bold text-red-800 mb-3 flex items-center">
+                                <span class="mr-2">⚠️</span> Precautions
+                            </h3>
+                            <ul class="text-sm text-red-700 space-y-2">
+                                <li>• Avoid if allergic to daisy family plants</li>
+                                <li>• May interact with sedative medications</li>
+                                <li>• Not recommended during pregnancy</li>
+                                <li>• Start with smaller amounts to test tolerance</li>
+                            </ul>
+                            <p class="text-xs text-red-600 mt-3">
+                                Always consult with a healthcare provider before using herbs medicinally.
+                            </p>
+                        </div>
+
+                        <!-- Related Herbs -->
+                        <div class="bg-purple-50 rounded-lg p-6">
+                            <h3 class="font-bold text-purple-800 mb-3">🌿 Featured Herbs</h3>
+                            <ul class="text-sm space-y-2">
+                                <li><a href="/herbs/chamomile.html" class="text-purple-700 hover:text-purple-900">→ Learn about Chamomile</a></li>
+                                <li><a href="/herbs/lavender.html" class="text-purple-700 hover:text-purple-900">→ Learn about Lavender</a></li>
+                                <li><a href="/herbs/valerian.html" class="text-purple-700 hover:text-purple-900">→ Learn about Valerian</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Print Recipe -->
+                        <div class="bg-gray-100 rounded-lg p-6 text-center">
+                            <button onclick="window.print()" class="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition">
+                                🖨️ Print Recipe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Recipes -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6">You Might Also Like</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <a href="/recipes/turmeric-golden-milk.html" class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="h-32 bg-orange-200"></div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">Anti-Inflammatory Golden Milk</h3>
+                                <p class="text-sm text-gray-600">Warming keto beverage for joint health</p>
+                            </div>
+                        </a>
+                        <a href="/recipes/peppermint-digestive-tincture.html" class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="h-32 bg-green-200"></div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">Peppermint Digestive Tincture</h3>
+                                <p class="text-sm text-gray-600">Concentrated extract for digestive relief</p>
+                            </div>
+                        </a>
+                        <a href="/recipes/lavender-lemon-cookies.html" class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
+                            <div class="h-32 bg-purple-200"></div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">Keto Lavender Lemon Cookies</h3>
+                                <p class="text-sm text-gray-600">Sugar-free treats with calming herbs</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌿 HerbCraft</h3>
+                    <p class="text-gray-400">Your AI-powered herbal knowledge platform</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/herbs.html" class="hover:text-white">Herb Database</a></li>
+                        <li><a href="/recipes.html" class="hover:text-white">Recipes</a></li>
+                        <li><a href="/ai-advisor.html" class="hover:text-white">AI Advisor</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Forums</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="/disclaimer.html" class="hover:text-white">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HerbCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

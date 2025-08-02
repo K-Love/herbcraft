@@ -1,0 +1,555 @@
+{
+  "recipes": {
+    "culinary": [
+      {
+        "id": "lavender-lemon-cookies",
+        "name": "Keto Lavender Lemon Shortbread Cookies",
+        "category": "culinary",
+        "type": "dessert",
+        "description": "Delicate buttery keto cookies infused with aromatic lavender and bright lemon zest. Sugar-free, gluten-free, and perfect for tea time.",
+        "prepTime": "20 minutes",
+        "cookTime": "15 minutes",
+        "totalTime": "35 minutes",
+        "servings": "24 cookies",
+        "difficulty": "easy",
+        "herbs": ["lavender"],
+        "dietaryInfo": ["keto", "gluten-free", "sugar-free", "low-carb"],
+        "ingredients": [
+          "2 cups almond flour",
+          "1/2 cup erythritol or monk fruit sweetener",
+          "1/4 teaspoon salt",
+          "1 tablespoon dried culinary lavender",
+          "1 cup unsalted butter, softened",
+          "2 tablespoons fresh lemon zest",
+          "1 teaspoon vanilla extract",
+          "1/4 cup coconut flour"
+        ],
+        "instructions": [
+          "Preheat oven to 325°F (165°C).",
+          "In a bowl, whisk together almond flour, coconut flour, sweetener, salt, and lavender.",
+          "In a large bowl, cream butter until light and fluffy.",
+          "Mix in lemon zest and vanilla extract.",
+          "Gradually add dry ingredients to butter mixture until just combined.",
+          "Roll dough into 1-inch balls and place on parchment-lined baking sheet.",
+          "Flatten each ball slightly with a fork.",
+          "Bake for 12-15 minutes until edges are lightly golden.",
+          "Cool on wire rack completely before serving."
+        ],
+        "nutritionInfo": {
+          "calories": "85 per cookie",
+          "fat": "8g",
+          "netCarbs": "1g",
+          "protein": "2g",
+          "fiber": "1g"
+        },
+        "tips": [
+          "Use culinary lavender, not ornamental varieties",
+          "Don't overbake - cookies should be pale",
+          "Store in airtight container for up to 1 week",
+          "Almond flour creates a tender, delicate texture"
+        ],
+        "tags": ["dessert", "cookies", "lavender", "lemon", "keto", "gluten-free", "sugar-free"]
+      },
+      {
+        "id": "herb-crusted-salmon",
+        "name": "Mediterranean Herb-Crusted Salmon",
+        "category": "culinary",
+        "type": "main",
+        "description": "Fresh salmon fillets topped with a fragrant crust of fresh herbs, garlic, and lemon. A healthy and flavorful dinner ready in 30 minutes.",
+        "prepTime": "10 minutes",
+        "cookTime": "15 minutes",
+        "totalTime": "25 minutes",
+        "servings": "4",
+        "difficulty": "easy",
+        "herbs": ["parsley", "dill", "basil", "thyme"],
+        "ingredients": [
+          "4 salmon fillets (6 oz each)",
+          "1/4 cup fresh parsley, chopped",
+          "2 tablespoons fresh dill, chopped",
+          "2 tablespoons fresh basil, chopped",
+          "1 tablespoon fresh thyme leaves",
+          "3 cloves garlic, minced",
+          "1/4 cup olive oil",
+          "2 tablespoons lemon juice",
+          "1 teaspoon lemon zest",
+          "Salt and pepper to taste"
+        ],
+        "instructions": [
+          "Preheat oven to 400°F (200°C).",
+          "Pat salmon fillets dry and season with salt and pepper.",
+          "In a bowl, combine all herbs, garlic, olive oil, lemon juice, and zest.",
+          "Place salmon on a lined baking sheet.",
+          "Spread herb mixture evenly over each fillet.",
+          "Bake for 12-15 minutes until salmon flakes easily.",
+          "Serve immediately with lemon wedges."
+        ],
+        "nutritionInfo": {
+          "calories": "320",
+          "fat": "18g",
+          "carbs": "3g",
+          "protein": "35g"
+        },
+        "tips": [
+          "Don't overcook - salmon should be slightly pink in center",
+          "Can substitute with other firm fish like halibut",
+          "Pairs well with roasted vegetables or quinoa"
+        ],
+        "tags": ["main-course", "seafood", "healthy", "mediterranean", "quick"]
+      },
+      {
+        "id": "rosemary-focaccia",
+        "name": "Keto Rosemary and Sea Salt Focaccia",
+        "category": "culinary",
+        "type": "bread",
+        "description": "Low-carb Italian-style flatbread topped with fresh rosemary, coarse sea salt, and olive oil. Gluten-free and keto-friendly.",
+        "prepTime": "15 minutes",
+        "cookTime": "25 minutes",
+        "totalTime": "40 minutes",
+        "servings": "8-10",
+        "difficulty": "easy",
+        "herbs": ["rosemary"],
+        "dietaryInfo": ["keto", "gluten-free", "sugar-free", "low-carb"],
+        "ingredients": [
+          "2 cups almond flour",
+          "1/4 cup psyllium husk powder",
+          "2 teaspoons baking powder",
+          "1 teaspoon salt",
+          "4 large eggs",
+          "1/4 cup olive oil, plus extra for topping",
+          "1/2 cup warm water",
+          "3 tablespoons fresh rosemary leaves",
+          "Coarse sea salt for topping",
+          "2 tablespoons apple cider vinegar"
+        ],
+        "instructions": [
+          "Preheat oven to 350°F (175°C).",
+          "Mix almond flour, psyllium husk, baking powder, and salt in a bowl.",
+          "In another bowl, whisk eggs, olive oil, warm water, and vinegar.",
+          "Combine wet and dry ingredients, mix well. Let stand 5 minutes to thicken.",
+          "Spread dough in oiled 9x13 inch pan, about 1/2 inch thick.",
+          "Dimple surface with fingers, drizzle with olive oil.",
+          "Sprinkle with rosemary and sea salt.",
+          "Bake 20-25 minutes until golden and firm.",
+          "Cool slightly before cutting."
+        ],
+        "nutritionInfo": {
+          "calories": "145 per serving",
+          "fat": "12g",
+          "netCarbs": "3g",
+          "protein": "6g",
+          "fiber": "4g"
+        },
+        "tips": [
+          "Psyllium husk gives bread-like texture",
+          "Don't skip the vinegar - it helps with rise",
+          "Can add olives or sun-dried tomatoes",
+          "Best served warm, stores well for 3 days"
+        ],
+        "tags": ["bread", "italian", "rosemary", "keto", "gluten-free", "low-carb"]
+      },
+      {
+        "id": "mint-cauliflower-soup",
+        "name": "Keto Mint and Cauliflower Soup",
+        "category": "culinary",
+        "type": "soup",
+        "description": "A vibrant green low-carb soup combining cauliflower with fresh mint. Light, refreshing, and perfect for any season.",
+        "prepTime": "10 minutes",
+        "cookTime": "20 minutes",
+        "totalTime": "30 minutes",
+        "servings": "4-6",
+        "difficulty": "easy",
+        "herbs": ["mint", "parsley"],
+        "dietaryInfo": ["keto", "gluten-free", "sugar-free", "low-carb"],
+        "ingredients": [
+          "2 tablespoons grass-fed butter or ghee",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "4 cups bone broth or vegetable broth",
+          "1 large head cauliflower, chopped",
+          "1/4 cup fresh mint leaves",
+          "2 tablespoons fresh parsley",
+          "1/2 cup heavy cream or coconut cream",
+          "Salt and pepper to taste",
+          "Mint leaves for garnish",
+          "Optional: 1 cup spinach for extra greens"
+        ],
+        "instructions": [
+          "In a large pot, melt butter over medium heat.",
+          "Sauté onion until translucent, about 5 minutes.",
+          "Add garlic and cook 1 minute more.",
+          "Add broth and bring to a boil.",
+          "Add cauliflower and simmer 10-12 minutes until tender.",
+          "Add spinach if using, cook 2 minutes.",
+          "Remove from heat and add mint and parsley.",
+          "Blend until smooth using immersion blender.",
+          "Stir in cream, season with salt and pepper.",
+          "Serve hot or chilled, garnished with mint."
+        ],
+        "nutritionInfo": {
+          "calories": "120 per serving",
+          "fat": "9g",
+          "netCarbs": "5g",
+          "protein": "4g",
+          "fiber": "3g"
+        },
+        "tips": [
+          "Can be served hot or cold",
+          "For dairy-free, use coconut cream",
+          "Freezes well for up to 3 months",
+          "Add MCT oil for extra healthy fats"
+        ],
+        "tags": ["soup", "keto", "gluten-free", "mint", "low-carb"]
+      },
+      {
+        "id": "basil-pesto",
+        "name": "Classic Keto Basil Pesto with Pine Nuts",
+        "category": "culinary",
+        "type": "sauce",
+        "description": "Traditional Genovese pesto made with fresh basil, pine nuts, garlic, and Parmesan. Naturally keto and gluten-free, perfect for zucchini noodles or grilled vegetables.",
+        "prepTime": "10 minutes",
+        "cookTime": "0 minutes",
+        "totalTime": "10 minutes",
+        "servings": "1 cup (serves 4-6)",
+        "difficulty": "easy",
+        "herbs": ["basil"],
+        "dietaryInfo": ["keto", "gluten-free", "sugar-free", "low-carb"],
+        "ingredients": [
+          "2 cups fresh basil leaves, packed",
+          "1/2 cup pine nuts, toasted",
+          "3 cloves garlic",
+          "1/2 cup Parmesan cheese, grated",
+          "1/2 cup extra virgin olive oil",
+          "1/4 teaspoon salt",
+          "1/4 teaspoon black pepper",
+          "1 tablespoon lemon juice",
+          "Optional: 2 tablespoons nutritional yeast for extra umami"
+        ],
+        "instructions": [
+          "Toast pine nuts in dry pan until golden, let cool.",
+          "In food processor, combine basil, pine nuts, and garlic.",
+          "Pulse until coarsely chopped.",
+          "Add Parmesan (and nutritional yeast if using) and pulse again.",
+          "With processor running, slowly drizzle in olive oil.",
+          "Season with salt, pepper, and lemon juice.",
+          "Use immediately or store with thin layer of oil on top."
+        ],
+        "nutritionInfo": {
+          "calories": "180 per 2 tablespoons",
+          "fat": "18g",
+          "netCarbs": "1g",
+          "protein": "3g",
+          "fiber": "1g"
+        },
+        "tips": [
+          "Blanch basil for brighter green color",
+          "Can substitute walnuts or almonds for pine nuts",
+          "Freeze in ice cube trays for easy portions",
+          "Serve over zucchini noodles or shirataki pasta for keto meal"
+        ],
+        "tags": ["sauce", "italian", "basil", "keto", "gluten-free", "quick"]
+      }
+    ],
+    "remedies": [
+      {
+        "id": "chamomile-sleep-tea",
+        "name": "Calming Chamomile Sleep Tea",
+        "category": "remedy",
+        "type": "tea",
+        "description": "A soothing bedtime tea blend that promotes relaxation and restful sleep. Perfect for winding down after a stressful day.",
+        "prepTime": "5 minutes",
+        "steepTime": "10 minutes",
+        "totalTime": "15 minutes",
+        "servings": "1 cup",
+        "difficulty": "easy",
+        "herbs": ["chamomile", "lavender", "passionflower"],
+        "benefits": [
+          "Promotes relaxation",
+          "Reduces anxiety",
+          "Improves sleep quality",
+          "Calms digestive system"
+        ],
+        "ingredients": [
+          "1 tablespoon dried chamomile flowers",
+          "1 teaspoon dried lavender buds",
+          "1 teaspoon dried passionflower",
+          "1 cup boiling water",
+          "Stevia or monk fruit sweetener to taste (optional)"
+        ],
+        "instructions": [
+          "Combine all dried herbs in a tea infuser or teapot.",
+          "Pour boiling water over herbs.",
+          "Cover and steep for 10 minutes.",
+          "Strain and add honey if desired.",
+          "Drink 30-60 minutes before bedtime.",
+          "Sweeten with stevia or monk fruit if desired."
+        ],
+        "dosage": "1-2 cups in the evening",
+        "precautions": [
+          "Avoid if allergic to daisy family plants",
+          "May interact with sedative medications",
+          "Not recommended during pregnancy"
+        ],
+        "tips": [
+          "Make a larger batch and store in the refrigerator",
+          "Can be enjoyed iced in summer",
+          "Add a splash of warm milk for extra comfort"
+        ],
+        "tags": ["sleep", "anxiety", "relaxation", "tea", "evening"]
+      },
+      {
+        "id": "ginger-honey-cough-syrup",
+        "name": "Ginger Honey Cough Syrup",
+        "category": "remedy",
+        "type": "syrup",
+        "description": "A natural cough syrup combining the soothing properties of honey with the warming, anti-inflammatory effects of ginger and lemon.",
+        "prepTime": "10 minutes",
+        "cookTime": "20 minutes",
+        "totalTime": "30 minutes",
+        "servings": "About 1 cup",
+        "difficulty": "easy",
+        "herbs": ["ginger", "thyme"],
+        "benefits": [
+          "Soothes sore throat",
+          "Reduces cough",
+          "Boosts immune system",
+          "Anti-inflammatory"
+        ],
+        "ingredients": [
+          "1/2 cup fresh ginger root, sliced",
+          "2 tablespoons fresh thyme (or 1 tbsp dried)",
+          "1 cup water",
+          "1/2 cup sugar-free honey substitute (like Lakanto) or 1/4 cup erythritol",
+          "Juice of 2 lemons",
+          "1/4 teaspoon cayenne pepper (optional)",
+          "1 tablespoon vegetable glycerin (for syrup consistency)"
+        ],
+        "instructions": [
+          "In a saucepan, combine ginger, thyme, and water.",
+          "Bring to a boil, then simmer for 15 minutes.",
+          "Strain out solids, pressing to extract liquid.",
+          "Let cool to warm temperature.",
+          "Stir in sweetener, glycerin, and lemon juice until well combined.",
+          "Add cayenne if using for extra throat-soothing power.",
+          "Store in a glass jar in refrigerator."
+        ],
+        "dosage": "Adults: 1-2 tablespoons every 4 hours as needed. Children over 1: 1 teaspoon",
+        "precautions": [
+          "Safe for diabetics with sugar-free sweetener",
+          "May interact with blood thinners",
+          "Start with small doses to test tolerance"
+        ],
+        "shelfLife": "Up to 1 month refrigerated",
+        "tips": [
+          "Can add cinnamon or cloves for flavor",
+          "Take straight or mix in warm water",
+          "Also works as a preventive during cold season"
+        ],
+        "tags": ["cough", "cold", "immune", "throat", "syrup"]
+      },
+      {
+        "id": "peppermint-digestive-tincture",
+        "name": "Peppermint Digestive Tincture",
+        "category": "remedy",
+        "type": "tincture",
+        "description": "A concentrated herbal extract to relieve digestive discomfort, gas, and bloating. Take before or after meals for best results.",
+        "prepTime": "20 minutes",
+        "infusionTime": "4-6 weeks",
+        "totalTime": "4-6 weeks",
+        "servings": "About 4 oz",
+        "difficulty": "medium",
+        "herbs": ["peppermint", "fennel", "ginger"],
+        "benefits": [
+          "Relieves gas and bloating",
+          "Improves digestion",
+          "Reduces nausea",
+          "Soothes stomach cramps"
+        ],
+        "ingredients": [
+          "1/2 cup dried peppermint leaves",
+          "1/4 cup fennel seeds",
+          "2 tablespoons dried ginger root",
+          "2 cups vodka or brandy (80-100 proof)",
+          "Glass jar with tight lid"
+        ],
+        "instructions": [
+          "Combine all herbs in a clean glass jar.",
+          "Pour alcohol over herbs, ensuring they're covered by 2 inches.",
+          "Seal jar tightly and label with date.",
+          "Store in a cool, dark place for 4-6 weeks.",
+          "Shake jar daily for first 2 weeks.",
+          "Strain through cheesecloth, squeezing out liquid.",
+          "Store in dark glass dropper bottles.",
+          "Label with ingredients and date."
+        ],
+        "dosage": "20-30 drops in water, 15 minutes before meals",
+        "precautions": [
+          "Contains alcohol - not for children or those avoiding alcohol",
+          "May worsen acid reflux in some people",
+          "Start with smaller dose to test tolerance"
+        ],
+        "shelfLife": "2-3 years when stored properly",
+        "tips": [
+          "Can use apple cider vinegar instead of alcohol",
+          "Add to sparkling water for a digestive mocktail",
+          "Keep a small bottle in your purse for dining out"
+        ],
+        "tags": ["digestion", "gas", "bloating", "tincture", "stomach"]
+      },
+      {
+        "id": "calendula-healing-salve",
+        "name": "Calendula Healing Salve",
+        "category": "remedy",
+        "type": "topical",
+        "description": "A gentle, all-purpose healing salve for cuts, scrapes, dry skin, and minor irritations. Safe for the whole family.",
+        "prepTime": "30 minutes",
+        "infusionTime": "2 weeks",
+        "totalTime": "2 weeks + 30 minutes",
+        "servings": "4 oz",
+        "difficulty": "medium",
+        "herbs": ["calendula", "comfrey", "lavender"],
+        "benefits": [
+          "Promotes wound healing",
+          "Reduces inflammation",
+          "Moisturizes dry skin",
+          "Prevents infection"
+        ],
+        "ingredients": [
+          "1/2 cup dried calendula flowers",
+          "1/4 cup dried comfrey leaf",
+          "2 tablespoons dried lavender",
+          "1 cup olive oil or sweet almond oil",
+          "1/4 cup beeswax pellets",
+          "10 drops lavender essential oil (optional)",
+          "Vitamin E oil (optional)"
+        ],
+        "instructions": [
+          "Infuse herbs in oil using slow method: combine in jar, let sit 2 weeks, shaking daily.",
+          "Or quick method: gently heat herbs and oil in double boiler for 2 hours.",
+          "Strain oil through cheesecloth, pressing out all liquid.",
+          "In double boiler, melt beeswax into infused oil.",
+          "Remove from heat, add essential oil and vitamin E if using.",
+          "Pour into small jars or tins while liquid.",
+          "Let cool completely before using.",
+          "Label with ingredients and date."
+        ],
+        "usage": "Apply small amount to affected area 2-3 times daily",
+        "precautions": [
+          "For external use only",
+          "Do not use on deep wounds",
+          "Test on small area first for allergies"
+        ],
+        "shelfLife": "1 year when stored in cool, dry place",
+        "tips": [
+          "Add plantain for extra healing power",
+          "Use coconut oil for antifungal properties",
+          "Makes great gifts in small tins"
+        ],
+        "tags": ["topical", "wounds", "skin", "healing", "salve"]
+      },
+      {
+        "id": "elderberry-immune-syrup",
+        "name": "Elderberry Immune Support Syrup",
+        "category": "remedy",
+        "type": "syrup",
+        "description": "A delicious immune-boosting syrup packed with antioxidants. Take daily during cold and flu season for prevention.",
+        "prepTime": "10 minutes",
+        "cookTime": "45 minutes",
+        "totalTime": "1 hour",
+        "servings": "About 2 cups",
+        "difficulty": "easy",
+        "herbs": ["elderberry", "ginger", "cinnamon", "cloves"],
+        "benefits": [
+          "Boosts immune system",
+          "Reduces cold and flu duration",
+          "High in antioxidants",
+          "Anti-inflammatory"
+        ],
+        "ingredients": [
+          "1 cup dried elderberries",
+          "3 cups water",
+          "2 tablespoons fresh ginger, grated",
+          "1 cinnamon stick",
+          "4 whole cloves",
+          "1/2 cup sugar-free honey substitute or 1/4 cup erythritol",
+          "2 tablespoons vegetable glycerin (for syrup consistency)"
+        ],
+        "instructions": [
+          "Combine elderberries, water, ginger, cinnamon, and cloves in saucepan.",
+          "Bring to boil, then reduce heat and simmer 45 minutes.",
+          "Liquid should reduce by about half.",
+          "Strain through fine mesh, pressing berries to extract liquid.",
+          "Let cool to lukewarm temperature.",
+          "Stir in sweetener and glycerin until dissolved.",
+          "Pour into glass jar and refrigerate.",
+          "Shake before each use."
+        ],
+        "dosage": "Prevention: 1 tbsp daily. Active illness: 1 tbsp every 2-3 hours",
+        "precautions": [
+          "Raw elderberries are toxic - must be cooked",
+          "May interact with immunosuppressant drugs",
+          "Sugar-free version safe for diabetics"
+        ],
+        "shelfLife": "2-3 months refrigerated",
+        "tips": [
+          "Can freeze in ice cube trays for single doses",
+          "Add to sparkling water for immune-boosting soda",
+          "Double batch and share with friends"
+        ],
+        "tags": ["immune", "cold", "flu", "prevention", "syrup"]
+      },
+      {
+        "id": "turmeric-golden-milk",
+        "name": "Anti-Inflammatory Golden Milk",
+        "category": "remedy",
+        "type": "beverage",
+        "description": "A warming, anti-inflammatory drink based on ancient Ayurvedic tradition. Perfect for joint pain, inflammation, or general wellness.",
+        "prepTime": "5 minutes",
+        "cookTime": "5 minutes",
+        "totalTime": "10 minutes",
+        "servings": "1 cup",
+        "difficulty": "easy",
+        "herbs": ["turmeric", "ginger", "cinnamon", "black-pepper"],
+        "benefits": [
+          "Reduces inflammation",
+          "Supports joint health",
+          "Boosts immunity",
+          "Improves digestion"
+        ],
+        "ingredients": [
+          "1 cup unsweetened almond or coconut milk",
+          "1 teaspoon turmeric powder",
+          "1/2 teaspoon ginger powder",
+          "1/4 teaspoon cinnamon",
+          "Pinch of black pepper (essential for absorption)",
+          "1 teaspoon coconut oil or MCT oil",
+          "Stevia or monk fruit sweetener to taste",
+          "Optional: 1 tablespoon collagen powder for protein"
+        ],
+        "instructions": [
+          "In a small saucepan, whisk together milk and all spices.",
+          "Add coconut oil or ghee.",
+          "Heat over medium heat, whisking frequently.",
+          "Bring to a simmer but don't boil.",
+          "Remove from heat and let cool slightly.",
+          "Add sweetener to taste.",
+          "Add collagen powder if using and whisk well.",
+          "Strain if desired for smoother texture.",
+          "Enjoy warm, preferably before bed."
+        ],
+        "dosage": "1 cup daily, best taken in evening",
+        "precautions": [
+          "May interact with blood thinners",
+          "Start with less turmeric if new to it",
+          "Can stain - be careful with clothing"
+        ],
+        "tips": [
+          "Make a batch of spice mix for convenience",
+          "Add vanilla extract for extra flavor",
+          "Can be enjoyed iced in summer",
+          "MCT oil provides quick energy on keto"
+        ],
+        "tags": ["anti-inflammatory", "joints", "arthritis", "beverage", "ayurvedic"]
+      }
+    ]
+  }
+}

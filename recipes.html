@@ -58,192 +58,122 @@
     </section>
 
     <!-- Recipe Categories -->
-    <section class="py-8 bg-white shadow-sm" x-data="{ activeCategory: 'all' }">
+    <section class="py-8 bg-white shadow-sm" x-data="recipeManager()">
         <div class="container mx-auto px-4">
-            <div class="flex flex-wrap gap-2 justify-center">
-                <button 
-                    @click="activeCategory = 'all'"
-                    :class="activeCategory === 'all' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-                    class="px-4 py-2 rounded-full text-sm font-medium transition"
+            <!-- Main Category Tabs -->
+            <div class="flex justify-center gap-4 mb-6">
+                <button
+                    @click="mainCategory = 'all'"
+                    :class="mainCategory === 'all' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
+                    class="px-6 py-3 rounded-lg text-base font-medium transition"
                 >
                     All Recipes
                 </button>
-                <button 
-                    @click="activeCategory = 'tea'"
-                    :class="activeCategory === 'tea' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-                    class="px-4 py-2 rounded-full text-sm font-medium transition"
+                <button
+                    @click="mainCategory = 'culinary'"
+                    :class="mainCategory === 'culinary' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
+                    class="px-6 py-3 rounded-lg text-base font-medium transition"
                 >
-                    Herbal Teas
+                    Culinary Recipes
                 </button>
-                <button 
-                    @click="activeCategory = 'tincture'"
-                    :class="activeCategory === 'tincture' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-                    class="px-4 py-2 rounded-full text-sm font-medium transition"
+                <button
+                    @click="mainCategory = 'remedies'"
+                    :class="mainCategory === 'remedies' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
+                    class="px-6 py-3 rounded-lg text-base font-medium transition"
                 >
-                    Tinctures
+                    Herbal Remedies
                 </button>
-                <button 
-                    @click="activeCategory = 'culinary'"
-                    :class="activeCategory === 'culinary' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-                    class="px-4 py-2 rounded-full text-sm font-medium transition"
-                >
-                    Culinary
-                </button>
-                <button 
-                    @click="activeCategory = 'beauty'"
-                    :class="activeCategory === 'beauty' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-                    class="px-4 py-2 rounded-full text-sm font-medium transition"
-                >
-                    Beauty & Skincare
-                </button>
+            </div>
+            
+            <!-- Sub-category filters -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <template x-if="mainCategory === 'culinary' || mainCategory === 'all'">
+                    <div class="flex gap-2">
+                        <button
+                            @click="subCategory = 'all'"
+                            :class="subCategory === 'all' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            All Types
+                        </button>
+                        <button
+                            @click="subCategory = 'dessert'"
+                            :class="subCategory === 'dessert' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Desserts
+                        </button>
+                        <button
+                            @click="subCategory = 'main'"
+                            :class="subCategory === 'main' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Main Dishes
+                        </button>
+                        <button
+                            @click="subCategory = 'soup'"
+                            :class="subCategory === 'soup' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Soups
+                        </button>
+                    </div>
+                </template>
+                <template x-if="mainCategory === 'remedies' || mainCategory === 'all'">
+                    <div class="flex gap-2">
+                        <button
+                            @click="subCategory = 'tea'"
+                            :class="subCategory === 'tea' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Teas
+                        </button>
+                        <button
+                            @click="subCategory = 'tincture'"
+                            :class="subCategory === 'tincture' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Tinctures
+                        </button>
+                        <button
+                            @click="subCategory = 'syrup'"
+                            :class="subCategory === 'syrup' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Syrups
+                        </button>
+                        <button
+                            @click="subCategory = 'topical'"
+                            :class="subCategory === 'topical' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+                            class="px-3 py-1 rounded-full text-sm transition"
+                        >
+                            Topical
+                        </button>
+                    </div>
+                </template>
             </div>
         </div>
-    </section>
 
-    <!-- Recipes Grid -->
-    <section class="py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Recipe Card 1 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-yellow-200"></div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Tea</span>
-                            <span class="text-xs text-gray-500">⏱️ 10 min</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Calming Chamomile Tea</h3>
-                        <p class="text-gray-600 mb-4">A soothing blend perfect for evening relaxation and better sleep.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★★</span>
-                                <span class="text-sm text-gray-600">(4.8)</span>
-                            </div>
-                            <a href="/recipes/chamomile-tea.html" class="text-green-600 font-medium hover:text-green-700">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </article>
+        <!-- Recipes Grid -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="recipes-grid">
+                    <!-- Recipes will be dynamically loaded here -->
+                </div>
 
-                <!-- Recipe Card 2 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-purple-200"></div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Beauty</span>
-                            <span class="text-xs text-gray-500">⏱️ 20 min</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Lavender Face Steam</h3>
-                        <p class="text-gray-600 mb-4">Open pores and relax with this aromatic facial steam treatment.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★★</span>
-                                <span class="text-sm text-gray-600">(4.9)</span>
-                            </div>
-                            <a href="/recipes/lavender-steam.html" class="text-green-600 font-medium hover:text-green-700">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                <!-- No results message -->
+                <div id="no-recipes" class="text-center py-12 hidden">
+                    <p class="text-gray-600 text-lg">No recipes found in this category.</p>
+                </div>
 
-                <!-- Recipe Card 3 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-orange-200"></div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Culinary</span>
-                            <span class="text-xs text-gray-500">⏱️ 30 min</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Golden Turmeric Latte</h3>
-                        <p class="text-gray-600 mb-4">Anti-inflammatory golden milk with warming spices and creamy texture.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★★</span>
-                                <span class="text-sm text-gray-600">(5.0)</span>
-                            </div>
-                            <a href="/recipes/turmeric-latte.html" class="text-green-600 font-medium hover:text-green-700">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Recipe Card 4 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-green-200"></div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Tea</span>
-                            <span class="text-xs text-gray-500">⏱️ 15 min</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Digestive Peppermint Tea</h3>
-                        <p class="text-gray-600 mb-4">Refresh and soothe your digestive system with this cooling blend.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★☆</span>
-                                <span class="text-sm text-gray-600">(4.6)</span>
-                            </div>
-                            <a href="/recipes/peppermint-tea.html" class="text-green-600 font-medium hover:text-green-700">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Recipe Card 5 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-red-200"></div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Tincture</span>
-                            <span class="text-xs text-gray-500">⏱️ 4 weeks</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Echinacea Immune Tincture</h3>
-                        <p class="text-gray-600 mb-4">Powerful immune-boosting tincture for cold and flu season.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★★</span>
-                                <span class="text-sm text-gray-600">(4.7)</span>
-                            </div>
-                            <a href="/recipes/echinacea-tincture.html" class="text-green-600 font-medium hover:text-green-700">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Recipe Card 6 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                    <div class="h-48 bg-green-300"></div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Culinary</span>
-                            <span class="text-xs text-gray-500">⏱️ 45 min</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Herb-Infused Honey</h3>
-                        <p class="text-gray-600 mb-4">Create medicinal honey infusions with your favorite healing herbs.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★★</span>
-                                <span class="text-sm text-gray-600">(4.9)</span>
-                            </div>
-                            <a href="/recipes/herb-honey.html" class="text-green-600 font-medium hover:text-green-700">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                <!-- Load More Button -->
+                <div class="text-center mt-12" x-show="hasMoreRecipes">
+                    <button @click="loadMoreRecipes" class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition">
+                        Load More Recipes
+                    </button>
+                </div>
             </div>
-
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button class="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition">
-                    Load More Recipes
-                </button>
-            </div>
-        </div>
+        </section>
     </section>
 
     <!-- CTA Section -->
@@ -299,5 +229,146 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Recipe data management
+        let recipesData = { culinary: [], remedies: [] };
+        
+        // Load recipes data from JSON file
+        async function loadRecipesData() {
+            try {
+                const response = await fetch('/content/recipes/recipes-data.json');
+                const data = await response.json();
+                recipesData = data.recipes;
+                // Initialize the Alpine component after data is loaded
+                window.dispatchEvent(new Event('recipes-loaded'));
+            } catch (error) {
+                console.error('Error loading recipes data:', error);
+                window.dispatchEvent(new Event('recipes-loaded'));
+            }
+        }
+        
+        // Load recipes data when page loads
+        loadRecipesData();
+
+        // Alpine.js component for recipe management
+        function recipeManager() {
+            return {
+                mainCategory: 'all',
+                subCategory: 'all',
+                displayedRecipes: 12,
+                hasMoreRecipes: true,
+                
+                init() {
+                    // Wait for recipes data to load
+                    window.addEventListener('recipes-loaded', () => {
+                        this.displayRecipes();
+                    });
+                    
+                    // Watch for category changes
+                    this.$watch('mainCategory', () => {
+                        this.subCategory = 'all';
+                        this.displayedRecipes = 12;
+                        this.displayRecipes();
+                    });
+                    
+                    this.$watch('subCategory', () => {
+                        this.displayedRecipes = 12;
+                        this.displayRecipes();
+                    });
+                },
+                
+                getFilteredRecipes() {
+                    let recipes = [];
+                    
+                    if (this.mainCategory === 'all') {
+                        recipes = [...recipesData.culinary, ...recipesData.remedies];
+                    } else if (this.mainCategory === 'culinary') {
+                        recipes = recipesData.culinary;
+                    } else if (this.mainCategory === 'remedies') {
+                        recipes = recipesData.remedies;
+                    }
+                    
+                    // Filter by subcategory
+                    if (this.subCategory !== 'all') {
+                        recipes = recipes.filter(recipe => recipe.type === this.subCategory);
+                    }
+                    
+                    return recipes;
+                },
+                
+                displayRecipes() {
+                    const grid = document.getElementById('recipes-grid');
+                    const noResults = document.getElementById('no-recipes');
+                    const allRecipes = this.getFilteredRecipes();
+                    const recipes = allRecipes.slice(0, this.displayedRecipes);
+                    
+                    this.hasMoreRecipes = this.displayedRecipes < allRecipes.length;
+                    
+                    if (recipes.length === 0) {
+                        grid.innerHTML = '';
+                        noResults.classList.remove('hidden');
+                        return;
+                    }
+                    
+                    noResults.classList.add('hidden');
+                    
+                    grid.innerHTML = recipes.map(recipe => {
+                        const bgColor = recipe.category === 'culinary' ?
+                            (recipe.type === 'dessert' ? 'bg-pink-200' :
+                             recipe.type === 'main' ? 'bg-orange-200' :
+                             recipe.type === 'soup' ? 'bg-green-200' :
+                             recipe.type === 'bread' ? 'bg-yellow-200' : 'bg-blue-200') :
+                            (recipe.type === 'tea' ? 'bg-purple-200' :
+                             recipe.type === 'tincture' ? 'bg-red-200' :
+                             recipe.type === 'syrup' ? 'bg-amber-200' :
+                             recipe.type === 'topical' ? 'bg-teal-200' : 'bg-indigo-200');
+                        
+                        const categoryLabel = recipe.category === 'culinary' ?
+                            recipe.type.charAt(0).toUpperCase() + recipe.type.slice(1) :
+                            recipe.type.charAt(0).toUpperCase() + recipe.type.slice(1);
+                        
+                        const timeLabel = recipe.totalTime || recipe.prepTime || 'Varies';
+                        
+                        return `
+                            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                                <div class="h-48 ${bgColor} relative">
+                                    <div class="absolute top-4 right-4">
+                                        <span class="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                                            ${recipe.category === 'culinary' ? '🍴 Culinary' : '🌿 Remedy'}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">${categoryLabel}</span>
+                                        <span class="text-xs text-gray-500">⏱️ ${timeLabel}</span>
+                                        ${recipe.difficulty ? `<span class="text-xs text-gray-500">• ${recipe.difficulty}</span>` : ''}
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-2">${recipe.name}</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-2">${recipe.description}</p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex flex-wrap gap-1">
+                                            ${recipe.herbs ? recipe.herbs.slice(0, 2).map(herb =>
+                                                `<span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">${herb}</span>`
+                                            ).join('') : ''}
+                                        </div>
+                                        <a href="/recipes/${recipe.id}.html" class="text-green-600 font-medium hover:text-green-700">
+                                            View Recipe →
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+                    }).join('');
+                },
+                
+                loadMoreRecipes() {
+                    this.displayedRecipes += 12;
+                    this.displayRecipes();
+                }
+            }
+        }
+    </script>
 </body>
 </html>

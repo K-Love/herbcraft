@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Disclaimer - HerbCraft</title>
+    <meta name="description" content="Important medical disclaimer for HerbCraft - Please read before using our herbal information and recommendations.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-green-700">
+                        🌿 HerbCraft
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/herbs.html" class="text-gray-700 hover:text-green-700 transition">Herbs</a>
+                    <a href="/recipes.html" class="text-gray-700 hover:text-green-700 transition">Recipes</a>
+                    <a href="/ai-advisor.html" class="text-gray-700 hover:text-green-700 transition">AI Advisor</a>
+                    <a href="/#about" class="text-gray-700 hover:text-green-700 transition">About</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden" x-data @click="$dispatch('toggle-menu')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden" x-data="{ open: false }" @toggle-menu.window="open = !open" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="/herbs.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Herbs</a>
+                <a href="/recipes.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Recipes</a>
+                <a href="/ai-advisor.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">AI Advisor</a>
+                <a href="/#about" class="block px-3 py-2 text-gray-700 hover:text-green-700">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Medical Disclaimer Content -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-4xl font-bold mb-8 text-red-600">Medical Disclaimer</h1>
+            
+            <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 mb-8">
+                <p class="text-lg font-semibold text-red-700 mb-4">
+                    ⚠️ IMPORTANT: Please read this disclaimer carefully before using HerbCraft
+                </p>
+            </div>
+            
+            <div class="prose prose-lg max-w-none">
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">No Medical Advice</h2>
+                    <p class="mb-4">
+                        The information provided on HerbCraft, including but not limited to text, graphics, images, and other material contained on this website, is for <strong>informational and educational purposes only</strong>. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Always seek the advice of your physician or other qualified health care provider</strong> with any questions you may have regarding a medical condition or treatment and before undertaking a new health care regimen, and never disregard professional medical advice or delay in seeking it because of something you have read on this website.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Not a Healthcare Provider</h2>
+                    <p class="mb-4">
+                        HerbCraft does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other information that may be mentioned on the website. Reliance on any information provided by HerbCraft, HerbCraft employees, others appearing on the website at the invitation of HerbCraft, or other visitors to the website is solely at your own risk.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Herbal Products and Supplements</h2>
+                    <p class="mb-4">
+                        The statements made regarding herbal products and dietary supplements have not been evaluated by the Food and Drug Administration (FDA). The efficacy of these products has not been confirmed by FDA-approved research. These products are not intended to diagnose, treat, cure, or prevent any disease.
+                    </p>
+                    <p class="mb-4">
+                        All information presented here is not meant as a substitute for or alternative to information from healthcare practitioners. Please consult your healthcare professional about potential interactions or other possible complications before using any product.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Individual Results May Vary</h2>
+                    <p class="mb-4">
+                        The experiences and testimonials shared on HerbCraft are individual results and may not be typical. Individual results will vary. The testimonials are not intended to make claims that these products can be used to diagnose, treat, cure, mitigate, or prevent any disease.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Allergies and Interactions</h2>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+                        <p class="font-semibold mb-2">⚠️ WARNING</p>
+                        <ul class="list-disc pl-6">
+                            <li>Herbs and natural products can cause allergic reactions in some individuals</li>
+                            <li>Herbs may interact with prescription medications</li>
+                            <li>Some herbs are contraindicated during pregnancy or breastfeeding</li>
+                            <li>Certain herbs may not be suitable for children</li>
+                            <li>Always inform your healthcare provider about all herbs and supplements you are taking</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Emergency Situations</h2>
+                    <div class="bg-red-100 border-2 border-red-600 rounded-lg p-4 mb-4">
+                        <p class="font-bold text-red-700 mb-2">
+                            If you think you may have a medical emergency, call your doctor, go to the emergency department, or call 911 immediately.
+                        </p>
+                        <p class="text-red-700">
+                            Do not rely on electronic communications or information from HerbCraft for urgent medical needs.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">AI-Generated Content</h2>
+                    <p class="mb-4">
+                        Some content on HerbCraft is generated or assisted by artificial intelligence. While we strive for accuracy, AI-generated content may contain errors or inaccuracies. Always verify important information with qualified healthcare professionals and authoritative sources.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">No Guarantee of Results</h2>
+                    <p class="mb-4">
+                        HerbCraft makes no guarantees about the completeness, reliability, and accuracy of this information. Any action you take upon the information on this website is strictly at your own risk, and HerbCraft will not be liable for any losses and/or damages in connection with the use of our website.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">External Links</h2>
+                    <p class="mb-4">
+                        From our website, you can visit other websites by following hyperlinks to such external sites. While we strive to provide only quality links to useful and ethical websites, we have no control over the content and nature of these sites. These links to other websites do not imply a recommendation for all the content found on these sites.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Consent</h2>
+                    <p class="mb-4">
+                        By using our website, you hereby consent to our disclaimer and agree to its terms. If you do not agree to this disclaimer, please do not use HerbCraft.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Updates to This Disclaimer</h2>
+                    <p class="mb-4">
+                        We may update this disclaimer from time to time. Any changes will be posted on this page with an updated revision date.
+                    </p>
+                    <p class="text-gray-600">
+                        Last updated: January 2024
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">Contact Information</h2>
+                    <p class="mb-4">
+                        If you have any questions about this Medical Disclaimer, please contact us at:
+                    </p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="mb-2"><strong>HerbCraft</strong></p>
+                        <p class="mb-2">Email: legal@herbcraft.com</p>
+                        <p>Website: herbcraft.com</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌿 HerbCraft</h3>
+                    <p class="text-gray-400">Your AI-powered herbal knowledge platform</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/herbs.html" class="hover:text-white">Herb Database</a></li>
+                        <li><a href="/recipes.html" class="hover:text-white">Recipes</a></li>
+                        <li><a href="/ai-advisor.html" class="hover:text-white">AI Advisor</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Forums</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="/disclaimer.html" class="hover:text-white">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HerbCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

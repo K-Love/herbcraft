@@ -175,81 +175,42 @@
     </footer>
 
     <script>
-        // Herb data (in production, this would come from a database or JSON file)
-        const herbsData = [
-            {
-                id: 1,
-                name: "Chamomile",
-                scientificName: "Matricaria chamomilla",
-                properties: ["calming", "digestive", "anti-inflammatory"],
-                description: "Gentle herb known for its calming properties",
-                image: "/images/herbs/chamomile.jpg",
-                slug: "chamomile"
-            },
-            {
-                id: 2,
-                name: "Lavender",
-                scientificName: "Lavandula angustifolia",
-                properties: ["calming", "antiseptic", "aromatic"],
-                description: "Aromatic herb with relaxing properties",
-                image: "/images/herbs/lavender.jpg",
-                slug: "lavender"
-            },
-            {
-                id: 3,
-                name: "Peppermint",
-                scientificName: "Mentha × piperita",
-                properties: ["digestive", "cooling", "energizing"],
-                description: "Refreshing herb that aids digestion",
-                image: "/images/herbs/peppermint.jpg",
-                slug: "peppermint"
-            },
-            {
-                id: 4,
-                name: "Ginger",
-                scientificName: "Zingiber officinale",
-                properties: ["digestive", "warming", "immune"],
-                description: "Warming root with anti-nausea properties",
-                image: "/images/herbs/ginger.jpg",
-                slug: "ginger"
-            },
-            {
-                id: 5,
-                name: "Echinacea",
-                scientificName: "Echinacea purpurea",
-                properties: ["immune", "anti-inflammatory"],
-                description: "Popular herb for immune system support",
-                image: "/images/herbs/echinacea.jpg",
-                slug: "echinacea"
-            },
-            {
-                id: 6,
-                name: "Turmeric",
-                scientificName: "Curcuma longa",
-                properties: ["anti-inflammatory", "digestive", "immune"],
-                description: "Golden spice with powerful anti-inflammatory effects",
-                image: "/images/herbs/turmeric.jpg",
-                slug: "turmeric"
-            },
-            {
-                id: 7,
-                name: "Valerian",
-                scientificName: "Valeriana officinalis",
-                properties: ["calming", "sleep"],
-                description: "Traditional herb for promoting restful sleep",
-                image: "/images/herbs/valerian.jpg",
-                slug: "valerian"
-            },
-            {
-                id: 8,
-                name: "Elderberry",
-                scientificName: "Sambucus nigra",
-                properties: ["immune", "respiratory"],
-                description: "Berry rich in antioxidants for immune support",
-                image: "/images/herbs/elderberry.jpg",
-                slug: "elderberry"
+        // Initialize herbs data
+        let herbsData = [];
+        
+        // Load herbs data from JSON file
+        async function loadHerbsData() {
+            try {
+                const response = await fetch('/content/herbs/herbs-data.json');
+                const data = await response.json();
+                herbsData = data.herbs;
+                // Initialize the Alpine component after data is loaded
+                window.dispatchEvent(new Event('herbs-loaded'));
+            } catch (error) {
+                console.error('Error loading herbs data:', error);
+                // Fallback to some default herbs if loading fails
+                herbsData = [
+                    {
+                        id: "chamomile",
+                        name: "Chamomile",
+                        scientificName: "Matricaria chamomilla",
+                        properties: ["calming", "digestive", "anti-inflammatory"],
+                        description: "Gentle herb known for its calming properties"
+                    },
+                    {
+                        id: "lavender",
+                        name: "Lavender",
+                        scientificName: "Lavandula angustifolia",
+                        properties: ["calming", "antiseptic", "aromatic"],
+                        description: "Aromatic herb with relaxing properties"
+                    }
+                ];
+                window.dispatchEvent(new Event('herbs-loaded'));
             }
-        ];
+        }
+        
+        // Load herbs data when page loads
+        loadHerbsData();
 
         // Alpine.js component for search functionality
         function herbSearch() {
@@ -259,14 +220,17 @@
                 fuse: null,
                 
                 init() {
-                    // Initialize Fuse.js for fuzzy search
-                    this.fuse = new Fuse(herbsData, {
-                        keys: ['name', 'scientificName', 'properties', 'description'],
-                        threshold: 0.3
+                    // Wait for herbs data to load
+                    window.addEventListener('herbs-loaded', () => {
+                        // Initialize Fuse.js for fuzzy search
+                        this.fuse = new Fuse(herbsData, {
+                            keys: ['name', 'scientificName', 'properties', 'description', 'medicinalUses', 'culinaryUses'],
+                            threshold: 0.3
+                        });
+                        
+                        // Display all herbs initially
+                        this.displayHerbs(herbsData);
                     });
-                    
-                    // Display all herbs initially
-                    this.displayHerbs(herbsData);
                 },
                 
                 performSearch() {
@@ -304,23 +268,33 @@
                     
                     noResults.classList.add('hidden');
                     
-                    grid.innerHTML = herbs.map(herb => `
-                        <a href="/herbs/${herb.slug}.html" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
-                            <div class="h-48 bg-green-200 relative overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                <h3 class="absolute bottom-4 left-4 text-white text-xl font-semibold">${herb.name}</h3>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-sm text-gray-500 italic mb-2">${herb.scientificName}</p>
-                                <p class="text-gray-700 mb-3">${herb.description}</p>
-                                <div class="flex flex-wrap gap-1">
-                                    ${herb.properties.map(prop => 
-                                        `<span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">${prop}</span>`
-                                    ).join('')}
+                    grid.innerHTML = herbs.map(herb => {
+                        // Get color based on primary property
+                        const bgColor = herb.properties.includes('calming') ? 'bg-purple-200' :
+                                      herb.properties.includes('digestive') ? 'bg-green-200' :
+                                      herb.properties.includes('immune') ? 'bg-blue-200' :
+                                      herb.properties.includes('warming') ? 'bg-orange-200' :
+                                      'bg-green-200';
+                        
+                        return `
+                            <a href="/herbs/${herb.id}.html" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group">
+                                <div class="h-48 ${bgColor} relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                    <h3 class="absolute bottom-4 left-4 text-white text-xl font-semibold">${herb.name}</h3>
                                 </div>
-                            </div>
-                        </a>
-                    `).join('');
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-500 italic mb-2">${herb.scientificName}</p>
+                                    <p class="text-gray-700 mb-3 line-clamp-2">${herb.description}</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        ${herb.properties.slice(0, 3).map(prop =>
+                                            `<span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">${prop}</span>`
+                                        ).join('')}
+                                        ${herb.properties.length > 3 ? `<span class="text-xs text-gray-500">+${herb.properties.length - 3} more</span>` : ''}
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+                    }).join('');
                 }
             }
         }

@@ -1,0 +1,445 @@
+{
+  "herbs": [
+    {
+      "id": "chamomile",
+      "name": "Chamomile",
+      "scientificName": "Matricaria chamomilla",
+      "commonNames": ["German Chamomile", "Wild Chamomile", "Scented Mayweed"],
+      "family": "Asteraceae",
+      "description": "Chamomile is one of the most ancient medicinal herbs known to mankind. This gentle, daisy-like flower has been used for thousands of years to calm nerves, soothe digestive issues, and promote restful sleep.",
+      "properties": ["calming", "digestive", "anti-inflammatory", "antimicrobial", "antispasmodic"],
+      "medicinalUses": [
+        "Anxiety and stress relief",
+        "Insomnia and sleep disorders",
+        "Digestive upset and gas",
+        "Skin irritations and wounds",
+        "Menstrual cramps",
+        "Mild infections"
+      ],
+      "culinaryUses": [
+        "Herbal tea",
+        "Flavoring for desserts",
+        "Infused honey",
+        "Cocktail ingredient",
+        "Ice cream flavoring"
+      ],
+      "preparations": {
+        "tea": "1-2 tsp dried flowers per cup, steep 5-10 minutes",
+        "tincture": "2-4 ml, 3 times daily",
+        "compress": "Strong tea applied topically",
+        "bath": "Add 1 cup dried flowers to bath water"
+      },
+      "dosage": "Tea: 1-4 cups daily. Tincture: 2-4 ml, 3 times daily",
+      "contraindications": [
+        "Allergy to plants in the daisy family",
+        "May interact with blood thinners",
+        "Use caution during pregnancy"
+      ],
+      "growingInfo": {
+        "zones": "3-9",
+        "sunlight": "Full sun to partial shade",
+        "soil": "Well-drained, slightly acidic",
+        "water": "Moderate, avoid overwatering"
+      },
+      "harvestingTips": "Harvest flowers when fully open on a dry morning after dew has evaporated",
+      "tags": ["anxiety", "sleep", "digestion", "skin", "gentle", "children-safe"]
+    },
+    {
+      "id": "lavender",
+      "name": "Lavender",
+      "scientificName": "Lavandula angustifolia",
+      "commonNames": ["English Lavender", "True Lavender", "Common Lavender"],
+      "family": "Lamiaceae",
+      "description": "Lavender is beloved for its distinctive fragrance and beautiful purple flowers. Native to the Mediterranean, it has been used for over 2,500 years for its calming properties and antiseptic qualities.",
+      "properties": ["calming", "antiseptic", "anti-inflammatory", "analgesic", "antifungal"],
+      "medicinalUses": [
+        "Anxiety and depression",
+        "Insomnia",
+        "Headaches and migraines",
+        "Minor burns and wounds",
+        "Muscle aches and pains",
+        "Respiratory issues"
+      ],
+      "culinaryUses": [
+        "Herbal tea",
+        "Baking (cookies, cakes)",
+        "Herb blends (Herbes de Provence)",
+        "Infused sugar and salt",
+        "Cocktails and lemonade",
+        "Ice cream and desserts"
+      ],
+      "preparations": {
+        "tea": "1 tsp dried flowers per cup, steep 5-10 minutes",
+        "essential oil": "2-4 drops in carrier oil for massage",
+        "bath": "Add 1/2 cup dried flowers or 5-10 drops oil to bath",
+        "pillow": "Place dried flowers in pillowcase for better sleep"
+      },
+      "dosage": "Tea: 1-3 cups daily. Essential oil: Use diluted only",
+      "contraindications": [
+        "May cause drowsiness",
+        "Avoid essential oil during pregnancy",
+        "Can cause skin irritation in sensitive individuals"
+      ],
+      "growingInfo": {
+        "zones": "5-9",
+        "sunlight": "Full sun",
+        "soil": "Well-drained, alkaline preferred",
+        "water": "Drought tolerant once established"
+      },
+      "harvestingTips": "Cut stems just as flowers begin to open for highest oil content",
+      "tags": ["anxiety", "sleep", "aromatherapy", "skin", "headache", "antiseptic"]
+    },
+    {
+      "id": "peppermint",
+      "name": "Peppermint",
+      "scientificName": "Mentha × piperita",
+      "commonNames": ["Brandy Mint", "Balm Mint"],
+      "family": "Lamiaceae",
+      "description": "Peppermint is a hybrid mint, a cross between watermint and spearmint. Known for its cooling sensation and fresh taste, it's one of the most popular herbs for digestive health.",
+      "properties": ["digestive", "cooling", "antispasmodic", "antimicrobial", "decongestant"],
+      "medicinalUses": [
+        "Indigestion and gas",
+        "IBS symptoms",
+        "Nausea and motion sickness",
+        "Headaches",
+        "Respiratory congestion",
+        "Mental fatigue"
+      ],
+      "culinaryUses": [
+        "Fresh and dried tea",
+        "Mojitos and cocktails",
+        "Salads and fruit dishes",
+        "Middle Eastern cuisine",
+        "Chocolate pairing",
+        "Ice cream and desserts"
+      ],
+      "preparations": {
+        "tea": "1-2 tsp dried leaves per cup, steep 5-10 minutes",
+        "tincture": "2-4 ml before meals",
+        "essential oil": "1-2 drops in water for digestive issues",
+        "steam inhalation": "3-4 drops in hot water, inhale vapors"
+      },
+      "dosage": "Tea: 1-3 cups daily, especially after meals",
+      "contraindications": [
+        "May worsen acid reflux in some people",
+        "Avoid essential oil in children under 6",
+        "May interact with certain medications"
+      ],
+      "growingInfo": {
+        "zones": "3-11",
+        "sunlight": "Partial shade to full sun",
+        "soil": "Rich, moist, well-drained",
+        "water": "Keep consistently moist"
+      },
+      "harvestingTips": "Harvest just before flowering for best flavor and potency",
+      "tags": ["digestion", "nausea", "cooling", "headache", "respiratory", "energizing"]
+    },
+    {
+      "id": "ginger",
+      "name": "Ginger",
+      "scientificName": "Zingiber officinale",
+      "commonNames": ["Common Ginger", "Cooking Ginger", "Canton Ginger"],
+      "family": "Zingiberaceae",
+      "description": "Ginger is a flowering plant whose rhizome is widely used as a spice and folk medicine. Native to Southeast Asia, it has been used for over 5,000 years for both culinary and medicinal purposes.",
+      "properties": ["warming", "anti-nausea", "anti-inflammatory", "digestive", "circulatory stimulant"],
+      "medicinalUses": [
+        "Nausea and morning sickness",
+        "Motion sickness",
+        "Digestive issues",
+        "Arthritis and joint pain",
+        "Cold and flu symptoms",
+        "Menstrual cramps"
+      ],
+      "culinaryUses": [
+        "Asian cuisine staple",
+        "Ginger tea and chai",
+        "Baking (gingerbread, cookies)",
+        "Pickled ginger (sushi)",
+        "Smoothies and juices",
+        "Candied ginger"
+      ],
+      "preparations": {
+        "tea": "1-2 tsp fresh grated root per cup, steep 10 minutes",
+        "tincture": "2-4 ml, 3 times daily",
+        "capsules": "250-500mg, 2-3 times daily",
+        "compress": "Apply grated ginger for joint pain"
+      },
+      "dosage": "Fresh: 1-3g daily. Dried: 250-1000mg daily",
+      "contraindications": [
+        "May interact with blood thinners",
+        "High doses may cause heartburn",
+        "Consult doctor if gallstones present"
+      ],
+      "growingInfo": {
+        "zones": "9-12",
+        "sunlight": "Partial shade",
+        "soil": "Rich, loose, well-draining",
+        "water": "Keep moist but not waterlogged"
+      },
+      "harvestingTips": "Harvest after 8-10 months when leaves yellow and die back",
+      "tags": ["nausea", "digestion", "warming", "anti-inflammatory", "immune", "circulation"]
+    },
+    {
+      "id": "echinacea",
+      "name": "Echinacea",
+      "scientificName": "Echinacea purpurea",
+      "commonNames": ["Purple Coneflower", "Eastern Purple Coneflower"],
+      "family": "Asteraceae",
+      "description": "Echinacea is a group of flowering plants native to North America. Used traditionally by Native Americans, it's now one of the most popular herbs for immune system support.",
+      "properties": ["immune-stimulating", "anti-inflammatory", "antimicrobial", "antiviral", "lymphatic"],
+      "medicinalUses": [
+        "Cold and flu prevention",
+        "Upper respiratory infections",
+        "Wound healing",
+        "Urinary tract infections",
+        "General immune support",
+        "Skin conditions"
+      ],
+      "culinaryUses": [
+        "Herbal tea",
+        "Tincture base",
+        "Honey infusions"
+      ],
+      "preparations": {
+        "tea": "1-2 tsp dried root or leaves per cup, steep 10-15 minutes",
+        "tincture": "2-4 ml, 3 times daily at onset of illness",
+        "capsules": "300-500mg, 3 times daily",
+        "topical": "Apply tea or diluted tincture to wounds"
+      },
+      "dosage": "Use for 7-10 days at onset of illness, then take a break",
+      "contraindications": [
+        "Autoimmune conditions",
+        "Allergy to daisy family plants",
+        "May interact with immunosuppressants"
+      ],
+      "growingInfo": {
+        "zones": "3-9",
+        "sunlight": "Full sun",
+        "soil": "Well-drained, tolerates poor soil",
+        "water": "Drought tolerant once established"
+      },
+      "harvestingTips": "Harvest roots in fall after 3-4 years of growth",
+      "tags": ["immune", "cold", "flu", "antiviral", "respiratory", "wound-healing"]
+    },
+    {
+      "id": "turmeric",
+      "name": "Turmeric",
+      "scientificName": "Curcuma longa",
+      "commonNames": ["Indian Saffron", "Golden Spice", "Haldi"],
+      "family": "Zingiberaceae",
+      "description": "Turmeric is a rhizomatous herbaceous perennial plant native to Southeast Asia. Its bright yellow color and powerful anti-inflammatory properties have made it a staple in both cuisine and traditional medicine.",
+      "properties": ["anti-inflammatory", "antioxidant", "digestive", "hepatoprotective", "antimicrobial"],
+      "medicinalUses": [
+        "Arthritis and joint pain",
+        "Digestive disorders",
+        "Liver support",
+        "Skin conditions",
+        "Depression",
+        "Heart health"
+      ],
+      "culinaryUses": [
+        "Curry powder base",
+        "Golden milk/latte",
+        "Rice and grain dishes",
+        "Smoothies",
+        "Pickles and chutneys",
+        "Natural food coloring"
+      ],
+      "preparations": {
+        "golden milk": "1/2 tsp powder in warm milk with black pepper",
+        "capsules": "500-2000mg daily with black pepper",
+        "paste": "Mix with honey for topical use",
+        "tea": "1/2 tsp powder in hot water"
+      },
+      "dosage": "500-2000mg daily, always with black pepper for absorption",
+      "contraindications": [
+        "May interact with blood thinners",
+        "High doses may cause stomach upset",
+        "Avoid before surgery"
+      ],
+      "growingInfo": {
+        "zones": "8-11",
+        "sunlight": "Partial shade",
+        "soil": "Rich, well-draining",
+        "water": "Keep consistently moist"
+      },
+      "harvestingTips": "Harvest rhizomes after 8-10 months when leaves start to dry",
+      "tags": ["anti-inflammatory", "arthritis", "digestion", "liver", "antioxidant", "golden"]
+    },
+    {
+      "id": "valerian",
+      "name": "Valerian",
+      "scientificName": "Valeriana officinalis",
+      "commonNames": ["Garden Valerian", "All-Heal", "Setwall"],
+      "family": "Caprifoliaceae",
+      "description": "Valerian is a perennial flowering plant native to Europe and Asia. Its root has been used since ancient Greek and Roman times as a remedy for insomnia and nervous tension.",
+      "properties": ["sedative", "anxiolytic", "antispasmodic", "hypnotic", "nervine"],
+      "medicinalUses": [
+        "Insomnia",
+        "Anxiety and stress",
+        "Nervous tension",
+        "Muscle cramps",
+        "Menstrual cramps",
+        "Restless leg syndrome"
+      ],
+      "culinaryUses": [
+        "Herbal tea (strong taste)",
+        "Tincture base"
+      ],
+      "preparations": {
+        "tea": "1-2 tsp dried root per cup, steep 10-15 minutes",
+        "tincture": "2-4 ml, 30-60 minutes before bed",
+        "capsules": "400-900mg before bedtime",
+        "bath": "Add strong tea to bath water"
+      },
+      "dosage": "For sleep: 400-900mg 30 minutes before bed",
+      "contraindications": [
+        "May cause drowsiness",
+        "Don't combine with sedatives",
+        "May cause vivid dreams",
+        "Avoid during pregnancy"
+      ],
+      "growingInfo": {
+        "zones": "4-9",
+        "sunlight": "Full sun to partial shade",
+        "soil": "Rich, moist, well-draining",
+        "water": "Keep consistently moist"
+      },
+      "harvestingTips": "Harvest roots in fall of second or third year",
+      "tags": ["sleep", "insomnia", "anxiety", "sedative", "muscle-relaxant", "stress"]
+    },
+    {
+      "id": "elderberry",
+      "name": "Elderberry",
+      "scientificName": "Sambucus nigra",
+      "commonNames": ["Black Elder", "European Elder", "Common Elder"],
+      "family": "Adoxaceae",
+      "description": "Elderberry is a deciduous shrub native to Europe, known for its dark purple berries rich in antioxidants. Both flowers and berries have been used medicinally for centuries.",
+      "properties": ["antiviral", "immune-boosting", "antioxidant", "diaphoretic", "anti-inflammatory"],
+      "medicinalUses": [
+        "Cold and flu treatment",
+        "Immune system support",
+        "Sinus infections",
+        "Allergies",
+        "Constipation",
+        "Joint and muscle pain"
+      ],
+      "culinaryUses": [
+        "Elderberry syrup",
+        "Jams and jellies",
+        "Wine and cordials",
+        "Elderflower fritters",
+        "Teas and infusions",
+        "Baked goods"
+      ],
+      "preparations": {
+        "syrup": "Simmer berries, strain, add honey",
+        "tea": "1-2 tsp dried berries or flowers per cup",
+        "tincture": "2-4 ml, 2-3 times daily",
+        "gummies": "Popular for children"
+      },
+      "dosage": "Syrup: 1 tbsp 2-3 times daily during illness",
+      "contraindications": [
+        "Raw berries can cause nausea",
+        "Leaves and bark are toxic",
+        "May interact with immunosuppressants"
+      ],
+      "growingInfo": {
+        "zones": "3-8",
+        "sunlight": "Full sun to partial shade",
+        "soil": "Moist, well-draining, fertile",
+        "water": "Regular watering, especially when fruiting"
+      },
+      "harvestingTips": "Harvest berries when fully ripe and dark purple",
+      "tags": ["immune", "antiviral", "cold", "flu", "respiratory", "antioxidant"]
+    },
+    {
+      "id": "calendula",
+      "name": "Calendula",
+      "scientificName": "Calendula officinalis",
+      "commonNames": ["Pot Marigold", "Garden Marigold", "Gold-Bloom"],
+      "family": "Asteraceae",
+      "description": "Calendula is a bright orange flowering plant native to the Mediterranean. It has been used since ancient times for its remarkable skin-healing properties.",
+      "properties": ["anti-inflammatory", "antimicrobial", "vulnerary", "lymphatic", "antifungal"],
+      "medicinalUses": [
+        "Wound healing",
+        "Skin irritations and rashes",
+        "Eczema and dermatitis",
+        "Minor burns",
+        "Diaper rash",
+        "Oral health"
+      ],
+      "culinaryUses": [
+        "Edible flower petals in salads",
+        "Natural food coloring",
+        "Herbal tea",
+        "Infused oils for cooking"
+      ],
+      "preparations": {
+        "oil": "Infuse flowers in carrier oil for 2-4 weeks",
+        "salve": "Combine infused oil with beeswax",
+        "tea": "1-2 tsp dried petals per cup",
+        "compress": "Apply cooled tea to affected area"
+      },
+      "dosage": "External use as needed. Tea: 1-3 cups daily",
+      "contraindications": [
+        "Allergy to daisy family plants",
+        "May cause allergic reactions in sensitive individuals",
+        "Avoid during pregnancy (internal use)"
+      ],
+      "growingInfo": {
+        "zones": "2-11 (annual)",
+        "sunlight": "Full sun to partial shade",
+        "soil": "Average, well-draining",
+        "water": "Moderate, drought tolerant"
+      },
+      "harvestingTips": "Pick flowers regularly to encourage more blooms",
+      "tags": ["skin", "wound-healing", "anti-inflammatory", "topical", "gentle", "baby-safe"]
+    },
+    {
+      "id": "lemon-balm",
+      "name": "Lemon Balm",
+      "scientificName": "Melissa officinalis",
+      "commonNames": ["Melissa", "Sweet Balm", "Common Balm"],
+      "family": "Lamiaceae",
+      "description": "Lemon balm is a perennial herb from the mint family, native to southern Europe. Its lemony scent and calming properties have made it a favorite for centuries.",
+      "properties": ["calming", "antiviral", "digestive", "antispasmodic", "mood-lifting"],
+      "medicinalUses": [
+        "Anxiety and stress",
+        "Insomnia",
+        "Cold sores (topical)",
+        "Digestive upset",
+        "ADHD symptoms",
+        "Alzheimer's support"
+      ],
+      "culinaryUses": [
+        "Herbal tea",
+        "Salads and pesto",
+        "Fish and poultry dishes",
+        "Fruit salads and desserts",
+        "Cocktails and lemonades",
+        "Herb butter"
+      ],
+      "preparations": {
+        "tea": "2-3 tsp fresh leaves or 1 tsp dried per cup",
+        "tincture": "2-4 ml, 2-3 times daily",
+        "essential oil": "Dilute for topical use on cold sores",
+        "bath": "Add tea to bath for relaxation"
+      },
+      "dosage": "Tea: 1-3 cups daily. Fresh leaves can be eaten freely",
+      "contraindications": [
+        "May interact with thyroid medications",
+        "May cause drowsiness",
+        "Use caution with sedatives"
+      ],
+      "growingInfo": {
+        "zones": "3-7",
+        "sunlight": "Full sun to partial shade",
+        "soil": "Well-draining, slightly sandy",
+        "water": "Regular watering, don't let dry out"
+      },
+      "harvestingTips": "Harvest before flowering for best flavor",
+      "tags": ["anxiety", "calming", "antiviral", "digestion", "mood", "gentle"]
+    }
+  ]
+}

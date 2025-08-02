@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - HerbCraft</title>
+    <meta name="description" content="HerbCraft's terms of service - Read our terms and conditions for using our herbal knowledge platform.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-green-700">
+                        🌿 HerbCraft
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/herbs.html" class="text-gray-700 hover:text-green-700 transition">Herbs</a>
+                    <a href="/recipes.html" class="text-gray-700 hover:text-green-700 transition">Recipes</a>
+                    <a href="/ai-advisor.html" class="text-gray-700 hover:text-green-700 transition">AI Advisor</a>
+                    <a href="/#about" class="text-gray-700 hover:text-green-700 transition">About</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden" x-data @click="$dispatch('toggle-menu')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden" x-data="{ open: false }" @toggle-menu.window="open = !open" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="/herbs.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Herbs</a>
+                <a href="/recipes.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">Recipes</a>
+                <a href="/ai-advisor.html" class="block px-3 py-2 text-gray-700 hover:text-green-700">AI Advisor</a>
+                <a href="/#about" class="block px-3 py-2 text-gray-700 hover:text-green-700">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms of Service Content -->
+    <main class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-4xl font-bold mb-8">Terms of Service</h1>
+            
+            <div class="prose prose-lg max-w-none">
+                <p class="text-gray-600 mb-6">Last updated: January 2024</p>
+                
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">1. Agreement to Terms</h2>
+                    <p class="mb-4">
+                        By accessing or using HerbCraft ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, then you may not access the Service.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">2. Description of Service</h2>
+                    <p class="mb-4">
+                        HerbCraft provides an AI-powered platform for herbal knowledge, including but not limited to:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Herbal information database</li>
+                        <li>Recipe and remedy suggestions</li>
+                        <li>AI-powered herbal advisor</li>
+                        <li>Community forums and discussions</li>
+                        <li>Educational content about herbs and natural wellness</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">3. Medical Disclaimer</h2>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-4">
+                        <p class="font-semibold mb-2">IMPORTANT HEALTH INFORMATION</p>
+                        <p class="mb-2">
+                            The information provided on HerbCraft is for educational and informational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+                        </p>
+                        <p class="mb-2">
+                            Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on HerbCraft.
+                        </p>
+                        <p>
+                            If you think you may have a medical emergency, call your doctor, go to the emergency department, or call emergency services immediately.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">4. User Accounts</h2>
+                    <p class="mb-4">
+                        When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password and for all activities that occur under your account.
+                    </p>
+                    <p class="mb-4">
+                        You agree to:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Notify us immediately of any unauthorized use of your account</li>
+                        <li>Not use the username of another person or entity</li>
+                        <li>Not use a name that is offensive, vulgar, or obscene</li>
+                        <li>Comply with all applicable laws and regulations</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">5. Acceptable Use</h2>
+                    <p class="mb-4">You agree not to use the Service to:</p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Violate any laws or regulations</li>
+                        <li>Infringe upon the rights of others</li>
+                        <li>Harm minors in any way</li>
+                        <li>Transmit spam, viruses, or malicious code</li>
+                        <li>Collect or harvest user information without consent</li>
+                        <li>Interfere with or disrupt the Service</li>
+                        <li>Attempt to gain unauthorized access to any portion of the Service</li>
+                        <li>Impersonate any person or entity</li>
+                        <li>Post false, misleading, or fraudulent content</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">6. User Content</h2>
+                    <p class="mb-4">
+                        Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, or other material ("Content"). You are responsible for the Content that you post to the Service.
+                    </p>
+                    <p class="mb-4">
+                        By posting Content to the Service, you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service.
+                    </p>
+                    <p class="mb-4">
+                        You represent and warrant that:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>The Content is yours or you have the right to use it</li>
+                        <li>Your use of the Content does not infringe upon the rights of any other person or entity</li>
+                        <li>The Content does not violate these Terms</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">7. Intellectual Property</h2>
+                    <p class="mb-4">
+                        The Service and its original content (excluding Content provided by users), features, and functionality are and will remain the exclusive property of HerbCraft and its licensors. The Service is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">8. Privacy</h2>
+                    <p class="mb-4">
+                        Your use of the Service is also governed by our Privacy Policy. Please review our Privacy Policy, which also governs the Site and informs users of our data collection practices.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">9. Termination</h2>
+                    <p class="mb-4">
+                        We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+                    </p>
+                    <p class="mb-4">
+                        If you wish to terminate your account, you may simply discontinue using the Service or contact us at support@herbcraft.com.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">10. Disclaimers</h2>
+                    <p class="mb-4">
+                        The information on this Service is provided on an "AS IS" and "AS AVAILABLE" basis. You agree that your use of the Service will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the Service and your use thereof.
+                    </p>
+                    <p class="mb-4">
+                        We make no warranties or representations about the accuracy or completeness of the Service's content or the content of any websites linked to this Service and we will assume no liability or responsibility for any:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Errors, mistakes, or inaccuracies of content</li>
+                        <li>Personal injury or property damage resulting from your use of the Service</li>
+                        <li>Unauthorized access to our servers or personal information</li>
+                        <li>Interruption or cessation of transmission to or from the Service</li>
+                        <li>Bugs, viruses, or other harmful code transmitted through the Service</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">11. Limitation of Liability</h2>
+                    <p class="mb-4">
+                        In no event shall HerbCraft, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">12. Indemnification</h2>
+                    <p class="mb-4">
+                        You agree to defend, indemnify, and hold harmless HerbCraft and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees).
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">13. Governing Law</h2>
+                    <p class="mb-4">
+                        These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">14. Changes to Terms</h2>
+                    <p class="mb-4">
+                        We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">15. Contact Information</h2>
+                    <p class="mb-4">
+                        If you have any questions about these Terms, please contact us at:
+                    </p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="mb-2"><strong>HerbCraft</strong></p>
+                        <p class="mb-2">Email: legal@herbcraft.com</p>
+                        <p>Website: herbcraft.com</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌿 HerbCraft</h3>
+                    <p class="text-gray-400">Your AI-powered herbal knowledge platform</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/herbs.html" class="hover:text-white">Herb Database</a></li>
+                        <li><a href="/recipes.html" class="hover:text-white">Recipes</a></li>
+                        <li><a href="/ai-advisor.html" class="hover:text-white">AI Advisor</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Forums</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="/disclaimer.html" class="hover:text-white">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HerbCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
