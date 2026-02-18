@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Herb Explorer - Discover herbs related to wellness concepts - Educational research aggregator.">
+    <title>Herb Explorer | herbcraft.app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-banner">
+        <p><strong>For Educational Purposes Only.</strong> The information on herbcraft.app is aggregated from public sources and is not medical advice. It is not intended to diagnose, treat, cure, or prevent any disease. <strong>Always consult a qualified healthcare professional before making any decisions about your health.</strong></p>
+    </div>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="logo"><a href="index.html">herbcraft.app</a></div>
+            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="header__menu-toggle-icon"></span>
+            </button>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="herb-directory.html" class="nav__link">Herb Directory</a></li>
+                    <li class="nav__item"><a href="herb-explorer.html" class="nav__link">Herb Explorer</a></li>
+                    <li class="nav__item"><a href="index.html#safety-notes" class="nav__link">Safety Notes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="main">
+        <section class="explorer-header">
+            <div class="explorer-header__container">
+                <h1>Herb Explorer</h1>
+                <p>Select a concept to discover herbs that have been traditionally used or researched in relation to it. This is a research tool, not a recommendation engine.</p>
+            </div>
+        </section>
+
+        <section class="explorer-content">
+            <div class="explorer-content__container">
+                <form class="explorer-form">
+                    <label for="concept-select" class="explorer-form__label">Choose a wellness concept:</label>
+                    <select id="concept-select" class="explorer-form__select">
+                        <option value="">-- Select a concept --</option>
+                        <option value="Calmness">Calmness</option>
+                        <option value="Digestion">Digestion</option>
+                        <option value="Energy">Energy</option>
+                        <option value="Sleep Support">Sleep Support</option>
+                    </select>
+                </form>
+
+                <div id="explorer-results" class="explorer-results"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="herb-directory.html" class="footer__nav-link">Herb Directory</a></li>
+                    <li class="footer__nav-item"><a href="herb-explorer.html" class="footer__nav-link">Herb Explorer</a></li>
+                    <li class="footer__nav-item"><a href="index.html#safety-notes" class="footer__nav-link">Safety Notes</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__disclaimer">
+                <h3 class="footer__disclaimer-title">Legal Disclaimer (DSHEA Compliance)</h3>
+                <p class="footer__disclaimer-text">
+                    The information provided on this website is for educational and informational purposes only and is not intended as medical advice. The statements made about herbs, supplements, and botanicals have not been evaluated by the Food and Drug Administration (FDA). The products and information discussed are not intended to diagnose, treat, cure, or prevent any disease or health condition. Under the Dietary Supplement Health and Education Act of 1994 (DSHEA), dietary supplements are regulated differently than conventional foods and drugs. herbcraft.app does not provide medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of information you have read on this website. Individual results may vary. If you are pregnant, nursing, taking medication, or have a medical condition, consult your healthcare professional before using any herbal products or following any information provided on this site.
+                </p>
+            </div>
+
+            <div class="footer__copyright">
+                © 2026 herbcraft.app. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="herb-explorer.js"></script>
+</body>
+</html>
