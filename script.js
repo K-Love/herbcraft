@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            
+
             menuToggle.setAttribute('aria-expanded', !isExpanded);
             nav.classList.toggle('nav--open');
-            
+
             if (!isExpanded) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -37,4 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const citationLinks = document.querySelectorAll('.citation a');
+
+    citationLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                setTimeout(() => {
+                    targetElement.focus({ preventScroll: true });
+                }, 500);
+            }
+        });
+    });
 });

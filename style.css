@@ -517,3 +517,199 @@ ul {
         width: 80%;
     }
 }
+
+.herb-page {
+    padding-top: var(--spacing-lg);
+}
+
+.herb-article__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.page-warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+    border: 1px solid var(--warning-border);
+    border-radius: 4px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.page-warning strong {
+    font-weight: 600;
+}
+
+.herb-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.herb-header h1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.herb-scientific-name {
+    font-size: 1.25rem;
+    color: var(--secondary-text);
+    font-style: italic;
+    margin: 0;
+}
+
+.herb-content {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.herb-content h2 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--accent-color);
+}
+
+.herb-content h2:first-child {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+}
+
+.herb-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.citation {
+    margin-left: 2px;
+}
+
+.citation a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    vertical-align: super;
+    line-height: 0;
+    transition: color 0.2s ease;
+}
+
+.citation a:hover {
+    color: #0066cc;
+    opacity: 1;
+}
+
+.when-to-see-doctor {
+    background-color: #f8f9fa;
+    border-left: 4px solid #dc3545;
+    padding: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    border-radius: 4px;
+}
+
+.when-to-see-doctor h3 {
+    color: #dc3545;
+    margin-bottom: var(--spacing-md);
+}
+
+.when-to-see-doctor p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.when-to-see-doctor ul {
+    list-style: disc;
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.when-to-see-doctor li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.6;
+}
+
+.references-section {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-xl);
+    border-top: 3px solid var(--accent-color);
+}
+
+.references-section h2 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.75rem;
+}
+
+.references-list {
+    list-style: decimal;
+    margin-left: var(--spacing-lg);
+    counter-reset: reference-counter;
+}
+
+.references-list li {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-xs);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    scroll-margin-top: 100px;
+}
+
+.references-list li:target {
+    background-color: #fffbcc;
+    padding: var(--spacing-xs);
+    margin-left: calc(-1 * var(--spacing-xs));
+    border-radius: 4px;
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #ffeb3b;
+    }
+    100% {
+        background-color: #fffbcc;
+    }
+}
+
+@media (max-width: 768px) {
+    .herb-article__container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .herb-header h1 {
+        font-size: 2.25rem;
+    }
+
+    .herb-scientific-name {
+        font-size: 1.1rem;
+    }
+
+    .page-warning {
+        font-size: 0.9rem;
+    }
+
+    .references-list {
+        margin-left: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .when-to-see-doctor {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .herb-header h1 {
+        font-size: 1.875rem;
+    }
+
+    .herb-scientific-name {
+        font-size: 1rem;
+    }
+
+    .herb-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .references-list {
+        margin-left: var(--spacing-sm);
+    }
+}
