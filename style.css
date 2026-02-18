@@ -713,3 +713,148 @@ ul {
         margin-left: var(--spacing-sm);
     }
 }
+
+.directory-header {
+    padding: var(--spacing-xxl) var(--spacing-sm) var(--spacing-lg);
+    text-align: center;
+}
+
+.directory-header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.directory-header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.directory-header p {
+    font-size: 1.125rem;
+    color: var(--secondary-text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.directory-content {
+    padding: 0 var(--spacing-sm) var(--spacing-xxl);
+}
+
+.directory-content__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.az-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background-color: var(--accent-color);
+    border-radius: 8px;
+}
+
+.az-filter__button {
+    background-color: var(--bg-color);
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 44px;
+}
+
+.az-filter__button:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-text);
+}
+
+.az-filter__button.active {
+    background-color: var(--primary-text);
+    color: var(--bg-color);
+    border-color: var(--primary-text);
+}
+
+.herb-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+.herb-card {
+    display: block;
+    padding: var(--spacing-lg);
+    background-color: var(--bg-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.herb-card:hover {
+    opacity: 1;
+    border-color: var(--primary-text);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.herb-card__name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+@media (max-width: 968px) {
+    .herb-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .directory-header h1 {
+        font-size: 2.25rem;
+    }
+
+    .directory-header p {
+        font-size: 1rem;
+    }
+
+    .herb-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .az-filter {
+        gap: 0.375rem;
+        padding: var(--spacing-sm);
+    }
+
+    .az-filter__button {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.875rem;
+        min-width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .directory-header h1 {
+        font-size: 1.875rem;
+    }
+
+    .herb-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .herb-card {
+        padding: var(--spacing-md);
+    }
+
+    .herb-card__name {
+        font-size: 1.125rem;
+    }
+}
