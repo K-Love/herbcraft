@@ -75,22 +75,23 @@ ul {
     list-style: none;
 }
 
-.site-banner {
+#site-banner {
+    background-color: #fff3cd;
+    color: #856404;
+    border-bottom: 1px solid #ffeeba;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
     position: sticky;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    background-color: var(--warning-bg);
-    color: var(--warning-text);
-    border-bottom: 1px solid var(--warning-border);
-    padding: var(--spacing-md) var(--spacing-sm);
-    text-align: center;
+    box-sizing: border-box;
 }
 
-.site-banner__content {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
+#site-banner p {
+    margin: 0;
     line-height: 1.5;
 }
 
