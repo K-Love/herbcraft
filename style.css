@@ -1153,6 +1153,61 @@ ul {
     display: block;
 }
 
+.citation {
+    display: inline;
+}
+
+.citation a {
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 0.75em;
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+.citation a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.references-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--accent-color);
+}
+
+.references-section h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-text);
+}
+
+.references-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+}
+
+.references-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.references-list li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.references-list li a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
 @media (max-width: 768px) {
     .safety-header h1 {
         font-size: 2.25rem;
