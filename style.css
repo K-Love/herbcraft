@@ -6,6 +6,14 @@
     --warning-bg: #fff3cd;
     --warning-text: #856404;
     --warning-border: #ffeeba;
+
+    --botanical-green: #7DA87B;
+    --botanical-sage: #8BAA6F;
+    --botanical-deep: #4A6741;
+    --botanical-cream: #FDFCF8;
+    --botanical-light: #F4F7F3;
+    --earth-tone: #E8DCC4;
+
     --max-width: 1200px;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -190,18 +198,68 @@ ul {
 }
 
 .hero {
-    background-color: var(--bg-color);
+    background: radial-gradient(ellipse at center, var(--botanical-cream) 0%, var(--botanical-light) 100%);
     padding: var(--spacing-xxl) var(--spacing-sm);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(125, 168, 123, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 170, 111, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(74, 103, 65, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(1deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(-1deg);
+    }
 }
 
 .hero__container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hero__title {
     margin-bottom: var(--spacing-md);
+    color: var(--botanical-deep);
+    position: relative;
+    display: inline-block;
+}
+
+.hero__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--botanical-sage) 20%,
+        var(--botanical-green) 50%,
+        var(--botanical-sage) 80%,
+        transparent 100%);
+    border-radius: 2px;
 }
 
 .hero__subtitle {
