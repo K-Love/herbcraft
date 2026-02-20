@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Safety Notes Finder - Search aggregated safety information for herbs - Educational research aggregator.">
-    <title>Safety Notes Finder | herbcraft.app</title>
+    <meta name="description" content="Herb details - Educational research aggregator for herbal information.">
+    <title>Herb Details | herbcraft.app</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="">
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var path = window.location.pathname.replace(/\/$/, '');
+        var slug = path.split('/').pop();
+        if (slug && slug !== 'herbs') {
+            var canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) canonical.href = 'https://herbcraft.app/herbs/' + slug;
+        }
+    });
+    </script>
 </head>
 <body>
     <div id="site-banner">
@@ -17,57 +28,41 @@
 
     <header class="header">
         <div class="header__container">
-            <div class="logo"><a href="index.html">herbcraft.app</a></div>
+            <div class="logo"><a href="../">herbcraft.app</a></div>
             <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="header__menu-toggle-icon"></span>
             </button>
             <nav class="nav" aria-label="Main navigation">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="herb-directory.html" class="nav__link">Herb Directory</a></li>
-                    <li class="nav__item"><a href="herb-explorer.html" class="nav__link">Herb Explorer</a></li>
-                    <li class="nav__item"><a href="safety-finder.html" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="../herb-directory/" class="nav__link">Herb Directory</a></li>
+                    <li class="nav__item"><a href="../herb-explorer/" class="nav__link">Herb Explorer</a></li>
+                    <li class="nav__item"><a href="../safety-finder/" class="nav__link">Safety Notes</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main id="main-content" class="main">
-        <section class="safety-header">
-            <div class="safety-header__container">
-                <h1>Safety Notes Finder</h1>
-                <p>Search for safety information we have aggregated from public sources.</p>
-                
+    <main id="main-content" class="main herb-page">
+        <article class="herb-article">
+            <div class="herb-article__container">
                 <div class="page-warning">
-                    <strong>Important:</strong> This tool aggregates safety notes from public sources. It is not a comprehensive safety checker. The absence of a warning does not mean an herb is safe. Consult a healthcare professional.
+                    <strong>Warning:</strong> This information is for educational research only and should not be construed as medical advice, diagnosis, or treatment recommendations. Always consult with a qualified healthcare professional before using any herbal products or making health-related decisions.
+                </div>
+
+                <div id="herb-content">
+                    <p style="text-align: center; padding: 2rem; color: var(--secondary-text);">Loading herb information...</p>
                 </div>
             </div>
-        </section>
-
-        <section class="safety-content">
-            <div class="safety-content__container">
-                <form class="safety-form" id="safety-search-form">
-                    <label for="herb-safety-search" class="safety-form__label">Search for an herb:</label>
-                    <input 
-                        type="search" 
-                        id="herb-safety-search" 
-                        class="safety-form__input" 
-                        placeholder="Enter an herb name (e.g., 'Ginger')"
-                        autocomplete="off"
-                    >
-                </form>
-
-                <div id="safety-results" class="safety-results"></div>
-            </div>
-        </section>
+        </article>
     </main>
 
     <footer class="footer">
         <div class="footer__container">
             <nav class="footer__nav" aria-label="Footer navigation">
                 <ul class="footer__nav-list">
-                    <li class="footer__nav-item"><a href="herb-directory.html" class="footer__nav-link">Herb Directory</a></li>
-                    <li class="footer__nav-item"><a href="herb-explorer.html" class="footer__nav-link">Herb Explorer</a></li>
-                    <li class="footer__nav-item"><a href="safety-finder.html" class="footer__nav-link">Safety Notes</a></li>
+                    <li class="footer__nav-item"><a href="../herb-directory/" class="footer__nav-link">Herb Directory</a></li>
+                    <li class="footer__nav-item"><a href="../herb-explorer/" class="footer__nav-link">Herb Explorer</a></li>
+                    <li class="footer__nav-item"><a href="../safety-finder/" class="footer__nav-link">Safety Notes</a></li>
                 </ul>
             </nav>
 
@@ -84,6 +79,6 @@
         </div>
     </footer>
 
-    <script src="safety-finder.js"></script>
+    <script src="../herb-detail.js"></script>
 </body>
 </html>

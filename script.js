@@ -1,24 +1,27 @@
+var scriptEl = document.currentScript || document.querySelector('script[src*="script.js"]');
+var basePath = (scriptEl && scriptEl.getAttribute('src').indexOf('../') === 0) ? '../' : '';
+
 const herbs = [
-    { name: 'Ashwagandha', url: 'herb-directory.html' },
-    { name: 'Basil', url: 'herb-directory.html' },
-    { name: 'Calendula', url: 'herb-directory.html' },
-    { name: 'Chamomile', url: 'herb-directory.html' },
-    { name: 'Cinnamon', url: 'herb-directory.html' },
-    { name: 'Dandelion', url: 'herb-directory.html' },
-    { name: 'Echinacea', url: 'herb-directory.html' },
-    { name: 'Elderberry', url: 'herb-directory.html' },
-    { name: 'Fennel', url: 'herb-directory.html' },
-    { name: 'Garlic', url: 'herb-directory.html' },
-    { name: 'Ginger', url: 'herb-directory.html' },
-    { name: 'Ginkgo', url: 'herb-directory.html' },
-    { name: 'Ginseng', url: 'herb-directory.html' },
-    { name: 'Lavender', url: 'herb-directory.html' },
-    { name: 'Lemon Balm', url: 'herb-directory.html' },
-    { name: 'Licorice', url: 'herb-directory.html' },
-    { name: 'Peppermint', url: 'herb-directory.html' },
-    { name: 'Rosemary', url: 'herb-directory.html' },
-    { name: 'Sage', url: 'herb-directory.html' },
-    { name: 'Turmeric', url: 'herb-directory.html' }
+    { name: 'Ashwagandha', url: basePath + 'herbs/ashwagandha' },
+    { name: 'Basil', url: basePath + 'herbs/basil' },
+    { name: 'Calendula', url: basePath + 'herbs/calendula' },
+    { name: 'Chamomile', url: basePath + 'herbs/chamomile' },
+    { name: 'Cinnamon', url: basePath + 'herbs/cinnamon' },
+    { name: 'Dandelion', url: basePath + 'herbs/dandelion' },
+    { name: 'Echinacea', url: basePath + 'herbs/echinacea' },
+    { name: 'Elderberry', url: basePath + 'herbs/elderberry' },
+    { name: 'Fennel', url: basePath + 'herbs/fennel' },
+    { name: 'Garlic', url: basePath + 'herbs/garlic' },
+    { name: 'Ginger', url: basePath + 'herbs/ginger' },
+    { name: 'Ginkgo', url: basePath + 'herbs/ginkgo' },
+    { name: 'Ginseng', url: basePath + 'herbs/ginseng' },
+    { name: 'Lavender', url: basePath + 'herbs/lavender' },
+    { name: 'Lemon Balm', url: basePath + 'herbs/lemon-balm' },
+    { name: 'Licorice', url: basePath + 'herbs/licorice' },
+    { name: 'Peppermint', url: basePath + 'herbs/peppermint' },
+    { name: 'Rosemary', url: basePath + 'herbs/rosemary' },
+    { name: 'Sage', url: basePath + 'herbs/sage' },
+    { name: 'Turmeric', url: basePath + 'herbs/turmeric' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

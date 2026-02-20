@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# 301 redirect old query parameter URLs to clean URLs
+RewriteCond %{QUERY_STRING} ^herb=([^&]+)$
+RewriteRule ^herb-detail\.html$ /herbs/%1? [R=301,L]
+
+# 301 redirect any .html requests to extensionless URLs
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?]
+RewriteRule ^ /%1 [R=301,L]
+
+
+# Rewrite /herbs/slug to /herbs/index.html (serve catch-all)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^herbs/(.+)$ /herbs/index.html [L]
