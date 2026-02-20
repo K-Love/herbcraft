@@ -455,6 +455,14 @@ ul {
     text-align: center;
 }
 
+.search-results-message {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--secondary-text);
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-sm);
+}
+
 .principles {
     background-color: var(--accent-color);
     padding: var(--spacing-xxl) var(--spacing-sm);

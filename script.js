@@ -88,6 +88,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const searchInput = document.getElementById('herb-search-input');
     const searchDropdown = document.getElementById('search-dropdown');
+    const searchSubmit = document.getElementById('search-submit');
+
+    function performSearch(query) {
+        if (!query) return;
+        var exactMatch = herbs.find(function(herb) {
+            return herb.name.toLowerCase() === query.toLowerCase();
+        });
+        if (exactMatch) {
+            window.location.href = exactMatch.url;
+        } else {
+            window.location.href = basePath + 'herb-directory/?search=' + encodeURIComponent(query);
+        }
+    }
+
+    if (searchSubmit) {
+        searchSubmit.addEventListener('click', function() {
+            performSearch(searchInput ? searchInput.value.trim() : '');
+        });
+    }
 
     if (searchInput && searchDropdown) {
         let selectedIndex = -1;
@@ -120,6 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('keydown', (e) => {
             const items = searchDropdown.querySelectorAll('.search-dropdown__item');
 
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedIndex >= 0 && items[selectedIndex]) {
+                    items[selectedIndex].click();
+                } else {
+                    performSearch(searchInput.value.trim());
+                }
+                return;
+            }
+
             if (items.length === 0) return;
 
             if (e.key === 'ArrowDown') {
@@ -130,11 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 selectedIndex = selectedIndex <= 0 ? items.length - 1 : selectedIndex - 1;
                 updateSelection(items);
-            } else if (e.key === 'Enter') {
-                e.preventDefault();
-                if (selectedIndex >= 0 && items[selectedIndex]) {
-                    items[selectedIndex].click();
-                }
             } else if (e.key === 'Escape') {
                 searchDropdown.innerHTML = '';
                 searchDropdown.hidden = true;
