@@ -207,8 +207,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const herbSlug = urlParams.get('herb');
+    var herbSlug = null;
+    var path = window.location.pathname.replace(/\/$/, '');
+    var pathParts = path.split('/');
+    var herbsIndex = pathParts.indexOf('herbs');
+    if (herbsIndex !== -1 && pathParts.length > herbsIndex + 1) {
+        herbSlug = pathParts[herbsIndex + 1];
+    }
+    if (!herbSlug) {
+        var urlParams = new URLSearchParams(window.location.search);
+        herbSlug = urlParams.get('herb');
+    }
+
+    var isSubdir = window.location.pathname.indexOf('/herbs/') !== -1;
+    var dirPrefix = isSubdir ? '../' : '';
+
     const contentDiv = document.getElementById('herb-content');
 
     if (!herbSlug || !herbData[herbSlug]) {
@@ -216,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div style="text-align: center; padding: 3rem;">
                 <h1>Herb Not Found</h1>
                 <p style="color: var(--secondary-text); margin: 1rem 0 2rem 0;">The herb you're looking for doesn't exist or hasn't been added yet.</p>
-                <a href="herb-directory.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary-green); color: white; text-decoration: none; border-radius: 4px;">Back to Herb Directory</a>
+                <a href="../herb-directory/" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary-green); color: white; text-decoration: none; border-radius: 4px;">Back to Herb Directory</a>
             </div>
         `;
         document.title = 'Herb Not Found | herbcraft.app';
@@ -225,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const herb = herbData[herbSlug];
     document.title = `${herb.name} | herbcraft.app`;
-    
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
         metaDescription.setAttribute('content', `${herb.name} - Educational research on ${herb.name.toLowerCase()} including uses, benefits, and safety information.`);
@@ -275,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </section>
 
         <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-            <a href="herb-directory.html" style="display: inline-block; color: var(--primary-green); text-decoration: none;">&larr; Back to Herb Directory</a>
+            <a href="../herb-directory/" style="display: inline-block; color: var(--primary-green); text-decoration: none;">&larr; Back to Herb Directory</a>
         </div>
     `;
 });
