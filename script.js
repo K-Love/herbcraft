@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 if (selectedIndex >= 0 && items[selectedIndex]) {
-                    items[selectedIndex].click();
+                    window.location.href = items[selectedIndex].href;
                 } else {
                     performSearch(searchInput.value.trim());
                 }
@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             items.forEach((item, index) => {
                 if (index === selectedIndex) {
                     item.classList.add('search-dropdown__item--selected');
+                    item.scrollIntoView({ block: 'nearest' });
                 } else {
                     item.classList.remove('search-dropdown__item--selected');
                 }
