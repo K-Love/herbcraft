@@ -373,8 +373,13 @@ ul {
     position: relative;
 }
 
-.search-bar__input {
+.search-bar__input-wrapper {
     flex: 1;
+    position: relative;
+}
+
+.search-bar__input {
+    width: 100%;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     padding: var(--spacing-md);
@@ -383,6 +388,7 @@ ul {
     background-color: var(--bg-color);
     color: var(--primary-text);
     transition: border-color 0.2s ease;
+    box-sizing: border-box;
 }
 
 .search-bar__input:focus {
@@ -700,6 +706,10 @@ ul {
 
     .search-bar {
         flex-direction: column;
+    }
+
+    .search-bar__input-wrapper {
+        width: 100%;
     }
 
     .search-bar__button {

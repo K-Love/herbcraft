@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput && searchDropdown) {
         let selectedIndex = -1;
         let currentMatches = [];
+        const searchWrapper = searchInput.closest('.search-bar__input-wrapper') || searchInput.parentElement;
 
         function renderDropdown(matches) {
             currentMatches = matches;
@@ -154,12 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
-                if (searchDropdown.hidden || currentMatches.length === 0) return;
+                if (currentMatches.length === 0) return;
+                if (searchDropdown.hidden) searchDropdown.hidden = false;
                 selectedIndex = (selectedIndex + 1) % currentMatches.length;
                 updateSelection();
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
-                if (searchDropdown.hidden || currentMatches.length === 0) return;
+                if (currentMatches.length === 0) return;
+                if (searchDropdown.hidden) searchDropdown.hidden = false;
                 selectedIndex = selectedIndex <= 0 ? currentMatches.length - 1 : selectedIndex - 1;
                 updateSelection();
             } else if (e.key === 'Enter') {
@@ -178,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+            if (!searchWrapper.contains(e.target)) {
                 currentMatches = [];
                 selectedIndex = -1;
                 searchDropdown.innerHTML = '';
