@@ -110,65 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (searchInput && searchDropdown) {
         let selectedIndex = -1;
+        let currentMatches = [];
 
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.trim().toLowerCase();
+        function renderDropdown(matches) {
+            currentMatches = matches;
             selectedIndex = -1;
-
-            if (query.length === 0) {
-                searchDropdown.innerHTML = '';
-                searchDropdown.hidden = true;
-                return;
-            }
-
-            const matches = herbs.filter(herb =>
-                herb.name.toLowerCase().includes(query)
-            );
-
             if (matches.length > 0) {
-                searchDropdown.innerHTML = matches.map((herb, index) =>
-                    `<a href="${herb.url}" class="search-dropdown__item" data-index="${index}">${herb.name}</a>`
+                searchDropdown.innerHTML = matches.map((herb, i) =>
+                    `<a href="${herb.url}" id="search-item-${i}" class="search-dropdown__item">${herb.name}</a>`
                 ).join('');
                 searchDropdown.hidden = false;
             } else {
                 searchDropdown.innerHTML = '<div class="search-dropdown__no-results">No herbs found</div>';
                 searchDropdown.hidden = false;
             }
-        });
+        }
 
-        searchInput.addEventListener('keydown', (e) => {
+        function updateSelection() {
             const items = searchDropdown.querySelectorAll('.search-dropdown__item');
-
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (selectedIndex >= 0 && items[selectedIndex]) {
-                    window.location.href = items[selectedIndex].href;
-                } else {
-                    performSearch(searchInput.value.trim());
-                }
-                return;
-            }
-
-            if (items.length === 0) return;
-
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                selectedIndex = (selectedIndex + 1) % items.length;
-                updateSelection(items);
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                selectedIndex = selectedIndex <= 0 ? items.length - 1 : selectedIndex - 1;
-                updateSelection(items);
-            } else if (e.key === 'Escape') {
-                searchDropdown.innerHTML = '';
-                searchDropdown.hidden = true;
-                selectedIndex = -1;
-            }
-        });
-
-        function updateSelection(items) {
-            items.forEach((item, index) => {
-                if (index === selectedIndex) {
+            items.forEach((item, i) => {
+                if (i === selectedIndex) {
                     item.classList.add('search-dropdown__item--selected');
                     item.scrollIntoView({ block: 'nearest' });
                 } else {
@@ -177,11 +138,51 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim().toLowerCase();
+            if (query.length === 0) {
+                currentMatches = [];
+                selectedIndex = -1;
                 searchDropdown.innerHTML = '';
                 searchDropdown.hidden = true;
+                return;
+            }
+            const matches = herbs.filter(herb => herb.name.toLowerCase().includes(query));
+            renderDropdown(matches);
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (searchDropdown.hidden || currentMatches.length === 0) return;
+                selectedIndex = (selectedIndex + 1) % currentMatches.length;
+                updateSelection();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (searchDropdown.hidden || currentMatches.length === 0) return;
+                selectedIndex = selectedIndex <= 0 ? currentMatches.length - 1 : selectedIndex - 1;
+                updateSelection();
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedIndex >= 0 && currentMatches[selectedIndex]) {
+                    window.location.href = currentMatches[selectedIndex].url;
+                } else {
+                    performSearch(searchInput.value.trim());
+                }
+            } else if (e.key === 'Escape') {
+                currentMatches = [];
                 selectedIndex = -1;
+                searchDropdown.innerHTML = '';
+                searchDropdown.hidden = true;
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+                currentMatches = [];
+                selectedIndex = -1;
+                searchDropdown.innerHTML = '';
+                searchDropdown.hidden = true;
             }
         });
     }
