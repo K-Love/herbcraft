@@ -450,7 +450,8 @@ ul {
 
 .search-dropdown__item:hover,
 .search-dropdown__item--selected {
-    background-color: var(--botanical-light);
+    background-color: var(--botanical-green);
+    color: #ffffff;
 }
 
 .search-dropdown__no-results {
