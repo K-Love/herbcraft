@@ -1,0 +1,22 @@
+[
+  { "id": "ashwagandha", "name": "Ashwagandha", "scientific": "Withania somnifera", "category": "Adaptogen", "safety": "Caution with thyroid conditions", "url": "/herbs/ashwagandha/" },
+  { "id": "basil", "name": "Basil", "scientific": "Ocimum basilicum", "category": "Culinary/Medicinal", "safety": "Generally safe", "url": "/herbs/basil/" },
+  { "id": "calendula", "name": "Calendula", "scientific": "Calendula officinalis", "category": "Topical/Skin", "safety": "Caution with ragweed allergies", "url": "/herbs/calendula/" },
+  { "id": "chamomile", "name": "Chamomile", "scientific": "Matricaria chamomilla", "category": "Nervine", "safety": "Caution with ragweed allergies", "url": "/herbs/chamomile/" },
+  { "id": "cinnamon", "name": "Cinnamon", "scientific": "Cinnamomum verum", "category": "Spice/Metabolic", "safety": "High doses may affect blood sugar", "url": "/herbs/cinnamon/" },
+  { "id": "dandelion", "name": "Dandelion", "scientific": "Taraxacum officinale", "category": "Diuretic/Digestive", "safety": "Caution with bile duct obstruction", "url": "/herbs/dandelion/" },
+  { "id": "echinacea", "name": "Echinacea", "scientific": "Echinacea purpurea", "category": "Immune", "safety": "Caution with autoimmune disorders", "url": "/herbs/echinacea/" },
+  { "id": "elderberry", "name": "Elderberry", "scientific": "Sambucus nigra", "category": "Immune", "safety": "Do not consume raw berries/leaves", "url": "/herbs/elderberry/" },
+  { "id": "fennel", "name": "Fennel", "scientific": "Foeniculum vulgare", "category": "Digestive", "safety": "Caution in estrogen-sensitive conditions", "url": "/herbs/fennel/" },
+  { "id": "garlic", "name": "Garlic", "scientific": "Allium sativum", "category": "Immune/Cardio", "safety": "Caution with blood thinners", "url": "/herbs/garlic/" },
+  { "id": "ginger", "name": "Ginger", "scientific": "Zingiber officinale", "category": "Digestive/Anti-inflammatory", "safety": "Caution with gallstones", "url": "/herbs/ginger/" },
+  { "id": "ginkgo", "name": "Ginkgo", "scientific": "Ginkgo biloba", "category": "Nootropic", "safety": "Caution with blood thinners", "url": "/herbs/ginkgo/" },
+  { "id": "ginseng", "name": "Ginseng", "scientific": "Panax ginseng", "category": "Adaptogen/Energy", "safety": "May affect blood pressure", "url": "/herbs/ginseng/" },
+  { "id": "lavender", "name": "Lavender", "scientific": "Lavandula angustifolia", "category": "Nervine", "safety": "Generally safe", "url": "/herbs/lavender/" },
+  { "id": "lemon-balm", "name": "Lemon Balm", "scientific": "Melissa officinalis", "category": "Nervine", "safety": "Caution with hypothyroidism", "url": "/herbs/lemon-balm/" },
+  { "id": "licorice", "name": "Licorice", "scientific": "Glycyrrhiza glabra", "category": "Adrenal/Respiratory", "safety": "Avoid with high blood pressure", "url": "/herbs/licorice/" },
+  { "id": "peppermint", "name": "Peppermint", "scientific": "Mentha x piperita", "category": "Digestive", "safety": "Caution with GERD", "url": "/herbs/peppermint/" },
+  { "id": "rosemary", "name": "Rosemary", "scientific": "Salvia rosmarinus", "category": "Nootropic/Culinary", "safety": "Avoid high doses in pregnancy", "url": "/herbs/rosemary/" },
+  { "id": "sage", "name": "Sage", "scientific": "Salvia officinalis", "category": "Nootropic/Culinary", "safety": "Avoid high doses in pregnancy", "url": "/herbs/sage/" },
+  { "id": "turmeric", "name": "Turmeric", "scientific": "Curcuma longa", "category": "Anti-inflammatory", "safety": "Caution with gallstones", "url": "/herbs/turmeric/" }
+]
