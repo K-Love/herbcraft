@@ -99,6 +99,11 @@ body {
     font-family: 'Inter', sans-serif; color: var(--botanical-green);
 }
 
+.search-dropdown__item:hover,
+.search-dropdown__item--selected {
+    background-color: var(--botanical-green); color: #fff; cursor: pointer;
+}
+
 .principles { background-color: var(--aged-paper); padding: 5rem 0; border-top: 1px solid var(--border-sepia); border-bottom: 1px solid var(--border-sepia); }
 .principles__container {
     max-width: var(--max-width);
