@@ -399,7 +399,7 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
-.safety-form { margin-bottom: 3rem; }
+.safety-form { margin-bottom: 3rem; text-align: center; }
 .safety-form__label {
     display: block;
     font-family: 'Inter', sans-serif;
@@ -411,8 +411,10 @@ body {
     margin-bottom: 0.75rem;
 }
 .safety-form__input {
+    display: block;
     width: 100%;
     max-width: 500px;
+    margin: 0 auto;
     padding: 1rem 1.5rem;
     font-size: 1.2rem;
     font-family: 'Source Serif Pro', serif;
