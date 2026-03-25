@@ -1,3 +1,5 @@
 /herb-detail.html   /herbs/:herb   301!  herb=:herb
 /herbs/*            /herbs/index.html   200
+/safety-finder      /safety-notes       301!
+/safety-finder.html /safety-notes       301!
 /*.html             /:splat             301!

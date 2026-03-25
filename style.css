@@ -26,24 +26,31 @@ body {
     padding: 0 2rem;
 }
 
-#site-banner { 
-    background-color: var(--ink-black); 
-    color: var(--parchment); 
-    padding: 0.6rem; 
-    text-align: center; 
-    font-size: 0.8rem; 
-    font-family: 'Inter', sans-serif; 
-    letter-spacing: 0.05em; 
-    text-transform: uppercase; 
+#site-banner {
+    background-color: var(--ink-black);
+    color: var(--parchment);
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .header { border-bottom: 1px double var(--border-sepia); padding: 2rem 0; }
-.header__container { display: flex; justify-content: space-between; align-items: center; }
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-.logo { 
+.logo {
     font-family: 'Source Serif Pro', serif;
-    font-weight: 700; 
-    font-size: 1.8rem; 
+    font-weight: 700;
+    font-size: 1.8rem;
     color: var(--botanical-green);
     font-variant: small-caps;
     border: 2px solid var(--botanical-green);
@@ -52,13 +59,13 @@ body {
 }
 
 .nav__list { display: flex; gap: 2.5rem; }
-.nav__link { 
-    font-family: 'Inter', sans-serif; 
-    font-weight: 600; 
-    font-size: 0.85rem; 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
-    color: var(--botanical-green); 
+.nav__link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--botanical-green);
 }
 
 .hero { text-align: center; padding: 5rem 0; }
@@ -66,60 +73,395 @@ body {
 .hero__subtitle { font-size: 1.3rem; max-width: 700px; margin: 0 auto; font-style: italic; }
 
 .search-section { padding-bottom: 5rem; text-align: center; }
-.search-bar { 
-    display: flex; 
-    max-width: 750px; 
-    margin: 0 auto; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    border: 1px solid var(--border-sepia); 
-    position: relative; 
+.search-bar {
+    display: flex;
+    max-width: 750px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-sepia);
+    position: relative;
 }
-.search-bar__input { 
-    flex: 1; padding: 1.4rem; font-size: 1.2rem; border: none; font-style: italic; 
-    background: white; width: 100%; 
+.search-bar__input {
+    flex: 1; padding: 1.4rem; font-size: 1.2rem; border: none; font-style: italic;
+    background: white; width: 100%;
 }
-.search-bar__button { 
-    padding: 1.4rem 2.5rem; background-color: var(--botanical-green); color: var(--parchment); 
-    border: none; font-family: 'Inter', sans-serif; font-weight: 700; text-transform: uppercase; cursor: pointer; 
+.search-bar__button {
+    padding: 1.4rem 2.5rem; background-color: var(--botanical-green); color: var(--parchment);
+    border: none; font-family: 'Inter', sans-serif; font-weight: 700; text-transform: uppercase; cursor: pointer;
 }
 
-.search-dropdown { 
-    position: absolute; top: 100%; left: 0; right: 0; background: white; 
-    border: 1px solid var(--border-sepia); z-index: 1000; text-align: left; 
+.search-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; background: white;
+    border: 1px solid var(--border-sepia); z-index: 1000; text-align: left;
 }
-.search-dropdown__item { 
-    display: block; padding: 1rem; border-bottom: 1px solid var(--aged-paper); 
-    font-family: 'Inter', sans-serif; color: var(--botanical-green); 
+.search-dropdown__item {
+    display: block; padding: 1rem; border-bottom: 1px solid var(--aged-paper);
+    font-family: 'Inter', sans-serif; color: var(--botanical-green);
 }
 
 .principles { background-color: var(--aged-paper); padding: 5rem 0; border-top: 1px solid var(--border-sepia); border-bottom: 1px solid var(--border-sepia); }
+.principles__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 .principles__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem; text-align: center; }
 .principle__icon { font-size: 3.5rem; display: block; margin-bottom: 1rem; }
 .principle__title { font-size: 1.6rem; font-style: italic; margin-bottom: 1rem; color: var(--botanical-green); }
 
+/* Home - Safety Notes Section */
+.section { padding: 5rem 0; }
+.section__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.section__title {
+    font-size: 2.2rem;
+    font-style: italic;
+    color: var(--botanical-green);
+    text-align: center;
+    margin-bottom: 2rem;
+}
 .safety-notes { background: white; border: 1px solid var(--border-sepia); padding: 3.5rem; max-width: 900px; margin: 0 auto; }
 .safety-notes__list { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .safety-notes__list li { display: flex; align-items: flex-start; gap: 1rem; font-style: italic; }
 
+/* Herb Grid / Cards */
 .herb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2.5rem; padding: 4rem 0; }
-.herb-card { 
-    background-color: var(--aged-paper); border: 1px solid var(--border-sepia); 
-    padding: 3rem 1.5rem; text-align: center; position: relative; transition: all 0.3s ease; 
+.herb-card {
+    background-color: var(--aged-paper); border: 1px solid var(--border-sepia);
+    padding: 3rem 1.5rem; text-align: center; position: relative; transition: all 0.3s ease;
 }
 .herb-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); border-color: var(--botanical-green); }
 .herb-card__name { font-size: 1.5rem; color: var(--botanical-green); font-weight: 600; }
 .herb-card__safety-badge { position: absolute; top: 15px; right: 15px; font-size: 1.2rem; cursor: help; }
 
+/* Footer */
 .footer { border-top: 1px double var(--border-sepia); padding: 4rem 0; text-align: center; }
+.footer__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 .footer__nav-list { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--botanical-green); }
+.footer__disclaimer {
+    border-top: 1px solid var(--border-sepia);
+    padding-top: 2rem;
+    margin-top: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #666;
+    text-align: left;
+}
+.footer__disclaimer-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    color: var(--ink-black);
+    font-weight: 600;
+}
+.footer__copyright {
+    margin-top: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: #999;
+}
 
-.herb-article__container { max-width: 800px; margin: 0 auto; padding: 6rem 0; }
+/* Herb Article */
+.herb-article__container { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 .herb-header { text-align: center; margin-bottom: 4rem; }
 .herb-header h1 { font-size: 3.5rem; font-style: italic; color: var(--botanical-green); }
 .herb-content h2 { font-size: 2rem; color: var(--botanical-green); margin: 3rem 0 1.5rem; border-bottom: 1px solid var(--border-sepia); }
 
+/* Herb Illustration */
+.herb-illustration {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+}
+.herb-illustration svg {
+    width: 180px;
+    height: 200px;
+}
+
+/* Herb scientific name */
+.herb-scientific-name {
+    font-size: 1.1rem;
+    color: var(--muted-sage);
+    margin-top: 0.5rem;
+}
+
+/* When to see doctor box */
+.when-to-see-doctor {
+    background: var(--aged-paper);
+    border: 1px solid var(--border-sepia);
+    padding: 2rem 2.5rem;
+    margin-top: 3rem;
+}
+.when-to-see-doctor h3 {
+    font-size: 1.3rem;
+    color: var(--botanical-green);
+    margin-bottom: 1rem;
+}
+.when-to-see-doctor ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0.5rem 0 1.5rem;
+}
+.when-to-see-doctor li {
+    list-style: disc;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+/* Herb Directory Page */
+.directory-header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    border-bottom: 1px solid var(--border-sepia);
+}
+.directory-header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.directory-header h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--botanical-green);
+    margin-bottom: 1rem;
+}
+.directory-header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.directory-content__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.az-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 2rem 0 0;
+}
+.az-filter__button {
+    padding: 0.5rem 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid var(--border-sepia);
+    background: white;
+    cursor: pointer;
+    color: var(--botanical-green);
+    transition: all 0.2s;
+}
+.az-filter__button.active, .az-filter__button:hover {
+    background: var(--botanical-green);
+    color: white;
+    border-color: var(--botanical-green);
+}
+
+/* Herb Explorer Page */
+.explorer-header {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border-sepia);
+}
+.explorer-header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.explorer-header h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--botanical-green);
+    margin-bottom: 1rem;
+}
+.explorer-header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.explorer-content { padding: 4rem 0 5rem; }
+.explorer-content__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.explorer-form { margin-bottom: 3rem; }
+.explorer-form__label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--botanical-green);
+    margin-bottom: 0.75rem;
+}
+.explorer-form__select {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    border: 1px solid var(--border-sepia);
+    background: white;
+    cursor: pointer;
+    color: var(--ink-black);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233D5A40' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    padding-right: 3rem;
+}
+.explorer-result-item {
+    background: var(--aged-paper);
+    border: 1px solid var(--border-sepia);
+    padding: 2rem 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.explorer-result-item__name {
+    font-size: 1.6rem;
+    color: var(--botanical-green);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+.explorer-result-item__claim {
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+.explorer-result-item__source {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-sage);
+}
+.explorer-results__message {
+    font-style: italic;
+    padding: 2rem 0;
+    color: #666;
+}
+
+/* Safety Notes Page */
+.safety-header {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border-sepia);
+}
+.safety-header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.safety-header h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--botanical-green);
+    margin-bottom: 1rem;
+}
+.safety-header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+.page-warning {
+    background: var(--aged-paper);
+    border: 1px solid var(--border-sepia);
+    padding: 1.25rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+.safety-content { padding: 4rem 0 5rem; }
+.safety-content__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.safety-form { margin-bottom: 3rem; }
+.safety-form__label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--botanical-green);
+    margin-bottom: 0.75rem;
+}
+.safety-form__input {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    border: 1px solid var(--border-sepia);
+    background: white;
+}
+.safety-results__title {
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--botanical-green);
+    margin-bottom: 2rem;
+}
+.safety-note-card {
+    background: var(--aged-paper);
+    border: 1px solid var(--border-sepia);
+    padding: 2rem 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.safety-note-card__text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--botanical-green);
+    font-size: 1.05rem;
+    display: block;
+}
+.safety-note-card__source {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-sage);
+    display: block;
+}
+.safety-results__message {
+    font-style: italic;
+    padding: 2rem 0;
+    color: #666;
+}
+
+/* Search results message */
+.search-results-message {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted-sage);
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 768px) {
     .principles__grid { grid-template-columns: 1fr; }
     .safety-notes__list { grid-template-columns: 1fr; }
-    .header__container { flex-direction: column; gap: 1.5rem; }
+    .header__container { flex-direction: column; gap: 1.5rem; padding: 0 1.5rem; }
+    .search-bar__input-wrapper { width: 100%; }
+    .explorer-form__select { max-width: 100%; }
+    .safety-form__input { max-width: 100%; }
 }
