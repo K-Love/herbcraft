@@ -118,5 +118,65 @@
     "benefits": "Studies support benefits for cognitive function, mental clarity, fatigue reduction, immune modulation, and erectile dysfunction. May also help regulate blood sugar.",
     "safety_info": "Safe for short-term use (up to 6 months). Can interact with blood thinners (Warfarin), MAOIs, and diabetes medications. Avoid in hormone-sensitive conditions (estrogen-like effects), pregnancy, or autoimmune disorders. May cause insomnia or headaches.",
     "references": ["PMC7116968", "WebMD-2025", "ClevelandClinic-Ginseng", "NIH-Ginseng-2025"]
+  },
+  {
+    "id": "fennel",
+    "name": "Fennel",
+    "scientific": "Foeniculum vulgare",
+    "category": "Digestive & Reproductive Health",
+    "overview": "Fennel is a Mediterranean-originating herb characterized by its licorice-like flavor and feathery leaves. It is a key ingredient in many culinary dishes and traditional remedies.",
+    "traditional": "Used since ancient Egyptian times for digestive relief and in Greek medicine to support lactation and regulate menstruation.",
+    "active_compounds": "Rich in anethole, fenchone, and estragole, which contribute to its carminative effects.",
+    "benefits": "Effective for treating gastrointestinal distress, infantile colic, and potentially easing menstrual cramps (dysmenorrhea).",
+    "safety_info": "Generally safe in food amounts. High doses or essential oil use should be avoided during pregnancy due to estrogenic activity. May interact with certain antibiotics like Ciprofloxacin.",
+    "references": ["PMC4137549", "Healthline-Fennel-2025", "AANMC-Herbs-2024"]
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "scientific": "Allium sativum",
+    "category": "Cardiovascular & Immune Health",
+    "overview": "Garlic is a plant in the Onion genus, Allium, known for its strong aroma and numerous medicinal properties worldwide.",
+    "traditional": "Documented use for 5,000 years across Egyptian, Babylonian, Greek, Roman, and Chinese civilizations for strength, infection, and circulation.",
+    "active_compounds": "Allicin (formed when crushed), alliin, and diallyl disulfide are the primary organosulfur compounds.",
+    "benefits": "Supports heart health by lowering blood pressure and cholesterol levels. Possesses antimicrobial and immune-enhancing properties.",
+    "safety_info": "Safe for most. May cause bad breath and body odor. High medicinal doses can increase the risk of bleeding; use caution with anticoagulants (e.g., Warfarin, Aspirin). Stop intake 2 weeks before surgery.",
+    "references": ["NCCIH-Garlic-2025", "MayoClinic-Garlic-2024", "PMC6966103"]
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "scientific": "Zingiber officinale",
+    "category": "Digestive & Anti-inflammatory",
+    "overview": "Ginger is a flowering plant whose rhizome (ginger root) is a common spice and traditional remedy across Asia and Africa.",
+    "traditional": "A staple of Ayurvedic and TCM practices for over 2,500 years, primarily for digestive upset, colds, and arthritis.",
+    "active_compounds": "Rich in gingerols, shogaols, and zingerone, which have potent antioxidant and anti-inflammatory effects.",
+    "benefits": "Highly effective for nausea (morning sickness, chemotherapy-induced), pain relief (osteoarthritis, dysmenorrhea), and digestive support.",
+    "safety_info": "Generally safe. Limit intake to 4g daily. May interact with blood thinners or medications for blood sugar and blood pressure. Safe for pregnancy nausea in moderate amounts (<1.5g/day).",
+    "references": ["JohnsHopkins-Ginger-2024", "NCCIH-Ginger-2025", "PMC4377061"]
+  },
+  {
+    "id": "lemon-balm",
+    "name": "Lemon Balm",
+    "scientific": "Melissa officinalis",
+    "category": "Nervine & Cognitive Support",
+    "overview": "Lemon Balm is a lemon-scented herb from the mint family, native to Europe and North Africa, commonly used in teas and essential oils.",
+    "traditional": "Used since the Middle Ages to reduce stress and anxiety, promote sleep, and soothe digestive issues.",
+    "active_compounds": "Contains high levels of rosmarinic acid, citral, and citronellal.",
+    "benefits": "Calms the nervous system, improves cognitive function and mood, and has antiviral properties (effective topically for cold sores).",
+    "safety_info": "Generally safe for short-term use. May cause drowsiness; use caution with other sedatives. May interfere with thyroid medications; those with hypothyroidism should consult a doctor.",
+    "references": ["MountSinai-LemonBalm", "Healthline-LemonBalm-2025", "PMC5871149"]
+  },
+  {
+    "id": "licorice",
+    "name": "Licorice Root",
+    "scientific": "Glycyrrhiza glabra",
+    "category": "Gastrointestinal & Respiratory",
+    "overview": "Licorice root is the root of the Glycyrrhiza glabra plant, valued for its sweetness and therapeutic applications in diverse global traditions.",
+    "traditional": "Used widely in TCM, Ayurveda, and ancient Greek medicine for respiratory congestion, digestive ulcers, and liver support.",
+    "active_compounds": "Contains glycyrrhizin, glycyrrhetinic acid, and various flavonoids and liquiritin.",
+    "benefits": "Soothes the digestive tract (GERD, ulcers), helps relieve sore throats and coughs, and possesses anti-inflammatory properties.",
+    "safety_info": "Chronic use of non-DGL (deglycyrrhizinated) licorice can lead to potassium loss, high blood pressure, and heart issues. Avoid during pregnancy and with diuretics or heart medications. Deglycyrrhizinated (DGL) forms are safer for continuous use.",
+    "references": ["NCCIH-Licorice-2025", "ClevelandClinic-Licorice-2024", "PMC7575128"]
   }
 ]

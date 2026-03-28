@@ -37,7 +37,11 @@ const herbIllustrations = {
 
     'sage': `<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" stroke="#3D5A40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Sage botanical illustration"><line x1="100" y1="215" x2="100" y2="85"/><ellipse cx="100" cy="72" rx="7" ry="10"/><ellipse cx="100" cy="58" rx="6" ry="9"/><ellipse cx="100" cy="45" rx="5" ry="8"/><path d="M100,195 Q72,192 58,178 Q55,162 72,155 Q88,150 100,168 Z"/><path d="M100,195 Q128,192 142,178 Q145,162 128,155 Q112,150 100,168 Z"/><path d="M75,170 Q80,165 90,168"/><path d="M70,178 Q78,172 88,175"/><path d="M100,165 Q74,160 60,145 Q58,128 76,122 Q92,118 100,138 Z"/><path d="M100,165 Q126,160 140,145 Q142,128 124,122 Q108,118 100,138 Z"/><path d="M72,140 Q80,134 90,138"/><path d="M66,150 Q76,143 86,147"/><path d="M100,135 Q76,128 64,112 Q63,95 80,90 Q96,87 100,108 Z"/><path d="M100,135 Q124,128 136,112 Q137,95 120,90 Q104,87 100,108 Z"/><line x1="100" y1="168" x2="72" y2="185"/><line x1="100" y1="168" x2="128" y2="185"/><line x1="100" y1="138" x2="74" y2="153"/><line x1="100" y1="138" x2="126" y2="153"/><line x1="100" y1="108" x2="76" y2="122"/><line x1="100" y1="108" x2="124" y2="122"/></svg>`,
 
-    'turmeric': `<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" stroke="#3D5A40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Turmeric botanical illustration"><line x1="100" y1="70" x2="100" y2="45"/><path d="M100,60 Q70,45 58,25 Q80,35 100,60 Z"/><path d="M100,60 Q130,45 142,25 Q120,35 100,60 Z"/><line x1="100" y1="55" x2="72" y2="32"/><line x1="100" y1="55" x2="128" y2="32"/><path d="M45,115 Q50,100 70,100 Q88,100 95,110 Q100,100 115,98 Q135,95 148,108 Q155,120 148,135 Q140,148 122,145 Q108,148 100,138 Q92,148 80,148 Q60,148 48,135 Q40,128 45,115 Z"/><path d="M68,108 Q55,95 45,100 Q33,108 38,122 Q44,135 60,132"/><path d="M132,105 Q145,92 158,98 Q170,108 165,122 Q157,135 142,130"/><path d="M95,142 Q90,158 100,168 Q112,160 108,142"/><path d="M60,108 Q75,100 95,105"/><path d="M105,100 Q118,97 138,108"/><path d="M50,122 Q65,116 85,120"/><path d="M115,118 Q130,114 148,120"/><line x1="75" y1="145" x2="72" y2="158"/><line x1="100" y1="147" x2="100" y2="160"/><line x1="125" y1="143" x2="128" y2="156"/></svg>`
+    'turmeric': `<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" stroke="#3D5A40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Turmeric botanical illustration"><line x1="100" y1="70" x2="100" y2="45"/><path d="M100,60 Q70,45 58,25 Q80,35 100,60 Z"/><path d="M100,60 Q130,45 142,25 Q120,35 100,60 Z"/><line x1="100" y1="55" x2="72" y2="32"/><line x1="100" y1="55" x2="128" y2="32"/><path d="M45,115 Q50,100 70,100 Q88,100 95,110 Q100,100 115,98 Q135,95 148,108 Q155,120 148,135 Q140,148 122,145 Q108,148 100,138 Q92,148 80,148 Q60,148 48,135 Q40,128 45,115 Z"/><path d="M68,108 Q55,95 45,100 Q33,108 38,122 Q44,135 60,132"/><path d="M132,105 Q145,92 158,98 Q170,108 165,122 Q157,135 142,130"/><path d="M95,142 Q90,158 100,168 Q112,160 108,142"/><path d="M60,108 Q75,100 95,105"/><path d="M105,100 Q118,97 138,108"/><path d="M50,122 Q65,116 85,120"/><path d="M115,118 Q130,114 148,120"/><line x1="75" y1="145" x2="72" y2="158"/><line x1="100" y1="147" x2="100" y2="160"/><line x1="125" y1="143" x2="128" y2="156"/></svg>`,
+
+    'valerian': `<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" stroke="#3D5A40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Valerian botanical illustration"><line x1="100" y1="215" x2="100" y2="70"/><line x1="100" y1="180" x2="70" y2="160"/><line x1="100" y1="180" x2="130" y2="160"/><line x1="100" y1="150" x2="75" y2="130"/><line x1="100" y1="150" x2="125" y2="130"/><line x1="100" y1="120" x2="80" y2="100"/><line x1="100" y1="120" x2="120" y2="100"/><circle cx="100" cy="55" r="15"/><circle cx="90" cy="45" r="8"/><circle cx="110" cy="45" r="8"/><circle cx="100" cy="35" r="8"/></svg>`,
+
+    'st-johns-wort': `<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" stroke="#3D5A40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="St. John's Wort botanical illustration"><line x1="100" y1="215" x2="100" y2="100"/><circle cx="100" cy="85" r="15" fill="none" stroke-dasharray="2,2"/><path d="M100,60 L100,110 M75,85 L125,85 M82,67 L118,103 M82,103 L118,67"/><circle cx="100" cy="85" r="5" fill="#3D5A40"/></svg>`
 };
 
 const herbData = {
@@ -220,8 +224,27 @@ const herbData = {
         activeCompounds: 'Contains curcumin, turmerones, and other bioactive compounds.',
         potentialBenefits: 'Research suggests potential benefits for inflammation management and joint health.',
         safety: 'Generally safe in food amounts. High doses may interact with certain medications.'
+    },
+    'valerian': {
+        name: 'Valerian Root',
+        scientificName: 'Valeriana officinalis',
+        overview: 'Valerian is a flowering plant renowned for its potential calming and sleep-promoting effects.',
+        traditionalUses: 'Traditionally used since ancient Greek and Roman times for insomnia, migraines, and anxiety.',
+        activeCompounds: 'Contains valerenic acid and volatile oils that increase GABA levels in the brain.',
+        potentialBenefits: 'Research suggests it may modestly improve sleep quality and reduce time to fall asleep.',
+        safety: 'Generally safe for short-term use. May cause dizziness or drowsiness. Avoid during pregnancy.'
+    },
+    'st-johns-wort': {
+        name: "St. John's Wort",
+        scientificName: 'Hypericum perforatum',
+        overview: "St. John's Wort is a flowering shrub extensively studied for its antidepressant properties.",
+        traditionalUses: 'Historically used for nerve-related disorders, anxiety, and minor wound healing.',
+        activeCompounds: 'Contains hypericin and hyperforin, which influence serotonin and dopamine levels.',
+        potentialBenefits: 'Effective for mild-to-moderate depression; may also help with menopausal symptoms.',
+        safety: 'Significant drug interactions (birth control, blood thinners). Can cause photosensitivity.'
     }
 };
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.header__menu-toggle');
