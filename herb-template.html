@@ -13,8 +13,32 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[Herb Name] - Educational research on [herb name] including uses, benefits, and safety information. Not medical advice.">
+    <meta name="description" content="{{META_DESCRIPTION}}">
     <title>[Herb Name] | herbcraft.app</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://herbcraft.app/herbs/{{HERB_ID}}.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="[Herb Name] — Uses, Benefits & Safety | herbcraft.app">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://herbcraft.app/herbs/{{HERB_ID}}.html">
+    <meta property="og:site_name" content="HerbCraft">
+    <meta property="og:image" content="https://herbcraft.app/assets/og-default.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[Herb Name] — Uses, Benefits & Safety | herbcraft.app">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="https://herbcraft.app/assets/og-default.png">
+    <meta name="twitter:site" content="@herbcraftapp">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+{{SCHEMA_JSON}}
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -53,6 +77,29 @@
                     <p class="herb-scientific-name"><em>[Scientific Name]</em></p>
                 </header>
 
+                <!-- Key Facts Box -->
+                <div class="key-facts-box" aria-label="Key facts about this herb">
+                    <h2 class="key-facts-box__title">Key Facts</h2>
+                    <dl class="key-facts-box__grid">
+                        <div class="key-facts-box__item">
+                            <dt>Scientific Name</dt>
+                            <dd><em>{{FACT_SCIENTIFIC_NAME}}</em></dd>
+                        </div>
+                        <div class="key-facts-box__item">
+                            <dt>Plant Family</dt>
+                            <dd>{{FACT_PLANT_FAMILY}}</dd>
+                        </div>
+                        <div class="key-facts-box__item">
+                            <dt>Origin</dt>
+                            <dd>{{FACT_ORIGIN}}</dd>
+                        </div>
+                        <div class="key-facts-box__item">
+                            <dt>Primary Use</dt>
+                            <dd>{{FACT_PRIMARY_USE}}</dd>
+                        </div>
+                    </dl>
+                </div>
+
                 <section class="herb-content">
                     <h2>Overview</h2>
                     <p>This is a claim about an herb. <sup class="citation"><a href="#ref-1" title="Source Name, Year">1</a></sup></p>
@@ -68,7 +115,7 @@
                     <p>Research-backed information about potential benefits. <sup class="citation"><a href="#ref-6" title="Clinical Study, Year">6</a></sup></p>
                     <p>Additional benefit information with proper citation. <sup class="citation"><a href="#ref-7" title="Another Study, Year">7</a></sup></p>
 
-                    <h2>Safety & Side Effects</h2>
+                    <h2>Safety &amp; Side Effects</h2>
                     <p>Important safety information about potential side effects and interactions. <sup class="citation"><a href="#ref-8" title="Safety Study, Year">8</a></sup></p>
                     <p>Information about contraindications and warnings. <sup class="citation"><a href="#ref-9" title="Medical Journal, Year">9</a></sup></p>
 
@@ -91,6 +138,19 @@
                             <li>Are giving herbs to children</li>
                         </ul>
                     </div>
+                </section>
+
+                <!-- Amazon Product Recommendations -->
+                <section class="product-recommendations">
+                    <h2>Recommended Products</h2>
+                    <div class="product-cards">{{PRODUCT_CARDS}}</div>
+                    <p class="affiliate-disclosure">As an Amazon Associate, herbcraft.app earns from qualifying purchases.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq-section" aria-label="Frequently asked questions">
+                    <h2>Frequently Asked Questions</h2>
+                    {{FAQ_HTML}}
                 </section>
 
                 <section class="references-section">
@@ -118,9 +178,10 @@
                     <li class="footer__nav-item"><a href="../index.html#herb-directory" class="footer__nav-link">Herb Directory</a></li>
                     <li class="footer__nav-item"><a href="../index.html#herb-explorer" class="footer__nav-link">Herb Explorer</a></li>
                     <li class="footer__nav-item"><a href="../safety-finder/" class="footer__nav-link">Safety Notes</a></li>
-                    <li class="footer__nav-item"><a href="../index.html#about" class="footer__nav-link">About Us</a></li>
-                    <li class="footer__nav-item"><a href="../index.html#terms" class="footer__nav-link">Terms of Service</a></li>
-                    <li class="footer__nav-item"><a href="../index.html#privacy" class="footer__nav-link">Privacy Policy</a></li>
+                    <li class="footer__nav-item"><a href="../about/" class="footer__nav-link">About Us</a></li>
+                    <li class="footer__nav-item"><a href="../editorial-policy/" class="footer__nav-link">Editorial Policy</a></li>
+                    <li class="footer__nav-item"><a href="../terms/" class="footer__nav-link">Terms of Service</a></li>
+                    <li class="footer__nav-item"><a href="../privacy/" class="footer__nav-link">Privacy Policy</a></li>
                 </ul>
             </nav>
 

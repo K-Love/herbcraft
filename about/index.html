@@ -7,18 +7,48 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-Y7JYY85G6Q');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About herbcraft.app — an educational botanical research tool.">
-    <title>About | herbcraft.app</title>
+    <meta name="description" content="About HerbCraft — an educational botanical research tool aggregating peer-reviewed herbal information. Learn about our mission, team, and editorial standards.">
+    <title>About HerbCraft | herbcraft.app</title>
+    <link rel="canonical" href="https://herbcraft.app/about/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About HerbCraft | herbcraft.app">
+    <meta property="og:description" content="Learn about HerbCraft's mission to make evidence-based herbal information accessible to everyone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://herbcraft.app/about/">
+    <meta property="og:site_name" content="HerbCraft">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    <style>
+        .about-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+        .about-content h1 { font-size: 3rem; font-style: italic; color: var(--botanical-green); margin-bottom: 0.5rem; }
+        .about-content .subtitle { font-size: 1.2rem; font-style: italic; color: var(--muted-sage); margin-bottom: 3rem; }
+        .about-content h2 { font-size: 1.8rem; color: var(--botanical-green); margin: 3rem 0 1.25rem; border-bottom: 1px solid var(--border-sepia); padding-bottom: 0.5rem; }
+        .about-content p { margin-bottom: 1.25rem; line-height: 1.85; }
+        .about-content ul { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+        .about-content ul li { list-style: disc; margin-bottom: 0.5rem; line-height: 1.7; }
+        .team-card { background: var(--aged-paper); border: 1px solid var(--border-sepia); padding: 2rem 2.5rem; margin-bottom: 1.5rem; border-radius: 4px; }
+        .team-card__name { font-size: 1.3rem; font-weight: 600; color: var(--botanical-green); margin-bottom: 0.25rem; }
+        .team-card__role { font-family: 'Inter', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-sage); margin-bottom: 0.75rem; }
+        .team-card__bio { font-style: italic; line-height: 1.75; }
+        .mission-box { background: #EEF5E8; border: 1px solid var(--border-sepia); border-left: 4px solid var(--botanical-green); padding: 2rem 2.5rem; margin: 2rem 0; border-radius: 4px; }
+        .mission-box p { margin-bottom: 0; font-size: 1.1rem; font-style: italic; line-height: 1.8; }
+        .not-list { background: var(--aged-paper); border: 1px solid var(--border-sepia); padding: 1.5rem 2rem; border-radius: 4px; }
+        .not-list li { list-style: none !important; padding-left: 0; }
+        .not-list li::before { content: "✗ "; color: #c0392b; font-weight: 700; }
+        .yes-list li::before { content: "✓ "; color: var(--botanical-green); font-weight: 700; }
+        .page-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .page-links a { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--botanical-green); border: 1px solid var(--botanical-green); padding: 0.6rem 1.2rem; border-radius: 3px; transition: all 0.2s; }
+        .page-links a:hover { background: var(--botanical-green); color: var(--parchment); }
+    </style>
 </head>
 <body>
     <div id="site-banner">
@@ -35,25 +65,76 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="/herb-directory/" class="nav__link">Herb Directory</a></li>
                     <li class="nav__item"><a href="/herb-explorer/" class="nav__link">Herb Explorer</a></li>
-                    <li class="nav__item"><a href="/safety-notes/" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="/safety-finder/" class="nav__link">Safety Notes</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main-content" class="main">
-        <section class="section">
-            <div class="section__container">
-                <h1 class="section__title">About herbcraft.app</h1>
-                <p class="section__subtitle">Educational research for a modern world.</p>
+        <div class="about-content">
 
-                <div style="max-width: 800px; margin: 3rem auto; text-align: left;">
-                    <p style="margin-bottom: 2rem;">herbcraft.app is an educational tool designed to aggregate and organize botanical information from authoritative sources, including peer-reviewed journals, historical texts, and public health databases.</p>
-                    <p style="margin-bottom: 2rem;">Our goal is radical transparency. We believe that by providing clear citations and safety data, we can empower users to conduct their own independent research into the fascinating world of herbalism.</p>
-                    <p><strong>Note:</strong> We do not provide medical advice, diagnoses, or treatment recommendations. Always consult a qualified healthcare professional.</p>
-                </div>
+            <h1>About HerbCraft</h1>
+            <p class="subtitle">Educational botanical research for a curious world.</p>
+
+            <div class="mission-box">
+                <p>HerbCraft exists to make evidence-based herbal information accessible, transparent, and honest — without hype, without sales pressure, and without pretending herbs are a substitute for medicine.</p>
             </div>
-        </section>
+
+            <h2>Our Mission</h2>
+            <p>Millions of people use herbal supplements every day, yet reliable, well-cited information is scattered across academic journals, government databases, and health websites of wildly varying quality. HerbCraft was built to change that.</p>
+            <p>We aggregate and organize information from authoritative sources — peer-reviewed journals, NIH databases, and established medical references — and present it in a clear, readable format with full citations. Our goal is to help you understand what the research actually says, so you can have better conversations with your healthcare provider.</p>
+
+            <h2>What HerbCraft Is</h2>
+            <ul class="yes-list">
+                <li>An educational research aggregator for herbal information</li>
+                <li>A curated index of peer-reviewed studies and authoritative sources</li>
+                <li>A tool for learning about traditional uses, active compounds, and safety profiles</li>
+                <li>A starting point for informed conversations with healthcare professionals</li>
+                <li>Committed to transparency: every claim links to a source</li>
+            </ul>
+
+            <h2>What HerbCraft Is Not</h2>
+            <div class="not-list">
+                <ul>
+                    <li>Medical advice, diagnosis, or treatment recommendations</li>
+                    <li>A substitute for professional healthcare</li>
+                    <li>An endorsement of any specific product or brand</li>
+                    <li>A guarantee that any herb is safe or effective for your situation</li>
+                    <li>Affiliated with any supplement manufacturer or retailer</li>
+                </ul>
+            </div>
+
+            <h2>Editorial Team</h2>
+            <p>HerbCraft content is produced by a dedicated team of researchers and writers passionate about herbal education and evidence-based communication.</p>
+
+            <div class="team-card">
+                <div class="team-card__name">HerbCraft Editorial Team</div>
+                <div class="team-card__role">Researchers &amp; Writers</div>
+                <p class="team-card__bio">Our editorial team consists of researchers and writers with backgrounds in botany, nutrition science, and health communication. Every herb profile is researched using primary sources — peer-reviewed journals, NIH databases, and established medical references — and reviewed for accuracy before publication. We do not accept payment for editorial coverage, and our product recommendations are based on relevance, not sponsorship.</p>
+            </div>
+
+            <h2>Our Sources</h2>
+            <p>We draw from the following types of authoritative sources:</p>
+            <ul>
+                <li><strong>PubMed / NCBI</strong> — National Library of Medicine database of peer-reviewed biomedical literature</li>
+                <li><strong>NIH National Center for Complementary and Integrative Health (NCCIH)</strong> — U.S. government research on complementary health approaches</li>
+                <li><strong>WebMD, Mayo Clinic, Cleveland Clinic</strong> — Established medical reference sites with editorial review boards</li>
+                <li><strong>Peer-reviewed journals</strong> — Including <em>Frontiers in Pharmacology</em>, <em>Journal of Ethnopharmacology</em>, and others</li>
+                <li><strong>Historical and traditional medicine texts</strong> — For context on traditional uses</li>
+            </ul>
+
+            <h2>Transparency &amp; Independence</h2>
+            <p>HerbCraft is independently operated. We are not funded by supplement companies, pharmaceutical companies, or any organization with a financial interest in the herbs we cover. Where we include product recommendations (via Amazon Associates), these are clearly labeled as affiliate links and do not influence our editorial content.</p>
+            <p>We believe transparency is the foundation of trust. If you spot an error, outdated information, or a missing citation, please <a href="/contact/">contact us</a>.</p>
+
+            <div class="page-links">
+                <a href="/editorial-policy/">Editorial Policy</a>
+                <a href="/contact/">Contact Us</a>
+                <a href="/herb-directory/">Browse Herbs</a>
+            </div>
+
+        </div>
     </main>
 
     <footer class="footer">
@@ -62,22 +143,20 @@
                 <ul class="footer__nav-list">
                     <li class="footer__nav-item"><a href="/herb-directory/" class="footer__nav-link">Herb Directory</a></li>
                     <li class="footer__nav-item"><a href="/herb-explorer/" class="footer__nav-link">Herb Explorer</a></li>
-                    <li class="footer__nav-item"><a href="/safety-notes/" class="footer__nav-link">Safety Notes</a></li>
+                    <li class="footer__nav-item"><a href="/safety-finder/" class="footer__nav-link">Safety Notes</a></li>
                     <li class="footer__nav-item"><a href="/about/" class="footer__nav-link">About</a></li>
+                    <li class="footer__nav-item"><a href="/editorial-policy/" class="footer__nav-link">Editorial Policy</a></li>
+                    <li class="footer__nav-item"><a href="/contact/" class="footer__nav-link">Contact</a></li>
                     <li class="footer__nav-item"><a href="/terms/" class="footer__nav-link">Terms of Service</a></li>
                     <li class="footer__nav-item"><a href="/privacy/" class="footer__nav-link">Privacy Policy</a></li>
                 </ul>
             </nav>
-
             <div class="footer__disclaimer">
                 <h3 class="footer__disclaimer-title">Legal Disclaimer (DSHEA Compliance)</h3>
-                <p class="footer__disclaimer-text">
-                    The information provided on this website is for educational and informational purposes only and is not intended as medical advice. The statements made about herbs, supplements, and botanicals have not been evaluated by the Food and Drug Administration (FDA). The products and information discussed are not intended to diagnose, treat, cure, or prevent any disease or health condition. Under the Dietary Supplement Health and Education Act of 1994 (DSHEA), dietary supplements are regulated differently than conventional foods and drugs. herbcraft.app does not provide medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of information you have read on this website. Individual results may vary. If you are pregnant, nursing, taking medication, or have a medical condition, consult your healthcare professional before using any herbal products or following any information provided on this site.
-                </p>
+                <p class="footer__disclaimer-text">The statements on this website have not been evaluated by the Food and Drug Administration. The products and information discussed are not intended to diagnose, treat, cure, or prevent any disease. This information is provided for educational purposes only.</p>
             </div>
-
             <div class="footer__copyright">
-                © 2026 herbcraft.app. All rights reserved.
+                <p>© 2026 herbcraft.app. All rights reserved.</p>
             </div>
         </div>
     </footer>

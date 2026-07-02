@@ -472,3 +472,212 @@ body {
     .explorer-form__select { max-width: 100%; }
     .safety-form__input { max-width: 100%; }
 }
+
+/* ============================================================
+   HerbCraft SEO & Monetization Components — Added 2026-07-02
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Key Facts Box
+   ---------------------------------------------------------- */
+.key-facts-box {
+    background-color: #EEF5E8;
+    border: 1px solid var(--border-sepia);
+    border-left: 4px solid var(--botanical-green);
+    border-radius: 4px;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0 2.5rem;
+}
+.key-facts-box__title {
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--botanical-green);
+    margin-bottom: 1.25rem;
+    border-bottom: none;
+    margin-top: 0;
+}
+.key-facts-box__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+}
+.key-facts-box__item dt {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-sage);
+    margin-bottom: 0.2rem;
+}
+.key-facts-box__item dd {
+    font-size: 1rem;
+    color: var(--ink-black);
+    margin: 0;
+}
+
+/* ----------------------------------------------------------
+   Product Recommendations / Amazon Cards
+   ---------------------------------------------------------- */
+.product-recommendations {
+    margin: 3rem 0;
+    padding: 2rem 2.5rem;
+    background-color: var(--aged-paper);
+    border: 1px solid var(--border-sepia);
+    border-radius: 4px;
+}
+.product-recommendations h2 {
+    font-size: 1.6rem;
+    color: var(--botanical-green);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-sepia);
+    padding-bottom: 0.75rem;
+}
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+.product-card {
+    background: white;
+    border: 1px solid var(--border-sepia);
+    border-radius: 6px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.product-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+.product-card__image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 4px;
+    align-self: center;
+}
+.product-card__title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink-black);
+    line-height: 1.4;
+}
+.product-card__description {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+    flex: 1;
+}
+.product-card__cta {
+    display: inline-block;
+    background-color: var(--botanical-green);
+    color: var(--parchment);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    text-align: center;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    text-decoration: none;
+    align-self: flex-start;
+}
+.product-card__cta:hover {
+    background-color: #2e4430;
+    opacity: 1;
+}
+.affiliate-disclosure {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   FAQ Section (details/summary accordion)
+   ---------------------------------------------------------- */
+.faq-section {
+    margin: 3rem 0;
+}
+.faq-section h2 {
+    font-size: 2rem;
+    color: var(--botanical-green);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-sepia);
+    padding-bottom: 0.5rem;
+}
+.faq-item {
+    border: 1px solid var(--border-sepia);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+.faq-item summary {
+    padding: 1.1rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--botanical-green);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--aged-paper);
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--muted-sage);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+.faq-item[open] summary {
+    background-color: #EEF5E8;
+    border-bottom: 1px solid var(--border-sepia);
+}
+.faq-item[open] summary::after {
+    content: '−';
+}
+.faq-item summary:hover {
+    background-color: #EEF5E8;
+}
+.faq-item__answer {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-black);
+    background: white;
+}
+
+/* ----------------------------------------------------------
+   Responsive overrides for new components
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .key-facts-box__grid {
+        grid-template-columns: 1fr;
+    }
+    .product-cards {
+        grid-template-columns: 1fr;
+    }
+    .product-card__cta {
+        align-self: stretch;
+        text-align: center;
+    }
+}
