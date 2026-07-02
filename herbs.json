@@ -9,7 +9,14 @@
     "active_compounds": "Curcumin is the major active component, along with related substances called curcuminoids.",
     "benefits": "Potent anti-inflammatory and antioxidant properties. Research supports its effectiveness in managing inflammatory disorders (e.g., arthritis), metabolic syndrome, anxiety, and muscle soreness.",
     "safety_info": "Generally considered safe. Its bioavailability is enhanced when taken with black pepper (bioperine).",
-    "references": ["FIM-2023-00086", "Healthline-2025"]
+    "references": [
+      "FIM-2023-00086",
+      "Healthline-2025"
+    ],
+    "plant_family": "Zingiberaceae (Ginger family)",
+    "origin": "Native to South Asia (India and Southeast Asia)",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "organic turmeric curcumin capsules with bioperine"
   },
   {
     "id": "ginkgo",
@@ -21,7 +28,14 @@
     "active_compounds": "Contains flavonoids and terpenoids, which are known for their potent antioxidant effects.",
     "benefits": "Known for boosting cognitive health, impacting anxiety, improving memory, and potentially helping with peripheral nerve damage.",
     "safety_info": "Ginkgo supplements can interact with blood thinners and may increase the risk of bleeding. Only leaf extract should be used.",
-    "references": ["PMC1127780", "SystematicReview-2013"]
+    "references": [
+      "PMC1127780",
+      "SystematicReview-2013"
+    ],
+    "plant_family": "Ginkgoaceae (Ginkgo family)",
+    "origin": "Native to China",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "ginkgo biloba extract 120mg capsules"
   },
   {
     "id": "echinacea",
@@ -33,7 +47,14 @@
     "active_compounds": "Contains polysaccharides, alkamides, and caffeic acid derivatives.",
     "benefits": "May help boost the immune system, shorten the duration of colds, and potentially prevent their occurrence.",
     "safety_info": "Generally safe for short-term use. People allergic to plants in the daisy family may have an allergic reaction.",
-    "references": ["AANMC-Natural-Remedies", "Frontiers-2023"]
+    "references": [
+      "AANMC-Natural-Remedies",
+      "Frontiers-2023"
+    ],
+    "plant_family": "Asteraceae (Daisy family)",
+    "origin": "Native to North America (Great Plains region)",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "echinacea immune support capsules"
   },
   {
     "id": "chamomile",
@@ -45,43 +66,14 @@
     "active_compounds": "Apigenin is a key bioactive compound that interacts with GABA receptors to promote relaxation.",
     "benefits": "Promoted as a remedy for anxiety, improving sleep quality, and alleviating gastrointestinal dysfunction.",
     "safety_info": "Considered safe by the FDA. May cause increased tiredness if taken with other medications.",
-    "references": ["GAD-Study-2009", "PMC2517879"]
-  },
-  {
-    "id": "valerian",
-    "name": "Valerian Root",
-    "scientific": "Valeriana officinalis",
-    "category": "Sleep & Relaxation",
-    "overview": "Valerian is a perennial flowering plant native to Europe and Asia. In the United States, it is widely used as a dietary supplement for sleep disorders and anxiety.",
-    "traditional": "Used since ancient Greek and Roman times to treat insomnia, migraines, fatigue, and stomach cramps.",
-    "active_compounds": "Contains valerenic acid, valepotriates, and volatile oils that are thought to interact with GABA receptors.",
-    "benefits": "Promoted for improving sleep quality, reducing the time it takes to fall asleep, and managing mild anxiety.",
-    "safety_info": "Generally safe for short-term use. Avoid prior to surgery or combining with other sedatives/alcohol.",
-    "references": ["NCCIH-2025", "PMC9914926", "SleepFoundation-2025"]
-  },
-  {
-    "id": "st-johns-wort",
-    "name": "St. John's Wort",
-    "scientific": "Hypericum perforatum",
-    "category": "Emotional Support",
-    "overview": "St. John's Wort is a flowering plant with a long history of use in traditional medicine for mental health conditions.",
-    "traditional": "Historically used for anxiety, depression, and wound healing since ancient Greek times.",
-    "active_compounds": "Hypericin and hyperforin are the primary active compounds responsible for its medicinal activity.",
-    "benefits": "Extensively studied for mild-to-moderate depression; may also support menopausal symptoms and PMS.",
-    "safety_info": "High potential for drug interactions. Can reduce the effectiveness of birth control and blood thinners. Consult a doctor before use.",
-    "references": ["MayoClinic-2024", "NCCIH-St-Johns-Wort", "ClevelandClinic-9304"]
-  },
-  {
-    "id": "lavender",
-    "name": "Lavender",
-    "scientific": "Lavandula angustifolia",
-    "category": "Calming & Sleep",
-    "overview": "Lavender is an aromatic evergreen shrub widely cultivated for its flowers and essential oils.",
-    "traditional": "Used for over 2,500 years for its fragrance and therapeutic properties, from ancient mummification to Roman bathing rituals.",
-    "active_compounds": "Linalool and linalyl acetate are the primary terpene alcohols responsible for its sedative effects.",
-    "benefits": "Highly effective for reducing anxiety, improving sleep quality, and alleviating mild pain through aromatherapy and oral supplementation.",
-    "safety_info": "Generally safe. Oral lavender oil can cause minor digestive upset. Topical use is safe for most, but skin irritation is possible.",
-    "references": ["PMC3612440", "ClevelandClinic-2025", "AANMC-2024"]
+    "references": [
+      "GAD-Study-2009",
+      "PMC2517879"
+    ],
+    "plant_family": "Asteraceae (Daisy family)",
+    "origin": "Native to Europe and Western Asia",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "organic chamomile tea capsules sleep support"
   },
   {
     "id": "peppermint",
@@ -93,55 +85,15 @@
     "active_compounds": "Menthol (up to 48%) and menthone are the primary active volatile oils.",
     "benefits": "Significant evidence supports its use for Irritable Bowel Syndrome (IBS), tension headaches, and soothing digestive discomfort.",
     "safety_info": "May worsen symptoms of GERD (Acid Reflux) by relaxing the lower esophageal sphincter. Use with caution during pregnancy.",
-    "references": ["NCCIH-Peppermint-2025", "MountSinai-Health-Library", "PMC5814329"]
-  },
-  {
-    "id": "ashwagandha",
-    "name": "Ashwagandha",
-    "scientific": "Withania somnifera",
-    "category": "Stress & Adaptogen",
-    "overview": "Ashwagandha, also known as Indian ginseng or winter cherry, is an evergreen shrub in the Solanaceae family. It is a cornerstone of Ayurvedic medicine, classified as a Rasayana herb for promoting health and longevity.",
-    "traditional": "A key Rasayana herb in Ayurveda for over 3,000 years, traditionally used for rejuvenation, vitality, longevity, and to calm the nerves (Vataroga). The name 'somnifera' reflects its traditional use for sleep.",
-    "active_compounds": "Steroidal lactones known as withanolides (withaferin A, withanolide A), alkaloids (withanine, somniferine), saponins, and flavonoids.",
-    "benefits": "Proven to reduce stress, anxiety, and cortisol levels. Research also supports improvements in sleep quality, cognitive function, physical performance, and male fertility/sperm quality.",
-    "safety_info": "Generally safe for up to 3 months. Avoid during pregnancy (potential abortifacient). May interact with thyroid (increases hormones), blood pressure, diabetes, and sedative medications. Use caution with liver disease or stomach ulcers. Stop 2 weeks before surgery.",
-    "references": ["ANSES-2024", "Frontiers-2024", "NCCIH-Ashwagandha-2025", "Wikipedia-Withania-somnifera"]
-  },
-  {
-    "id": "ginseng",
-    "name": "Ginseng",
-    "scientific": "Panax ginseng / Panax quinquefolius",
-    "category": "Energy & Vitality",
-    "overview": "Ginseng refers to species in the Panax genus, primarily Asian (Panax ginseng) and American (Panax quinquefolius). The name Panax comes from the Greek word for 'all-healing'.",
-    "traditional": "Highly prized in TCM (Traditional Chinese Medicine) as a 'Qi tonic' for energy and vitality. Used for over 2,000 years to improve physical function, immune health, and as an adaptogen.",
-    "active_compounds": "Contains over 100 ginsenosides (steroidal saponins like Rb1, Rg1), gintonin, polysaccharides (ginsenans), and polyacetylenes.",
-    "benefits": "Studies support benefits for cognitive function, mental clarity, fatigue reduction, immune modulation, and erectile dysfunction. May also help regulate blood sugar.",
-    "safety_info": "Safe for short-term use (up to 6 months). Can interact with blood thinners (Warfarin), MAOIs, and diabetes medications. Avoid in hormone-sensitive conditions (estrogen-like effects), pregnancy, or autoimmune disorders. May cause insomnia or headaches.",
-    "references": ["PMC7116968", "WebMD-2025", "ClevelandClinic-Ginseng", "NIH-Ginseng-2025"]
-  },
-  {
-    "id": "fennel",
-    "name": "Fennel",
-    "scientific": "Foeniculum vulgare",
-    "category": "Digestive & Reproductive Health",
-    "overview": "Fennel is a Mediterranean-originating herb characterized by its licorice-like flavor and feathery leaves. It is a key ingredient in many culinary dishes and traditional remedies.",
-    "traditional": "Used since ancient Egyptian times for digestive relief and in Greek medicine to support lactation and regulate menstruation.",
-    "active_compounds": "Rich in anethole, fenchone, and estragole, which contribute to its carminative effects.",
-    "benefits": "Effective for treating gastrointestinal distress, infantile colic, and potentially easing menstrual cramps (dysmenorrhea).",
-    "safety_info": "Generally safe in food amounts. High doses or essential oil use should be avoided during pregnancy due to estrogenic activity. May interact with certain antibiotics like Ciprofloxacin.",
-    "references": ["PMC4137549", "Healthline-Fennel-2025", "AANMC-Herbs-2024"]
-  },
-  {
-    "id": "garlic",
-    "name": "Garlic",
-    "scientific": "Allium sativum",
-    "category": "Cardiovascular & Immune Health",
-    "overview": "Garlic is a plant in the Onion genus, Allium, known for its strong aroma and numerous medicinal properties worldwide.",
-    "traditional": "Documented use for 5,000 years across Egyptian, Babylonian, Greek, Roman, and Chinese civilizations for strength, infection, and circulation.",
-    "active_compounds": "Allicin (formed when crushed), alliin, and diallyl disulfide are the primary organosulfur compounds.",
-    "benefits": "Supports heart health by lowering blood pressure and cholesterol levels. Possesses antimicrobial and immune-enhancing properties.",
-    "safety_info": "Safe for most. May cause bad breath and body odor. High medicinal doses can increase the risk of bleeding; use caution with anticoagulants (e.g., Warfarin, Aspirin). Stop intake 2 weeks before surgery.",
-    "references": ["NCCIH-Garlic-2025", "MayoClinic-Garlic-2024", "PMC6966103"]
+    "references": [
+      "NCCIH-Peppermint-2025",
+      "MountSinai-Health-Library",
+      "PMC5814329"
+    ],
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Hybrid origin; cultivated widely in Europe and North America",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "peppermint oil enteric coated capsules IBS"
   },
   {
     "id": "ginger",
@@ -153,7 +105,277 @@
     "active_compounds": "Rich in gingerols, shogaols, and zingerone, which have potent antioxidant and anti-inflammatory effects.",
     "benefits": "Highly effective for nausea (morning sickness, chemotherapy-induced), pain relief (osteoarthritis, dysmenorrhea), and digestive support.",
     "safety_info": "Generally safe. Limit intake to 4g daily. May interact with blood thinners or medications for blood sugar and blood pressure. Safe for pregnancy nausea in moderate amounts (<1.5g/day).",
-    "references": ["JohnsHopkins-Ginger-2024", "NCCIH-Ginger-2025", "PMC4377061"]
+    "references": [
+      "JohnsHopkins-Ginger-2024",
+      "NCCIH-Ginger-2025",
+      "PMC4377061"
+    ],
+    "plant_family": "Zingiberaceae (Ginger family)",
+    "origin": "Native to Southeast Asia (likely India or China)",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "organic ginger root capsules nausea relief"
+  },
+  {
+    "id": "lavender",
+    "name": "Lavender",
+    "scientific": "Lavandula angustifolia",
+    "category": "Calming & Sleep",
+    "overview": "Lavender is an aromatic evergreen shrub widely cultivated for its flowers and essential oils.",
+    "traditional": "Used for over 2,500 years for its fragrance and therapeutic properties, from ancient mummification to Roman bathing rituals.",
+    "active_compounds": "Linalool and linalyl acetate are the primary terpene alcohols responsible for its sedative effects.",
+    "benefits": "Highly effective for reducing anxiety, improving sleep quality, and alleviating mild pain through aromatherapy and oral supplementation.",
+    "safety_info": "Generally safe. Oral lavender oil can cause minor digestive upset. Topical use is safe for most, but skin irritation is possible.",
+    "references": [
+      "PMC3612440",
+      "ClevelandClinic-2025",
+      "AANMC-2024"
+    ],
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to the Mediterranean region",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "lavender essential oil sleep anxiety supplement"
+  },
+  {
+    "id": "ashwagandha",
+    "name": "Ashwagandha",
+    "scientific": "Withania somnifera",
+    "category": "Stress & Adaptogen",
+    "overview": "Ashwagandha, also known as Indian ginseng or winter cherry, is an evergreen shrub in the Solanaceae family. It is a cornerstone of Ayurvedic medicine, classified as a Rasayana herb for promoting health and longevity.",
+    "traditional": "A key Rasayana herb in Ayurveda for over 3,000 years, traditionally used for rejuvenation, vitality, longevity, and to calm the nerves (Vataroga). The name 'somnifera' reflects its traditional use for sleep.",
+    "active_compounds": "Steroidal lactones known as withanolides (withaferin A, withanolide A), alkaloids (withanine, somniferine), saponins, and flavonoids.",
+    "benefits": "Proven to reduce stress, anxiety, and cortisol levels. Research also supports improvements in sleep quality, cognitive function, physical performance, and male fertility/sperm quality.",
+    "safety_info": "Generally safe for up to 3 months. Avoid during pregnancy (potential abortifacient). May interact with thyroid (increases hormones), blood pressure, diabetes, and sedative medications. Use caution with liver disease or stomach ulcers. Stop 2 weeks before surgery.",
+    "references": [
+      "ANSES-2024",
+      "Frontiers-2024",
+      "NCCIH-Ashwagandha-2025",
+      "Wikipedia-Withania-somnifera"
+    ],
+    "plant_family": "Solanaceae (Nightshade family)",
+    "origin": "Native to India, North Africa, and the Mediterranean",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "ashwagandha KSM-66 stress relief capsules"
+  },
+  {
+    "id": "valerian",
+    "name": "Valerian Root",
+    "scientific": "Valeriana officinalis",
+    "category": "Sleep & Relaxation",
+    "overview": "Valerian is a perennial flowering plant native to Europe and Asia. In the United States, it is widely used as a dietary supplement for sleep disorders and anxiety.",
+    "traditional": "Used since ancient Greek and Roman times to treat insomnia, migraines, fatigue, and stomach cramps.",
+    "active_compounds": "Contains valerenic acid, valepotriates, and volatile oils that are thought to interact with GABA receptors.",
+    "benefits": "Promoted for improving sleep quality, reducing the time it takes to fall asleep, and managing mild anxiety.",
+    "safety_info": "Generally safe for short-term use. Avoid prior to surgery or combining with other sedatives/alcohol.",
+    "references": [
+      "NCCIH-2025",
+      "PMC9914926",
+      "SleepFoundation-2025"
+    ],
+    "plant_family": "Caprifoliaceae (Honeysuckle family)",
+    "origin": "Native to Europe and Asia",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "valerian root sleep supplement capsules"
+  },
+  {
+    "id": "st-johns-wort",
+    "name": "St. John's Wort",
+    "scientific": "Hypericum perforatum",
+    "category": "Emotional Support",
+    "overview": "St. John's Wort is a flowering plant with a long history of use in traditional medicine for mental health conditions.",
+    "traditional": "Historically used for anxiety, depression, and wound healing since ancient Greek times.",
+    "active_compounds": "Hypericin and hyperforin are the primary active compounds responsible for its medicinal activity.",
+    "benefits": "Extensively studied for mild-to-moderate depression; may also support menopausal symptoms and PMS.",
+    "safety_info": "High potential for drug interactions. Can reduce the effectiveness of birth control and blood thinners. Consult a doctor before use.",
+    "references": [
+      "MayoClinic-2024",
+      "NCCIH-St-Johns-Wort",
+      "ClevelandClinic-9304"
+    ],
+    "plant_family": "Hypericaceae (St. John's Wort family)",
+    "origin": "Native to Europe and Western Asia",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "St Johns Wort mood support supplement"
+  },
+  {
+    "id": "ginseng",
+    "name": "Ginseng",
+    "scientific": "Panax ginseng / Panax quinquefolius",
+    "category": "Energy & Vitality",
+    "overview": "Ginseng refers to species in the Panax genus, primarily Asian (Panax ginseng) and American (Panax quinquefolius). The name Panax comes from the Greek word for 'all-healing'.",
+    "traditional": "Highly prized in TCM (Traditional Chinese Medicine) as a 'Qi tonic' for energy and vitality. Used for over 2,000 years to improve physical function, immune health, and as an adaptogen.",
+    "active_compounds": "Contains over 100 ginsenosides (steroidal saponins like Rb1, Rg1), gintonin, polysaccharides (ginsenans), and polyacetylenes.",
+    "benefits": "Studies support benefits for cognitive function, mental clarity, fatigue reduction, immune modulation, and erectile dysfunction. May also help regulate blood sugar.",
+    "safety_info": "Safe for short-term use (up to 6 months). Can interact with blood thinners (Warfarin), MAOIs, and diabetes medications. Avoid in hormone-sensitive conditions (estrogen-like effects), pregnancy, or autoimmune disorders. May cause insomnia or headaches.",
+    "references": [
+      "PMC7116968",
+      "WebMD-2025",
+      "ClevelandClinic-Ginseng",
+      "NIH-Ginseng-2025"
+    ],
+    "plant_family": "Araliaceae (Ginseng family)",
+    "origin": "Asian ginseng native to Korea and China; American ginseng native to eastern North America",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "Korean red ginseng energy vitality capsules"
+  },
+  {
+    "id": "elderberry",
+    "name": "Elderberry",
+    "scientific": "Sambucus nigra",
+    "category": "Immune Support",
+    "overview": "Elderberry is the dark purple berry of the European elder tree (Sambucus nigra). It has been used in folk medicine for centuries and is now one of the most popular herbal supplements for immune support.",
+    "traditional": "Used in European folk medicine for centuries to treat colds, flu, and fever. Native Americans also used elder plants for infections and skin conditions.",
+    "active_compounds": "Rich in anthocyanins, flavonoids (quercetin, rutin), and vitamins A and C, which contribute to its antioxidant and antiviral properties.",
+    "benefits": "May reduce the duration and severity of colds and flu. Supports immune function and provides antioxidant protection.",
+    "safety_info": "Raw or unripe elderberries are toxic and must not be consumed. Cooked or processed forms are safe. May interact with immunosuppressants and diuretics.",
+    "references": [
+      "NCCIH-Elderberry-2025",
+      "PMC4848651",
+      "Healthline-Elderberry-2024"
+    ],
+    "plant_family": "Adoxaceae (Moschatel family)",
+    "origin": "Native to Europe and North America",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "elderberry syrup immune support supplement"
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "scientific": "Allium sativum",
+    "category": "Cardiovascular & Immune Health",
+    "overview": "Garlic is a plant in the Onion genus, Allium, known for its strong aroma and numerous medicinal properties worldwide.",
+    "traditional": "Documented use for 5,000 years across Egyptian, Babylonian, Greek, Roman, and Chinese civilizations for strength, infection, and circulation.",
+    "active_compounds": "Allicin (formed when crushed), alliin, and diallyl disulfide are the primary organosulfur compounds.",
+    "benefits": "Supports heart health by lowering blood pressure and cholesterol levels. Possesses antimicrobial and immune-enhancing properties.",
+    "safety_info": "Safe for most. May cause bad breath and body odor. High medicinal doses can increase the risk of bleeding; use caution with anticoagulants (e.g., Warfarin, Aspirin). Stop intake 2 weeks before surgery.",
+    "references": [
+      "NCCIH-Garlic-2025",
+      "MayoClinic-Garlic-2024",
+      "PMC6966103"
+    ],
+    "plant_family": "Amaryllidaceae (Amaryllis family)",
+    "origin": "Native to Central Asia (likely Kyrgyzstan or Tajikistan)",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "odorless garlic supplement cardiovascular health"
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary",
+    "scientific": "Salvia rosmarinus",
+    "category": "Nootropic & Culinary",
+    "overview": "Rosemary is a fragrant evergreen herb native to the Mediterranean region, widely used in cooking and traditional medicine. It has been studied for its potential cognitive and circulatory benefits.",
+    "traditional": "Used since ancient Greek and Roman times to improve memory, stimulate circulation, and as a culinary herb. Sprigs were placed on graves and worn at weddings as a symbol of remembrance.",
+    "active_compounds": "Rosmarinic acid, carnosic acid, and 1,8-cineole are the primary bioactive compounds with antioxidant and anti-inflammatory properties.",
+    "benefits": "May improve memory and concentration, support circulation, and provide antioxidant protection. Aromatherapy with rosemary oil has shown cognitive benefits in studies.",
+    "safety_info": "Safe in culinary amounts. High doses or essential oil ingestion can cause seizures. Avoid medicinal doses during pregnancy. May interact with blood thinners and ACE inhibitors.",
+    "references": [
+      "PMC6330594",
+      "Healthline-Rosemary-2024",
+      "NCCIH-Rosemary-2025"
+    ],
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to the Mediterranean region",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "rosemary extract memory cognitive supplement"
+  },
+  {
+    "id": "cinnamon",
+    "name": "Cinnamon",
+    "scientific": "Cinnamomum verum",
+    "category": "Metabolic & Antioxidant",
+    "overview": "Cinnamon is a spice obtained from the inner bark of trees in the Cinnamomum genus. Ceylon cinnamon (Cinnamomum verum) is considered 'true cinnamon' and is prized for its delicate flavor and lower coumarin content.",
+    "traditional": "Used for over 4,000 years in ancient Egypt, China, and India for digestive ailments, respiratory conditions, and as a preservative.",
+    "active_compounds": "Cinnamaldehyde, cinnamic acid, and cinnamate are the primary active compounds. Ceylon cinnamon has lower coumarin levels than Cassia cinnamon.",
+    "benefits": "May help lower blood sugar levels and improve insulin sensitivity. Possesses antioxidant, anti-inflammatory, and antimicrobial properties.",
+    "safety_info": "Ceylon cinnamon is generally safe. Cassia cinnamon contains high coumarin levels that can cause liver damage in large doses. Avoid high doses during pregnancy.",
+    "references": [
+      "PMC7959578",
+      "Healthline-Cinnamon-2024",
+      "NCCIH-Cinnamon-2025"
+    ],
+    "plant_family": "Lauraceae (Laurel family)",
+    "origin": "Native to Sri Lanka (Ceylon cinnamon) and southern China (Cassia cinnamon)",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "Ceylon cinnamon blood sugar supplement capsules"
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "scientific": "Salvia officinalis",
+    "category": "Cognitive & Menopausal Support",
+    "overview": "Sage is a perennial, evergreen subshrub with woody stems, grayish leaves, and blue to purplish flowers. It is a member of the mint family Lamiaceae and native to the Mediterranean region.",
+    "traditional": "Used since ancient Greek and Roman times for its medicinal properties, including improving memory, treating sore throats, and as a digestive aid. The name Salvia comes from the Latin 'salvere' meaning 'to save'.",
+    "active_compounds": "Contains rosmarinic acid, carnosic acid, thujone, and camphor. Rich in vitamins K, A, and C.",
+    "benefits": "Research supports benefits for cognitive function and memory, menopausal hot flashes, blood sugar regulation, and oral health (antimicrobial properties).",
+    "safety_info": "Safe in culinary amounts. High doses containing thujone can be toxic. Avoid medicinal doses during pregnancy and breastfeeding. May interact with diabetes and sedative medications.",
+    "references": [
+      "PMC7491497",
+      "Healthline-Sage-2024",
+      "WebMD-Sage-2025"
+    ],
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to the Mediterranean region",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "sage extract menopause cognitive support supplement"
+  },
+  {
+    "id": "basil",
+    "name": "Basil",
+    "scientific": "Ocimum basilicum",
+    "category": "Adaptogenic & Culinary",
+    "overview": "Basil is a culinary herb of the family Lamiaceae (mints). It is a tender plant used in cuisines worldwide, particularly in Italian and Southeast Asian cooking. Holy basil (Tulsi) is a related species with stronger medicinal use.",
+    "traditional": "Revered as a sacred plant in Hindu tradition (Tulsi/Holy Basil). Used in Ayurvedic medicine for thousands of years as an adaptogen for stress, infections, and inflammation.",
+    "active_compounds": "Contains eugenol, linalool, rosmarinic acid, and various flavonoids with antioxidant and anti-inflammatory properties.",
+    "benefits": "Antioxidant and anti-inflammatory properties. Holy basil (Tulsi) has adaptogenic effects for stress reduction. May support blood sugar regulation and cardiovascular health.",
+    "safety_info": "Generally safe in culinary amounts. High doses of basil essential oil may be toxic. Avoid medicinal doses during pregnancy. May interact with blood thinners.",
+    "references": [
+      "PMC4296439",
+      "Healthline-Basil-2024",
+      "NCCIH-Basil-2025"
+    ],
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to tropical regions of Central Africa and Southeast Asia",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "holy basil tulsi adaptogen stress supplement"
+  },
+  {
+    "id": "fennel",
+    "name": "Fennel",
+    "scientific": "Foeniculum vulgare",
+    "category": "Digestive & Reproductive Health",
+    "overview": "Fennel is a Mediterranean-originating herb characterized by its licorice-like flavor and feathery leaves. It is a key ingredient in many culinary dishes and traditional remedies.",
+    "traditional": "Used since ancient Egyptian times for digestive relief and in Greek medicine to support lactation and regulate menstruation.",
+    "active_compounds": "Rich in anethole, fenchone, and estragole, which contribute to its carminative effects.",
+    "benefits": "Effective for treating gastrointestinal distress, infantile colic, and potentially easing menstrual cramps (dysmenorrhea).",
+    "safety_info": "Generally safe in food amounts. High doses or essential oil use should be avoided during pregnancy due to estrogenic activity. May interact with certain antibiotics like Ciprofloxacin.",
+    "references": [
+      "PMC4137549",
+      "Healthline-Fennel-2025",
+      "AANMC-Herbs-2024"
+    ],
+    "plant_family": "Apiaceae (Carrot family)",
+    "origin": "Native to the Mediterranean region",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "fennel seed digestive supplement capsules"
+  },
+  {
+    "id": "dandelion",
+    "name": "Dandelion",
+    "scientific": "Taraxacum officinale",
+    "category": "Liver & Digestive Support",
+    "overview": "Dandelion is a flowering plant widely considered a weed but valued in herbal medicine for its nutritional and medicinal properties. Both the root and leaves are used therapeutically.",
+    "traditional": "Used in traditional Chinese medicine and European folk medicine for liver and gallbladder conditions, digestive issues, and as a diuretic.",
+    "active_compounds": "Contains taraxacin, taraxacerin, inulin, sesquiterpene lactones, and high levels of vitamins A, C, and K.",
+    "benefits": "Acts as a natural diuretic, supports liver health, aids digestion, and provides significant nutritional value. May help regulate blood sugar and cholesterol.",
+    "safety_info": "Generally safe. May cause allergic reactions in people sensitive to ragweed or related plants. Avoid with bile duct obstruction or gallstones. May interact with diuretics and lithium.",
+    "references": [
+      "NCCIH-Dandelion-2025",
+      "PMC5553762",
+      "Healthline-Dandelion-2024"
+    ],
+    "plant_family": "Asteraceae (Daisy family)",
+    "origin": "Native to Eurasia; now widespread worldwide",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "dandelion root liver detox supplement"
   },
   {
     "id": "lemon-balm",
@@ -165,7 +387,15 @@
     "active_compounds": "Contains high levels of rosmarinic acid, citral, and citronellal.",
     "benefits": "Calms the nervous system, improves cognitive function and mood, and has antiviral properties (effective topically for cold sores).",
     "safety_info": "Generally safe for short-term use. May cause drowsiness; use caution with other sedatives. May interfere with thyroid medications; those with hypothyroidism should consult a doctor.",
-    "references": ["MountSinai-LemonBalm", "Healthline-LemonBalm-2025", "PMC5871149"]
+    "references": [
+      "MountSinai-LemonBalm",
+      "Healthline-LemonBalm-2025",
+      "PMC5871149"
+    ],
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to Europe and North Africa",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "lemon balm extract anxiety sleep supplement"
   },
   {
     "id": "licorice",
@@ -177,6 +407,34 @@
     "active_compounds": "Contains glycyrrhizin, glycyrrhetinic acid, and various flavonoids and liquiritin.",
     "benefits": "Soothes the digestive tract (GERD, ulcers), helps relieve sore throats and coughs, and possesses anti-inflammatory properties.",
     "safety_info": "Chronic use of non-DGL (deglycyrrhizinated) licorice can lead to potassium loss, high blood pressure, and heart issues. Avoid during pregnancy and with diuretics or heart medications. Deglycyrrhizinated (DGL) forms are safer for continuous use.",
-    "references": ["NCCIH-Licorice-2025", "ClevelandClinic-Licorice-2024", "PMC7575128"]
+    "references": [
+      "NCCIH-Licorice-2025",
+      "ClevelandClinic-Licorice-2024",
+      "PMC7575128"
+    ],
+    "plant_family": "Fabaceae (Legume family)",
+    "origin": "Native to the Mediterranean region and southwestern Asia",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "DGL licorice root digestive supplement"
+  },
+  {
+    "id": "calendula",
+    "name": "Calendula",
+    "scientific": "Calendula officinalis",
+    "category": "Topical & Skin Health",
+    "overview": "Calendula (pot marigold) is a flowering plant in the daisy family, widely used in herbal medicine for its anti-inflammatory and wound-healing properties, particularly in topical applications.",
+    "traditional": "Used in traditional European and Ayurvedic medicine for centuries to treat skin wounds, burns, rashes, and infections. Also used internally for digestive and menstrual complaints.",
+    "active_compounds": "Contains triterpenoids (oleanolic acid glycosides), flavonoids (quercetin, isorhamnetin), carotenoids, and polysaccharides.",
+    "benefits": "Highly effective for wound healing, reducing skin inflammation, and treating dermatitis and eczema. May also have antifungal and antimicrobial properties.",
+    "safety_info": "Generally safe for topical use. May cause allergic reactions in people sensitive to ragweed or other Asteraceae plants. Avoid during pregnancy (may stimulate uterine contractions). Limited safety data for internal use.",
+    "references": [
+      "PMC5871149",
+      "Healthline-Calendula-2024",
+      "NCCIH-Calendula-2025"
+    ],
+    "plant_family": "Asteraceae (Daisy family)",
+    "origin": "Native to the Mediterranean region and southwestern Asia",
+    "date_published": "2026-07-02",
+    "amazon_search_term": "calendula cream skin healing wound care"
   }
 ]
