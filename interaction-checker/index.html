@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7JYY85G6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y7JYY85G6Q');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check for known herb-herb and herb-drug interactions. Select up to 5 herbs and see safety warnings. Educational tool from HerbCraft.">
+    <title>Herb Interaction Checker — Is It Safe to Combine? | HerbCraft</title>
+    <link rel="canonical" href="https://herbcraft.app/interaction-checker/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .ic-hero{text-align:center;padding:4rem 0 2rem;border-bottom:1px solid var(--border-sepia)}
+        .ic-hero h1{font-size:2.6rem;font-style:italic;color:var(--botanical-green);margin-bottom:.75rem}
+        .ic-hero p{font-size:1.05rem;font-style:italic;max-width:650px;margin:0 auto;color:#555}
+        .ic-disclaimer{background:#fff3f3;border:1px solid #e57373;border-left:4px solid #c62828;padding:1rem 1.2rem;margin:1.5rem auto;max-width:900px;font-family:'Inter',sans-serif;font-size:.88rem;line-height:1.6}
+        .ic-disclaimer strong{color:#c62828}
+        .ic-layout{display:grid;grid-template-columns:320px 1fr;gap:2rem;max-width:960px;margin:2rem auto 4rem;padding:0 1.5rem}
+        .ic-panel{background:white;border:1px solid var(--border-sepia);padding:1.5rem}
+        .ic-panel__title{font-family:'Inter',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--botanical-green);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-sepia)}
+        .ic-search{width:100%;padding:.65rem .9rem;border:1px solid var(--border-sepia);font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;background:var(--parchment)}
+        .ic-search:focus{outline:none;border-color:var(--botanical-green)}
+        .ic-herb-list{max-height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:.3rem}
+        .ic-herb-item{display:flex;align-items:center;gap:.6rem;padding:.45rem .5rem;cursor:pointer;border-radius:2px;transition:background .15s}
+        .ic-herb-item:hover{background:var(--aged-paper)}
+        .ic-herb-item input[type=checkbox]{accent-color:var(--botanical-green);width:15px;height:15px;cursor:pointer;flex-shrink:0}
+        .ic-herb-item label{font-family:'Inter',sans-serif;font-size:.88rem;cursor:pointer;color:var(--ink-black)}
+        .ic-herb-item.disabled label{color:#aaa}
+        .ic-herb-item.disabled{cursor:not-allowed}
+        .ic-selected-count{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--muted-sage);margin-bottom:.75rem;text-align:right}
+        .ic-results-panel{display:flex;flex-direction:column;gap:1rem}
+        .ic-empty{text-align:center;padding:3rem 1rem;color:#888;font-style:italic;font-size:1rem}
+        .ic-empty-icon{font-size:2.5rem;margin-bottom:.75rem}
+        .ic-no-interactions{text-align:center;padding:2rem 1rem;color:var(--botanical-green)}
+        .ic-no-interactions-icon{font-size:2rem;margin-bottom:.5rem}
+        .ic-no-interactions p{font-family:'Inter',sans-serif;font-size:.9rem;color:#555;margin-top:.5rem}
+        .ic-warning-card{border:1px solid;padding:1.25rem;border-radius:2px}
+        .ic-warning-card.severity-moderate{border-color:#f59e0b;background:#fffbeb}
+        .ic-warning-card.severity-high{border-color:#ef4444;background:#fef2f2}
+        .ic-warning-card__header{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem;margin-bottom:.75rem}
+        .ic-warning-card__pair{font-size:1.05rem;font-style:italic;color:var(--ink-black)}
+        .ic-badge{font-family:'Inter',sans-serif;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .55rem;border-radius:2px;white-space:nowrap}
+        .ic-badge.moderate{background:#f59e0b;color:white}
+        .ic-badge.high{background:#ef4444;color:white}
+        .ic-warning-card__desc{font-family:'Inter',sans-serif;font-size:.88rem;line-height:1.6;color:#444;margin-bottom:.6rem}
+        .ic-warning-card__consult{font-family:'Inter',sans-serif;font-size:.8rem;color:#666;font-style:italic;border-top:1px solid rgba(0,0,0,.08);padding-top:.6rem}
+        .ic-selected-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem;min-height:28px}
+        .ic-tag{display:inline-flex;align-items:center;gap:.35rem;background:var(--botanical-green);color:var(--parchment);font-family:'Inter',sans-serif;font-size:.78rem;padding:.25rem .6rem;border-radius:2px}
+        .ic-tag__remove{cursor:pointer;opacity:.8;font-size:.9rem;line-height:1}
+        .ic-tag__remove:hover{opacity:1}
+        @media(max-width:700px){
+            .ic-layout{grid-template-columns:1fr;grid-template-rows:auto auto}
+            .ic-herb-list{max-height:250px}
+        }
+    </style>
+</head>
+<body>
+    <div id="site-banner">
+        <p><strong>For Educational Purposes Only.</strong> The information on herbcraft.app is aggregated from public sources and is not medical advice. It is not intended to diagnose, treat, cure, or prevent any disease. <strong>Always consult a qualified healthcare professional before making any decisions about your health.</strong></p>
+    </div>
+    <header class="header">
+        <div class="header__container">
+            <div class="logo"><a href="../">herbcraft.app</a></div>
+            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="header__menu-toggle-icon"></span>
+            </button>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../herb-directory/" class="nav__link">Herb Directory</a></li>
+                    <li class="nav__item"><a href="../herb-explorer/" class="nav__link">Herb Explorer</a></li>
+                    <li class="nav__item"><a href="../safety-finder/" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="../quiz/" class="nav__link">Herb Quiz</a></li>
+                    <li class="nav__item"><a href="../interaction-checker/" class="nav__link">Interactions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main-content" class="main">
+        <section class="ic-hero">
+            <div class="container">
+                <h1>Herb Interaction Checker</h1>
+                <p>Select up to 5 herbs to see known interaction warnings between them and common drug categories.</p>
+            </div>
+        </section>
+        <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+            <div class="ic-disclaimer">
+                <strong>&#9888; Important Disclaimer:</strong> This tool is for educational purposes only. Interaction data is aggregated from public sources and may not be complete. The absence of a warning does not mean a combination is safe. <strong>Always consult a healthcare provider before combining herbs or medications.</strong>
+            </div>
+        </div>
+        <div class="ic-layout">
+            <!-- Left panel: herb selector -->
+            <div>
+                <div class="ic-panel">
+                    <div class="ic-panel__title">Select Herbs (up to 5)</div>
+                    <input type="text" class="ic-search" id="herb-search" placeholder="Search herbs..." aria-label="Search herbs">
+                    <div class="ic-selected-count" id="selected-count">0 of 5 selected</div>
+                    <div class="ic-herb-list" id="herb-list"></div>
+                </div>
+            </div>
+            <!-- Right panel: results -->
+            <div>
+                <div class="ic-panel">
+                    <div class="ic-panel__title">Interaction Results</div>
+                    <div class="ic-selected-tags" id="selected-tags"></div>
+                    <div class="ic-results-panel" id="results-panel">
+                        <div class="ic-empty">
+                            <div class="ic-empty-icon">&#127807;</div>
+                            Select herbs on the left to check for interactions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="/herb-directory/" class="footer__nav-link">Herb Directory</a></li>
+                    <li class="footer__nav-item"><a href="/herb-explorer/" class="footer__nav-link">Herb Explorer</a></li>
+                    <li class="footer__nav-item"><a href="/safety-finder/" class="footer__nav-link">Safety Notes</a></li>
+                    <li class="footer__nav-item"><a href="/quiz/" class="footer__nav-link">Herb Quiz</a></li>
+                    <li class="footer__nav-item"><a href="/interaction-checker/" class="footer__nav-link">Interaction Checker</a></li>
+                    <li class="footer__nav-item"><a href="/about/" class="footer__nav-link">About</a></li>
+                    <li class="footer__nav-item"><a href="/terms/" class="footer__nav-link">Terms of Service</a></li>
+                    <li class="footer__nav-item"><a href="/privacy/" class="footer__nav-link">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="footer__disclaimer">
+                <h3 class="footer__disclaimer-title">Legal Disclaimer (DSHEA Compliance)</h3>
+                <p class="footer__disclaimer-text">The information provided on this website is for educational and informational purposes only and is not intended as medical advice. herbcraft.app does not provide medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+            </div>
+            <div class="footer__copyright">&#169; 2026 herbcraft.app. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="interaction-checker.js"></script>
+</body>
+</html>
