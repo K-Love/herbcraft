@@ -436,5 +436,565 @@
     "origin": "Native to the Mediterranean region and southwestern Asia",
     "date_published": "2026-07-02",
     "amazon_search_term": "calendula cream skin healing wound care"
+  },
+  {
+    "id": "black-cohosh",
+    "name": "Black Cohosh",
+    "scientific": "Actaea racemosa",
+    "plant_family": "Ranunculaceae (Buttercup family)",
+    "origin": "Native to eastern North America",
+    "category": "Women's Health & Menopause",
+    "overview": "Black cohosh is a woodland perennial native to eastern North America, long used by Native American tribes for women's health conditions. It is one of the most widely studied herbs for menopausal symptom relief, particularly hot flashes and night sweats.",
+    "traditional": "Used by Native American tribes including the Algonquin, Cherokee, and Iroquois for menstrual irregularities, childbirth support, and rheumatic pain. European settlers adopted it in the 19th century, and it became a key ingredient in Lydia Pinkham's Vegetable Compound.",
+    "active_compounds": "Triterpene glycosides (actein, 27-deoxyactein, cimicifugoside), isoflavones, and phenolic acids including caffeic and isoferulic acid. The exact mechanism of action remains under investigation.",
+    "benefits": "Clinical trials support its use for reducing menopausal hot flashes, night sweats, and mood disturbances. Some evidence suggests benefits for sleep quality and vaginal dryness. The German Commission E has approved it for menopausal symptoms.",
+    "safety_info": "Generally safe for up to 6 months. Rare cases of liver injury have been reported; discontinue if jaundice or liver symptoms occur. Avoid during pregnancy and breastfeeding. Not recommended for women with hormone-sensitive conditions (breast cancer) due to uncertain estrogenic activity. May interact with tamoxifen and other hormone therapies.",
+    "references": [
+      "NCCIH-BlackCohosh-2025",
+      "PMC8346734",
+      "MayoClinic-BlackCohosh-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "black cohosh menopause hot flash supplement"
+  },
+  {
+    "id": "boswellia",
+    "name": "Boswellia",
+    "scientific": "Boswellia serrata",
+    "plant_family": "Burseraceae (Frankincense family)",
+    "origin": "Native to India, North Africa, and the Middle East",
+    "category": "Anti-inflammatory & Joint Health",
+    "overview": "Boswellia, also known as Indian frankincense, is a resin extracted from the Boswellia serrata tree. It has been used for centuries in Ayurvedic medicine and is now one of the most clinically studied natural anti-inflammatory agents.",
+    "traditional": "A cornerstone of Ayurvedic medicine (Shallaki) for thousands of years, used to treat arthritis, inflammatory bowel disease, asthma, and skin conditions. Also used in traditional African and Middle Eastern medicine as incense and for wound healing.",
+    "active_compounds": "Boswellic acids, particularly AKBA (3-O-acetyl-11-keto-beta-boswellic acid), are the primary active compounds. They inhibit 5-lipoxygenase (5-LOX), a key enzyme in the inflammatory cascade.",
+    "benefits": "Strong clinical evidence for reducing pain and improving function in osteoarthritis and rheumatoid arthritis. Studies also support benefits for inflammatory bowel disease (Crohn's, ulcerative colitis), asthma, and potentially brain tumor-related edema.",
+    "safety_info": "Generally well-tolerated. Most common side effects are mild gastrointestinal issues (nausea, diarrhea, stomach pain). May interact with anticoagulants and anti-inflammatory drugs. Use caution during pregnancy. Look for products standardized to AKBA content.",
+    "references": [
+      "PMC3309643",
+      "NCCIH-Boswellia-2025",
+      "PMC6334250"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "boswellia serrata AKBA joint inflammation supplement"
+  },
+  {
+    "id": "cats-claw",
+    "name": "Cat's Claw",
+    "scientific": "Uncaria tomentosa",
+    "plant_family": "Rubiaceae (Coffee family)",
+    "origin": "Native to the Amazon rainforest of Peru and South America",
+    "category": "Immune Support & Anti-inflammatory",
+    "overview": "Cat's claw is a woody vine from the Amazon rainforest named for its hook-like thorns that resemble a cat's claws. It has been used for centuries by indigenous Peruvian tribes and has gained international attention for its immune-modulating and anti-inflammatory properties.",
+    "traditional": "Used for over 2,000 years by the Ashaninka people of Peru and other Amazonian tribes for treating inflammation, infections, arthritis, ulcers, and as a contraceptive. Known as 'una de gato' in Spanish.",
+    "active_compounds": "Oxindole alkaloids (isopteropodine, pteropodine, mitraphylline), pentacyclic alkaloids, quinovic acid glycosides, and tannins. The alkaloid profile varies between chemotypes.",
+    "benefits": "May enhance immune function by stimulating white blood cell activity. Clinical evidence supports anti-inflammatory effects for osteoarthritis and rheumatoid arthritis. Some research suggests antiviral and antioxidant properties.",
+    "safety_info": "Generally safe for short-term use. Avoid during pregnancy (may cause miscarriage) and breastfeeding. May interact with anticoagulants, antihypertensives, and immunosuppressants. Avoid with autoimmune conditions. May slow blood clotting; stop 2 weeks before surgery.",
+    "references": [
+      "NCCIH-CatsClaw-2025",
+      "PMC5765955",
+      "WebMD-CatsClaw-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "cats claw uncaria tomentosa immune supplement"
+  },
+  {
+    "id": "cayenne",
+    "name": "Cayenne Pepper",
+    "scientific": "Capsicum annuum",
+    "plant_family": "Solanaceae (Nightshade family)",
+    "origin": "Native to Central and South America",
+    "category": "Pain Relief & Circulatory Health",
+    "overview": "Cayenne pepper is a hot chili pepper widely used as a spice and medicinal herb. Its active compound capsaicin is one of the most well-researched natural pain-relief agents and is used in both topical and oral formulations.",
+    "traditional": "Used by indigenous peoples of the Americas for thousands of years for pain, digestive issues, and circulatory problems. Introduced to Europe in the 15th century and subsequently integrated into Ayurvedic and traditional Chinese medicine.",
+    "active_compounds": "Capsaicin (8-methyl-N-vanillyl-6-nonenamide) is the primary bioactive compound, along with dihydrocapsaicin and other capsaicinoids. Capsaicin depletes substance P, a neuropeptide involved in pain transmission.",
+    "benefits": "Topical capsaicin is FDA-approved for neuropathic pain, osteoarthritis, and postherpetic neuralgia. Oral cayenne may improve circulation, support metabolism, reduce appetite, and aid digestion. May also have cardiovascular benefits.",
+    "safety_info": "Topical use causes initial burning sensation that diminishes with repeated use. Avoid contact with eyes and mucous membranes. Oral use may cause gastrointestinal irritation; avoid with GERD or ulcers. May interact with blood thinners and ACE inhibitors. Avoid high doses during pregnancy.",
+    "references": [
+      "NCCIH-Capsaicin-2025",
+      "PMC6273101",
+      "MayoClinic-Capsaicin-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "cayenne pepper capsaicin supplement metabolism"
+  },
+  {
+    "id": "devils-claw",
+    "name": "Devil's Claw",
+    "scientific": "Harpagophytum procumbens",
+    "plant_family": "Pedaliaceae (Sesame family)",
+    "origin": "Native to southern Africa (Kalahari Desert region)",
+    "category": "Pain Relief & Anti-inflammatory",
+    "overview": "Devil's claw is a plant native to the Kalahari Desert of southern Africa, named for its fruit covered in hook-like projections. It has been used for centuries in traditional African medicine and is now widely used in Europe for pain and inflammation.",
+    "traditional": "Used by the San and Khoi peoples of southern Africa for fever, pain, digestive problems, and skin conditions. Introduced to European medicine in the early 20th century and approved in Germany for musculoskeletal pain.",
+    "active_compounds": "Iridoid glycosides, particularly harpagoside, are the primary active compounds with demonstrated anti-inflammatory and analgesic properties. Also contains harpagide and procumbide.",
+    "benefits": "Clinical evidence supports its use for low back pain, osteoarthritis (hip and knee), and general musculoskeletal pain. The German Commission E and ESCOP have approved it for these indications. May also reduce inflammation markers.",
+    "safety_info": "Generally well-tolerated. May cause mild gastrointestinal side effects. Avoid during pregnancy (may stimulate uterine contractions) and with peptic ulcers or gallstones. May interact with anticoagulants, antiarrhythmics, and diabetes medications. Stop 2 weeks before surgery.",
+    "references": [
+      "PMC4914308",
+      "NCCIH-DevilsClaw-2025",
+      "Cochrane-DevilsClaw-2014"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "devils claw back pain joint supplement"
+  },
+  {
+    "id": "dong-quai",
+    "name": "Dong Quai",
+    "scientific": "Angelica sinensis",
+    "plant_family": "Apiaceae (Carrot family)",
+    "origin": "Native to China, Japan, and Korea",
+    "category": "Women's Health & Blood Tonic",
+    "overview": "Dong quai, often called 'female ginseng,' is one of the most important herbs in Traditional Chinese Medicine. It has been used for over 2,000 years primarily for women's reproductive health, blood deficiency, and circulation.",
+    "traditional": "A foundational herb in TCM, used for menstrual irregularities, dysmenorrhea, amenorrhea, and menopausal symptoms. Also used as a blood tonic for anemia and to improve circulation. Frequently combined with other herbs in formulas like Si Wu Tang.",
+    "active_compounds": "Phthalides (Z-ligustilide, butylidenephthalide), ferulic acid, polysaccharides, and coumarins. Z-ligustilide is responsible for its smooth muscle relaxant and anti-inflammatory effects.",
+    "benefits": "May help regulate menstrual cycles, reduce menstrual cramps, and alleviate menopausal symptoms. Ferulic acid has antioxidant and anti-inflammatory properties. Some evidence for cardiovascular benefits and blood-building effects.",
+    "safety_info": "Avoid during pregnancy (uterine stimulant) and breastfeeding. May increase photosensitivity; avoid prolonged sun exposure. Significant interaction with warfarin and other anticoagulants (increases bleeding risk). Avoid with hormone-sensitive conditions. Not recommended for heavy menstrual bleeding.",
+    "references": [
+      "NCCIH-DongQuai-2025",
+      "PMC6266883",
+      "WebMD-DongQuai-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "dong quai female ginseng women health supplement"
+  },
+  {
+    "id": "fenugreek",
+    "name": "Fenugreek",
+    "scientific": "Trigonella foenum-graecum",
+    "plant_family": "Fabaceae (Legume family)",
+    "origin": "Native to the Mediterranean region and western Asia",
+    "category": "Metabolic & Lactation Support",
+    "overview": "Fenugreek is an annual plant cultivated worldwide as a culinary spice and medicinal herb. Its seeds are rich in soluble fiber and bioactive compounds that have demonstrated effects on blood sugar regulation, testosterone levels, and lactation.",
+    "traditional": "Used for over 4,000 years in ancient Egypt, Greece, and India. In Ayurveda, used for digestive issues, inflammation, and to promote lactation. In TCM, used for kidney yang deficiency and reproductive health.",
+    "active_compounds": "4-hydroxyisoleucine (unique amino acid), diosgenin (steroidal saponin), trigonelline, galactomannan (soluble fiber), and furostanolic saponins.",
+    "benefits": "Clinical evidence supports blood sugar lowering effects in type 2 diabetes. May increase testosterone and improve sexual function in men. Commonly used to increase breast milk production in nursing mothers. May also lower LDL cholesterol.",
+    "safety_info": "Generally safe in food amounts. Medicinal doses may cause maple syrup-like body odor, gastrointestinal upset, and diarrhea. Avoid during pregnancy (uterine stimulant). May interact with diabetes medications (hypoglycemia risk) and anticoagulants. Allergic reactions possible in people sensitive to legumes.",
+    "references": [
+      "PMC4020548",
+      "NCCIH-Fenugreek-2025",
+      "PMC6360548"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "fenugreek seed supplement testosterone lactation"
+  },
+  {
+    "id": "feverfew",
+    "name": "Feverfew",
+    "scientific": "Tanacetum parthenium",
+    "plant_family": "Asteraceae (Daisy family)",
+    "origin": "Native to the Balkan Peninsula; naturalized throughout Europe and North America",
+    "category": "Migraine Prevention",
+    "overview": "Feverfew is a flowering plant in the daisy family that has been used medicinally for centuries. It is best known for its use in preventing migraines and is one of the most studied herbs for this purpose.",
+    "traditional": "Used in European folk medicine since ancient Greek times for fever reduction (hence the name), headaches, arthritis, and menstrual irregularities. Gained widespread popularity in the UK in the 1970s-80s for migraine prevention.",
+    "active_compounds": "Parthenolide is the primary sesquiterpene lactone responsible for its anti-inflammatory and anti-platelet effects. Also contains chrysanthemyl acetate, camphor, and various flavonoids.",
+    "benefits": "Multiple clinical trials support its use for migraine prevention, reducing frequency and severity of attacks. May also reduce associated nausea and vomiting. Some evidence for anti-inflammatory effects in arthritis.",
+    "safety_info": "Generally safe for short-term use. Post-feverfew syndrome (rebound headaches, anxiety, insomnia) may occur upon abrupt discontinuation. Avoid during pregnancy (may stimulate uterine contractions). May interact with anticoagulants and NSAIDs. May cause mouth ulcers with fresh leaf consumption. Avoid in people allergic to Asteraceae plants.",
+    "references": [
+      "PMC3210009",
+      "Cochrane-Feverfew-2004",
+      "NCCIH-Feverfew-2025"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "feverfew migraine prevention supplement"
+  },
+  {
+    "id": "gotu-kola",
+    "name": "Gotu Kola",
+    "scientific": "Centella asiatica",
+    "plant_family": "Apiaceae (Carrot family)",
+    "origin": "Native to Asia (India, Sri Lanka, China, Indonesia)",
+    "category": "Cognitive & Skin Health",
+    "overview": "Gotu kola is a small herbaceous plant revered in Ayurvedic, Chinese, and Indonesian traditional medicine as a brain tonic and longevity herb. It is also widely used in dermatology for wound healing and scar reduction.",
+    "traditional": "Called 'brahmi' in some regions of India, gotu kola has been used in Ayurveda for over 3,000 years to enhance memory, treat skin diseases, and promote longevity. In TCM, it is used for clearing heat and resolving toxicity.",
+    "active_compounds": "Triterpenoid saponins (asiaticoside, madecassoside, asiatic acid, madecassic acid) are the primary active compounds. These stimulate collagen synthesis and have neuroprotective effects.",
+    "benefits": "Clinical evidence supports improved cognitive function and memory, reduced anxiety, and accelerated wound healing. Widely used in cosmetics for scar treatment, stretch marks, and skin firming. May also improve circulation and reduce venous insufficiency.",
+    "safety_info": "Generally safe for short-term use (up to 6 weeks). Rare cases of liver toxicity reported with high doses; avoid with liver disease. May cause skin sensitization with topical use. Avoid during pregnancy and breastfeeding. May interact with sedatives and hepatotoxic drugs.",
+    "references": [
+      "PMC3834700",
+      "NCCIH-GotuKola-2025",
+      "PMC6835901"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "gotu kola centella asiatica cognitive supplement"
+  },
+  {
+    "id": "hawthorn",
+    "name": "Hawthorn",
+    "scientific": "Crataegus monogyna",
+    "plant_family": "Rosaceae (Rose family)",
+    "origin": "Native to Europe, North Africa, and western Asia",
+    "category": "Cardiovascular Health",
+    "overview": "Hawthorn is a thorny shrub or small tree whose berries, leaves, and flowers have been used medicinally for centuries. It is one of the most well-studied herbs for cardiovascular support, particularly for heart failure and hypertension.",
+    "traditional": "Used in European herbal medicine since the Middle Ages for heart conditions, digestive issues, and anxiety. In TCM, hawthorn berries (shan zha) are used to improve digestion and blood circulation. The German Commission E has approved hawthorn for declining cardiac output.",
+    "active_compounds": "Oligomeric proanthocyanidins (OPCs), flavonoids (vitexin, quercetin, hyperoside), and triterpene acids. These compounds improve coronary blood flow, reduce peripheral vascular resistance, and have antioxidant effects.",
+    "benefits": "Clinical trials demonstrate improved exercise tolerance and reduced symptoms in mild-to-moderate heart failure (NYHA Class II). May lower blood pressure, reduce LDL cholesterol, and improve overall cardiac function. Antioxidant properties protect against oxidative stress.",
+    "safety_info": "Generally safe and well-tolerated. May cause mild dizziness, nausea, or palpitations at high doses. Significant interactions with digoxin and other cardiac medications; consult a doctor before use. May potentiate antihypertensive drugs. Effects may take 6-8 weeks to manifest.",
+    "references": [
+      "PMC3249900",
+      "NCCIH-Hawthorn-2025",
+      "Cochrane-Hawthorn-2008"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "hawthorn berry heart health cardiovascular supplement"
+  },
+  {
+    "id": "holy-basil",
+    "name": "Holy Basil (Tulsi)",
+    "scientific": "Ocimum tenuiflorum",
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to the Indian subcontinent",
+    "category": "Adaptogen & Stress Relief",
+    "overview": "Holy basil, known as Tulsi in Sanskrit, is a sacred plant in Hinduism and a cornerstone of Ayurvedic medicine. It is classified as an adaptogen, helping the body adapt to physical, chemical, and psychological stress.",
+    "traditional": "Revered as the 'Queen of Herbs' in Ayurveda, Tulsi has been used for over 3,000 years for respiratory conditions, fever, digestive issues, and as a general tonic. It holds deep spiritual significance in Hindu culture and is grown in most Indian households.",
+    "active_compounds": "Eugenol, rosmarinic acid, ursolic acid, beta-caryophyllene, linalool, and various flavonoids. These compounds contribute to its adaptogenic, anti-inflammatory, and antimicrobial properties.",
+    "benefits": "Clinical evidence supports reduction of stress, anxiety, and cortisol levels. May improve cognitive function, blood sugar regulation, and immune response. Antimicrobial properties effective against various bacteria and fungi. May also support respiratory health.",
+    "safety_info": "Generally safe for most adults. May slow blood clotting; avoid before surgery. May lower blood sugar; monitor if diabetic. Avoid during pregnancy (may stimulate uterine contractions). May interact with anticoagulants and diabetes medications.",
+    "references": [
+      "PMC4296439",
+      "NCCIH-HolyBasil-2025",
+      "PMC5376420"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "holy basil tulsi adaptogen stress relief supplement"
+  },
+  {
+    "id": "hops",
+    "name": "Hops",
+    "scientific": "Humulus lupulus",
+    "plant_family": "Cannabaceae (Hemp family)",
+    "origin": "Native to Europe, western Asia, and North America",
+    "category": "Sleep & Relaxation",
+    "overview": "Hops are the cone-shaped flowers of the Humulus lupulus plant, best known as a bittering agent in beer brewing. The female flowers (strobiles) have been used medicinally for centuries as a sedative and sleep aid.",
+    "traditional": "Used in European folk medicine since the 9th century for insomnia, anxiety, and digestive complaints. Hop pillows were traditionally used to promote sleep. Often combined with valerian root for enhanced sedative effects.",
+    "active_compounds": "2-methyl-3-buten-2-ol (a metabolite of humulone), alpha-acids (humulone, cohumulone), beta-acids (lupulone), and 8-prenylnaringenin (a phytoestrogen). The sedative effects are primarily attributed to 2-methyl-3-buten-2-ol.",
+    "benefits": "Clinical evidence, particularly in combination with valerian, supports improved sleep quality and reduced sleep latency. May also reduce anxiety and menopausal symptoms due to phytoestrogenic activity. Anti-inflammatory and antimicrobial properties have been documented.",
+    "safety_info": "Generally safe for short-term use. May cause drowsiness; avoid with alcohol, sedatives, or when driving. Avoid during pregnancy and breastfeeding. May worsen depression. The phytoestrogenic compound 8-prenylnaringenin may affect hormone-sensitive conditions.",
+    "references": [
+      "PMC7230697",
+      "NCCIH-Hops-2025",
+      "PMC3198864"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "hops valerian sleep supplement capsules"
+  },
+  {
+    "id": "horsetail",
+    "name": "Horsetail",
+    "scientific": "Equisetum arvense",
+    "plant_family": "Equisetaceae (Horsetail family)",
+    "origin": "Native to the Northern Hemisphere (Europe, Asia, North America)",
+    "category": "Bone & Connective Tissue Health",
+    "overview": "Horsetail is an ancient plant species dating back over 300 million years, making it one of the oldest surviving plant genera. It is exceptionally rich in silica, which supports bone, hair, nail, and connective tissue health.",
+    "traditional": "Used in ancient Greek and Roman medicine for wound healing, kidney conditions, and as a diuretic. In traditional European herbalism, used for urinary tract conditions, bone health, and to strengthen hair and nails.",
+    "active_compounds": "Silicon dioxide (silica, up to 25% of dry weight), flavonoids (quercetin, kaempferol, isoquercitrin), alkaloids (nicotine, palustrine), and saponins (equisetonin). Silica is the primary therapeutic compound.",
+    "benefits": "May improve bone mineral density and support bone healing. Silica promotes collagen synthesis, benefiting hair strength, nail growth, and skin elasticity. Diuretic properties may support urinary tract health. Some evidence for antioxidant and anti-inflammatory effects.",
+    "safety_info": "Generally safe for short-term use. Contains thiaminase (destroys vitamin B1); avoid long-term use or supplement with B1. May cause potassium loss due to diuretic effects. Avoid during pregnancy and breastfeeding. May interact with diuretics and lithium. Avoid with kidney disease.",
+    "references": [
+      "PMC6115838",
+      "NCCIH-Horsetail-2025",
+      "WebMD-Horsetail-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "horsetail silica hair nails bone supplement"
+  },
+  {
+    "id": "kava",
+    "name": "Kava",
+    "scientific": "Piper methysticum",
+    "plant_family": "Piperaceae (Pepper family)",
+    "origin": "Native to the Pacific Islands (Polynesia, Melanesia, Micronesia)",
+    "category": "Anxiety Relief & Relaxation",
+    "overview": "Kava is a plant native to the Pacific Islands whose root has been used for centuries in ceremonial and social contexts. It produces a calming, anxiolytic effect without impairing cognitive function, making it one of the most studied natural remedies for anxiety.",
+    "traditional": "Central to Pacific Island cultures for thousands of years, used in ceremonies, social gatherings, and as a traditional medicine for anxiety, insomnia, and pain. The prepared drink (also called kava) is consumed widely across Fiji, Vanuatu, Tonga, and Hawaii.",
+    "active_compounds": "Kavalactones (kavain, dihydrokavain, methysticin, dihydromethysticin, yangonin, desmethoxyyangonin) are the primary active compounds. They modulate GABA-A receptors and inhibit voltage-gated sodium channels.",
+    "benefits": "Multiple meta-analyses confirm significant anxiolytic effects comparable to some pharmaceutical anxiolytics. May improve sleep quality and reduce stress. Some evidence for muscle relaxant and analgesic properties. Does not impair cognitive function at standard doses.",
+    "safety_info": "Significant hepatotoxicity risk; rare but serious liver damage has been reported. Avoid with alcohol, acetaminophen, or other hepatotoxic substances. Avoid with liver disease or history of liver problems. Avoid during pregnancy and breastfeeding. May impair driving ability. Banned or restricted in some countries.",
+    "references": [
+      "PMC3991026",
+      "NCCIH-Kava-2025",
+      "Cochrane-Kava-2003"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "kava kava anxiety relief relaxation supplement"
+  },
+  {
+    "id": "lions-mane",
+    "name": "Lion's Mane",
+    "scientific": "Hericium erinaceus",
+    "plant_family": "Hericiaceae (Tooth fungus family)",
+    "origin": "Native to North America, Europe, and Asia",
+    "category": "Cognitive & Neurological Health",
+    "overview": "Lion's mane is a distinctive white, shaggy mushroom that resembles a lion's mane. It has been used in traditional Chinese and Japanese medicine for centuries and is now one of the most researched functional mushrooms for cognitive health and neuroprotection.",
+    "traditional": "Used in TCM and Japanese Kampo medicine for digestive conditions, nervous system support, and as a general tonic. Buddhist monks reportedly used it to enhance focus during meditation. Known as 'yamabushitake' in Japan and 'hou tou gu' in China.",
+    "active_compounds": "Hericenones (from fruiting body) and erinacines (from mycelium) are the primary bioactive compounds. They stimulate Nerve Growth Factor (NGF) synthesis, which is critical for neuron growth and maintenance.",
+    "benefits": "Clinical trials show improvements in mild cognitive impairment, memory, and concentration. May reduce anxiety and depression symptoms. Neuroprotective effects suggest potential for neurodegenerative disease prevention. Also supports digestive health and immune function.",
+    "safety_info": "Generally safe and well-tolerated. May cause mild gastrointestinal discomfort in some individuals. Rare allergic reactions reported, particularly in people with mushroom allergies. Avoid during pregnancy and breastfeeding (insufficient data). May interact with anticoagulants and diabetes medications.",
+    "references": [
+      "PMC6982118",
+      "NCCIH-LionsMane-2025",
+      "PMC8533583"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "lions mane mushroom cognitive brain supplement"
+  },
+  {
+    "id": "marshmallow-root",
+    "name": "Marshmallow Root",
+    "scientific": "Althaea officinalis",
+    "plant_family": "Malvaceae (Mallow family)",
+    "origin": "Native to Europe, western Asia, and North Africa",
+    "category": "Digestive & Respiratory Soothing",
+    "overview": "Marshmallow root is a perennial herb whose root contains high levels of mucilage, a gel-like substance that soothes and protects irritated mucous membranes. It has been used medicinally since ancient Egyptian and Greek times.",
+    "traditional": "Used in ancient Egypt, Greece, and Rome for sore throats, coughs, digestive inflammation, and skin conditions. The original marshmallow candy was made from the root's mucilage. Used in European folk medicine for urinary tract irritation and wound healing.",
+    "active_compounds": "Mucilage polysaccharides (primarily rhamnogalacturonan I), flavonoids (quercetin, kaempferol), phenolic acids, and pectin. The mucilage forms a protective coating on mucous membranes.",
+    "benefits": "Soothes irritated mucous membranes in the throat, digestive tract, and urinary system. May relieve dry cough, sore throat, gastritis, and IBS symptoms. Topically, may help with wound healing and skin inflammation. Diuretic properties support urinary tract health.",
+    "safety_info": "Generally very safe with minimal side effects. May slow absorption of oral medications; take 1-2 hours apart from other drugs. May lower blood sugar; monitor if diabetic. Avoid during pregnancy (insufficient safety data). May cause allergic reactions in people sensitive to Malvaceae plants.",
+    "references": [
+      "PMC5637098",
+      "NCCIH-Marshmallow-2025",
+      "WebMD-Marshmallow-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "marshmallow root digestive soothing supplement"
+  },
+  {
+    "id": "milk-thistle",
+    "name": "Milk Thistle",
+    "scientific": "Silybum marianum",
+    "plant_family": "Asteraceae (Daisy family)",
+    "origin": "Native to the Mediterranean region",
+    "category": "Liver Support",
+    "overview": "Milk thistle is a flowering herb related to the daisy and ragweed family. Its seeds contain silymarin, one of the most well-researched natural compounds for liver protection and regeneration.",
+    "traditional": "Used in European herbal medicine for over 2,000 years for liver and gallbladder conditions. Widely used in European phytotherapy for hepatitis, cirrhosis, and liver toxicity.",
+    "active_compounds": "Silymarin is a complex of flavonolignans (silybin, silydianin, silychristin), with silybin being the most biologically active. Silymarin acts as an antioxidant, anti-inflammatory, and promotes liver cell regeneration.",
+    "benefits": "Strong evidence for liver protection against toxins including Amanita mushroom poisoning, alcohol, and drug-induced liver injury. May improve liver function in hepatitis and cirrhosis. Antioxidant properties protect against oxidative stress.",
+    "safety_info": "Generally very safe and well-tolerated. May cause mild laxative effect or gastrointestinal upset. Rare allergic reactions in people sensitive to Asteraceae plants. May interact with certain medications metabolized by CYP450 enzymes. Avoid during pregnancy and breastfeeding.",
+    "references": [
+      "PMC4110863",
+      "NCCIH-MilkThistle-2025",
+      "MayoClinic-MilkThistle-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "milk thistle silymarin liver support supplement"
+  },
+  {
+    "id": "motherwort",
+    "name": "Motherwort",
+    "scientific": "Leonurus cardiaca",
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to central Asia and southeastern Europe",
+    "category": "Cardiovascular and Women Health",
+    "overview": "Motherwort is a perennial herb in the mint family whose name reflects its traditional use for uterine and heart conditions. It has been used in European and Chinese herbal medicine for centuries for heart palpitations, anxiety, and menstrual irregularities.",
+    "traditional": "Used in European folk medicine since the Middle Ages for heart palpitations, anxiety, and menstrual problems. In TCM, the related species Leonurus japonicus (yi mu cao) is a key herb for gynecological conditions.",
+    "active_compounds": "Iridoids (leonurine, leonuridine), alkaloids (stachydrine, betonicine), flavonoids (quercetin, rutin, hyperoside), and phenolic acids. Leonurine has demonstrated uterotonic and cardioprotective effects.",
+    "benefits": "May reduce heart palpitations and anxiety associated with hyperthyroidism. Uterotonic effects may help regulate menstrual cycles and reduce menstrual cramps. Some evidence for mild antihypertensive effects.",
+    "safety_info": "Avoid during pregnancy (strong uterotonic effects may cause miscarriage). Avoid with heavy menstrual bleeding. May interact with anticoagulants, cardiac medications, and sedatives. May cause photosensitivity.",
+    "references": [
+      "PMC6337770",
+      "WebMD-Motherwort-2024",
+      "NCCIH-Motherwort-2025"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "motherwort heart palpitations women supplement"
+  },
+  {
+    "id": "mullein",
+    "name": "Mullein",
+    "scientific": "Verbascum thapsus",
+    "plant_family": "Scrophulariaceae (Figwort family)",
+    "origin": "Native to Europe and Asia; naturalized in North America",
+    "category": "Respiratory Health",
+    "overview": "Mullein is a tall biennial plant with large, soft, woolly leaves and yellow flowers. It has been used for centuries as a respiratory herb, particularly for coughs, bronchitis, and lung conditions.",
+    "traditional": "Used in European folk medicine since ancient Greek times for respiratory conditions. Native Americans used it for coughs, colds, and asthma. The leaves were smoked or made into tea for lung conditions.",
+    "active_compounds": "Saponins (verbascosaponin), iridoid glycosides (aucubin, catalpol), mucilage, flavonoids (luteolin, apigenin), and phenylethanoid glycosides. Saponins have expectorant properties; mucilage soothes irritated tissues.",
+    "benefits": "May help loosen and expel mucus from the respiratory tract (expectorant). Soothes irritated throat and bronchial tissues. Mullein ear oil is traditionally used for ear infections. Anti-inflammatory and antimicrobial properties have been documented.",
+    "safety_info": "Generally safe for most adults. The fine hairs on leaves may irritate mucous membranes; strain tea thoroughly. Topical ear oil should not be used if eardrum is perforated. Avoid during pregnancy and breastfeeding.",
+    "references": [
+      "PMC7019735",
+      "NCCIH-Mullein-2025",
+      "WebMD-Mullein-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "mullein leaf respiratory lung support supplement"
+  },
+  {
+    "id": "nettle",
+    "name": "Stinging Nettle",
+    "scientific": "Urtica dioica",
+    "plant_family": "Urticaceae (Nettle family)",
+    "origin": "Native to Europe, Asia, and North America",
+    "category": "Allergy Relief and Nutritional Support",
+    "overview": "Stinging nettle is a perennial plant covered in tiny stinging hairs that inject irritating chemicals when touched. Despite this, it has been used medicinally for thousands of years and is highly nutritious, containing significant amounts of vitamins, minerals, and bioactive compounds.",
+    "traditional": "Used since ancient Egyptian times for arthritis and muscle pain. In European folk medicine, used for allergies, urinary conditions, and as a nutritive tonic. Native Americans used it for joint pain and as a food source.",
+    "active_compounds": "Lectins, polysaccharides, flavonoids (quercetin, kaempferol, rutin), phenolic acids, sterols (beta-sitosterol), and high levels of vitamins A, C, K, iron, calcium, and magnesium.",
+    "benefits": "Clinical evidence supports use for allergic rhinitis (hay fever) by inhibiting inflammatory pathways. May reduce symptoms of benign prostatic hyperplasia (BPH). Anti-inflammatory properties may help with arthritis. Highly nutritious; supports iron levels and overall nutrition.",
+    "safety_info": "Generally safe. Fresh plant causes stinging; cooking or drying neutralizes this. May interact with anticoagulants, diuretics, diabetes medications, and blood pressure drugs. Avoid during pregnancy.",
+    "references": [
+      "PMC6100552",
+      "NCCIH-Nettle-2025",
+      "PMC3917145"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "stinging nettle allergy prostate supplement"
+  },
+  {
+    "id": "passionflower",
+    "name": "Passionflower",
+    "scientific": "Passiflora incarnata",
+    "plant_family": "Passifloraceae (Passionflower family)",
+    "origin": "Native to the southeastern United States and Central and South America",
+    "category": "Anxiety and Sleep Support",
+    "overview": "Passionflower is a climbing vine with striking flowers that has been used medicinally by Native Americans and later adopted in European herbal medicine. It is primarily used for anxiety, insomnia, and nervous tension.",
+    "traditional": "Used by Native American tribes for boils, wounds, and earaches. Spanish explorers brought it to Europe in the 16th century, where it became popular for anxiety and insomnia. The German Commission E has approved it for nervous restlessness.",
+    "active_compounds": "Flavonoids (chrysin, vitexin, isovitexin, orientin), maltol, and gamma-aminobutyric acid (GABA). Chrysin has demonstrated anxiolytic effects by binding to GABA-A receptors.",
+    "benefits": "Clinical trials show significant reduction in anxiety symptoms comparable to low-dose oxazepam in some studies. May improve sleep quality and reduce insomnia. May help with opioid withdrawal symptoms.",
+    "safety_info": "Generally safe for short-term use (up to 8 weeks). May cause drowsiness, dizziness, and confusion. Avoid with alcohol and other sedatives. Avoid during pregnancy (may stimulate uterine contractions). May interact with anticoagulants, MAOIs, and sedative medications.",
+    "references": [
+      "PMC3659033",
+      "NCCIH-Passionflower-2025",
+      "PMC6313445"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "passionflower anxiety sleep supplement capsules"
+  },
+  {
+    "id": "rhodiola",
+    "name": "Rhodiola",
+    "scientific": "Rhodiola rosea",
+    "plant_family": "Crassulaceae (Stonecrop family)",
+    "origin": "Native to the Arctic regions of Europe, Asia, and North America",
+    "category": "Adaptogen and Energy",
+    "overview": "Rhodiola rosea, also known as golden root or arctic root, is a succulent plant that grows in cold, mountainous regions. It is classified as an adaptogen and has been used in Scandinavian and Russian traditional medicine for centuries to combat fatigue and enhance physical performance.",
+    "traditional": "Used by Vikings to enhance physical endurance and mental performance. In traditional Russian and Scandinavian medicine, used for fatigue, depression, and altitude sickness. Studied extensively by Soviet scientists during the Cold War as a performance enhancer.",
+    "active_compounds": "Rosavins (rosavin, rosin, rosarin) and salidroside (rhodioloside) are the primary bioactive compounds. Salidroside has demonstrated neuroprotective and adaptogenic effects.",
+    "benefits": "Clinical evidence supports reduction of mental and physical fatigue, improved cognitive performance under stress, and reduced burnout symptoms. May improve exercise performance and recovery. Some evidence for antidepressant effects and reduction of anxiety.",
+    "safety_info": "Generally safe and well-tolerated. May cause mild side effects including dizziness, dry mouth, and vivid dreams. Avoid during pregnancy and breastfeeding. May interact with antidepressants (SSRIs, MAOIs), stimulants, and diabetes medications.",
+    "references": [
+      "PMC6208354",
+      "NCCIH-Rhodiola-2025",
+      "PMC3541197"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "rhodiola rosea adaptogen energy fatigue supplement"
+  },
+  {
+    "id": "saw-palmetto",
+    "name": "Saw Palmetto",
+    "scientific": "Serenoa repens",
+    "plant_family": "Arecaceae (Palm family)",
+    "origin": "Native to the southeastern United States",
+    "category": "Prostate and Men Health",
+    "overview": "Saw palmetto is a small palm tree native to the southeastern United States whose berries have been used medicinally for centuries. It is one of the most commonly used herbal supplements for men health, particularly for benign prostatic hyperplasia (BPH).",
+    "traditional": "Used by Native American tribes of the southeastern US for food and medicine, including urinary and reproductive conditions. Adopted by European settlers and later became a popular remedy for prostate conditions in the late 19th century.",
+    "active_compounds": "Fatty acids (lauric, oleic, myristic acids), phytosterols (beta-sitosterol), flavonoids, and polysaccharides. The lipid-sterolic extract inhibits 5-alpha-reductase, reducing conversion of testosterone to DHT.",
+    "benefits": "May reduce urinary symptoms associated with BPH (frequent urination, weak stream, nocturia). Some evidence for reducing hair loss by inhibiting DHT. May have anti-inflammatory effects. Clinical evidence is mixed; some large trials show no benefit over placebo for BPH.",
+    "safety_info": "Generally safe and well-tolerated. May cause mild gastrointestinal side effects. May interact with anticoagulants and hormone therapies. May affect PSA test results (important for prostate cancer screening). Avoid during pregnancy and breastfeeding.",
+    "references": [
+      "PMC3589769",
+      "NCCIH-SawPalmetto-2025",
+      "Cochrane-SawPalmetto-2012"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "saw palmetto prostate health men supplement"
+  },
+  {
+    "id": "schisandra",
+    "name": "Schisandra",
+    "scientific": "Schisandra chinensis",
+    "plant_family": "Schisandraceae (Schisandra family)",
+    "origin": "Native to northeastern China, Russia, and Korea",
+    "category": "Adaptogen and Liver Support",
+    "overview": "Schisandra, known as wu wei zi (five-flavor berry) in Chinese, is a woody vine whose berries are unique in possessing all five basic flavors: sweet, sour, salty, bitter, and pungent. It is a revered adaptogen in Traditional Chinese Medicine.",
+    "traditional": "Used in TCM for over 2,000 years as a tonic for the five yin organs (heart, liver, spleen, lungs, kidneys). Traditionally used for fatigue, liver conditions, respiratory issues, and as a general longevity tonic.",
+    "active_compounds": "Lignans (schisandrin A, B, C; gomisin A, N), schisandrol, and various organic acids. Schisandrin B has demonstrated hepatoprotective and adaptogenic effects.",
+    "benefits": "May improve liver function and protect against liver damage (hepatoprotective). Adaptogenic effects reduce fatigue and improve mental performance under stress. May enhance athletic performance and recovery.",
+    "safety_info": "Generally safe for most adults. May cause heartburn, stomach upset, or skin rash. Avoid during pregnancy (may stimulate uterine contractions). May interact with medications metabolized by CYP3A4 enzymes including some statins and immunosuppressants.",
+    "references": [
+      "PMC6240259",
+      "NCCIH-Schisandra-2025",
+      "PMC4220502"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "schisandra berry adaptogen liver supplement"
+  },
+  {
+    "id": "skullcap",
+    "name": "Skullcap",
+    "scientific": "Scutellaria lateriflora",
+    "plant_family": "Lamiaceae (Mint family)",
+    "origin": "Native to North America",
+    "category": "Nervine and Anxiety Relief",
+    "overview": "American skullcap is a perennial herb in the mint family that has been used by Native Americans and later in Western herbal medicine as a nervine tonic for anxiety, insomnia, and nervous tension.",
+    "traditional": "Used by Native American tribes including the Cherokee for nervous conditions, menstrual irregularities, and as a ceremonial herb. Adopted by 19th century American herbalists as a primary nervine for anxiety, hysteria, and epilepsy.",
+    "active_compounds": "Flavonoids (baicalin, baicalein, scutellarein, wogonin), iridoids, and tannins. Baicalin has demonstrated anxiolytic effects by modulating GABA-A receptors.",
+    "benefits": "May reduce anxiety and nervous tension without causing significant sedation. Some evidence for improved mood and cognitive performance. Anti-inflammatory and antioxidant properties. May also have neuroprotective effects.",
+    "safety_info": "Generally safe for short-term use. May cause drowsiness; avoid with alcohol and sedatives. Avoid during pregnancy and breastfeeding. Some commercial products have been adulterated with germander (hepatotoxic); purchase from reputable sources.",
+    "references": [
+      "PMC3870104",
+      "NCCIH-Skullcap-2025",
+      "WebMD-Skullcap-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "skullcap nervine anxiety supplement"
+  },
+  {
+    "id": "slippery-elm",
+    "name": "Slippery Elm",
+    "scientific": "Ulmus rubra",
+    "plant_family": "Ulmaceae (Elm family)",
+    "origin": "Native to eastern North America",
+    "category": "Digestive and Throat Soothing",
+    "overview": "Slippery elm is a tree native to eastern North America whose inner bark contains a mucilaginous substance that has been used medicinally for centuries. It is particularly valued for soothing irritated mucous membranes in the digestive tract and throat.",
+    "traditional": "Used by Native American tribes including the Cherokee, Iroquois, and Ojibwe for sore throats, coughs, digestive issues, and wound healing. Adopted by early American settlers and later became a popular remedy for gastrointestinal conditions.",
+    "active_compounds": "Mucilage (a complex mixture of polysaccharides including hexoses, pentoses, and methylpentoses), tannins, and various antioxidants. The mucilage forms a soothing gel when mixed with water.",
+    "benefits": "Soothes irritated mucous membranes in the throat, esophagus, and digestive tract. May relieve symptoms of GERD, gastritis, IBS, and inflammatory bowel disease. Traditionally used for sore throats and coughs. May also have mild antioxidant and anti-inflammatory properties.",
+    "safety_info": "Generally very safe with minimal side effects. May slow absorption of oral medications; take 1-2 hours apart from other drugs. Avoid during pregnancy (insufficient safety data). May cause allergic reactions in people sensitive to elm trees.",
+    "references": [
+      "PMC5637098",
+      "NCCIH-SlipperyElm-2025",
+      "WebMD-SlipperyElm-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "slippery elm bark digestive supplement"
+  },
+  {
+    "id": "tribulus",
+    "name": "Tribulus",
+    "scientific": "Tribulus terrestris",
+    "plant_family": "Zygophyllaceae (Caltrop family)",
+    "origin": "Native to warm temperate and tropical regions of Europe, Asia, Africa, and Australia",
+    "category": "Athletic Performance and Men Health",
+    "overview": "Tribulus terrestris is a flowering plant that has been used in traditional medicine across multiple cultures for centuries. It is widely marketed as a natural testosterone booster and athletic performance enhancer, though clinical evidence is mixed.",
+    "traditional": "Used in Ayurvedic medicine as a rasayana (rejuvenating tonic) for urinary conditions, sexual dysfunction, and as a general tonic. In TCM, used for liver conditions, cardiovascular health, and as an aphrodisiac. Also used in traditional Bulgarian and Greek medicine.",
+    "active_compounds": "Steroidal saponins (protodioscin, protogracillin, dioscin), flavonoids, alkaloids, and phytosterols. Protodioscin is considered the primary active compound.",
+    "benefits": "May improve sexual function and libido in men with sexual dysfunction. Some evidence for mild testosterone-supporting effects. May improve exercise performance and recovery in some populations. Traditional use for urinary tract conditions and kidney stones.",
+    "safety_info": "Generally safe for short-term use. May cause mild gastrointestinal side effects. Avoid during pregnancy and breastfeeding. May interact with diabetes medications, blood pressure drugs, and lithium. Avoid with hormone-sensitive conditions. High doses may cause liver or kidney toxicity.",
+    "references": [
+      "PMC5503856",
+      "NCCIH-Tribulus-2025",
+      "WebMD-Tribulus-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "tribulus terrestris testosterone supplement"
+  },
+  {
+    "id": "white-willow-bark",
+    "name": "White Willow Bark",
+    "scientific": "Salix alba",
+    "plant_family": "Salicaceae (Willow family)",
+    "origin": "Native to Europe and central Asia",
+    "category": "Pain Relief and Anti-inflammatory",
+    "overview": "White willow bark is derived from the bark of the white willow tree and has been used as a natural pain reliever for thousands of years. It contains salicin, the natural precursor to aspirin, and is often called nature aspirin.",
+    "traditional": "Used in ancient Egypt, Greece, and Rome for pain and fever. Hippocrates prescribed willow bark tea for fever and pain. The isolation of salicin from willow bark in the 19th century led to the development of aspirin (acetylsalicylic acid).",
+    "active_compounds": "Salicin (converted to salicylic acid in the body), salicortin, tremulacin, and various flavonoids and polyphenols. Salicin has anti-inflammatory and analgesic effects similar to aspirin but with slower onset and longer duration.",
+    "benefits": "Clinical evidence supports use for low back pain, osteoarthritis, and headaches. May reduce fever and inflammation. Slower onset than aspirin but potentially longer-lasting effects. May also have antioxidant and antimicrobial properties.",
+    "safety_info": "Avoid if allergic to aspirin or salicylates. May cause gastrointestinal irritation; take with food. Avoid during pregnancy and breastfeeding. May interact with anticoagulants, NSAIDs, and methotrexate. Avoid in children with viral infections (risk of Reye syndrome). May interact with diabetes medications.",
+    "references": [
+      "PMC3616189",
+      "NCCIH-WillowBark-2025",
+      "MayoClinic-WillowBark-2024"
+    ],
+    "date_published": "2026-07-02",
+    "amazon_search_term": "white willow bark pain relief supplement"
   }
 ]
