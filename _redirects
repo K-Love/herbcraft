@@ -2,4 +2,6 @@
 /herbs/*            /herbs/index.html   200
 /safety-finder      /safety-notes       301!
 /safety-finder.html /safety-notes       301!
+/quiz               /quiz/index.html    200
+/interaction-checker  /interaction-checker/index.html  200
 /*.html             /:splat             301!
