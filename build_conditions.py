@@ -33,7 +33,7 @@ HERBS_JSON = REPO_DIR / "herbs.json"
 TEMPLATE_HTML = REPO_DIR / "conditions" / "template.html"
 CONDITIONS_DIR = REPO_DIR / "conditions"
 
-AMAZON_TAG = "YOURTAG-20"  # Replace with real Associates tag when available
+AMAZON_TAG = "herbcraft0a-20"  # Replace with real Associates tag when available
 
 # Herb emoji icons for cards
 HERB_ICONS = {

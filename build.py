@@ -32,7 +32,7 @@ HERBS_JSON = REPO_DIR / "herbs.json"
 TEMPLATE_HTML = REPO_DIR / "herb-template.html"
 HERBS_DIR = REPO_DIR / "herbs"
 
-AMAZON_TAG = "YOURTAG-20"  # Replace with real Associates tag when available
+AMAZON_TAG = "herbcraft0a-20"  # Replace with real Associates tag when available
 
 
 # ---------------------------------------------------------------------------
