@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="discovery-page">
     <div id="site-banner">
         <p><strong>For Educational Purposes Only.</strong> The information on herbcraft.app is aggregated from public sources and is not medical advice. It is not intended to diagnose, treat, cure, or prevent any disease. <strong>Always consult a qualified healthcare professional before making any decisions about your health.</strong></p>
     </div>
@@ -53,11 +53,11 @@
 
         <section class="search-section">
             <div class="search-section__container">
-                <div class="search-bar">
-                    <input type="text" id="herb-search-input" class="search-bar__input" placeholder="Search herbs..." aria-label="Search herbs" autocomplete="off">
+                <form class="search-bar" role="search" action="/herb-directory" method="get">
+                    <input type="search" name="search" id="herb-search-input" class="search-bar__input" placeholder="Search herbs..." aria-label="Search herbs" autocomplete="off">
                     <div id="search-dropdown" class="search-dropdown" hidden></div>
-                    <a href="herb-directory.html" class="search-bar__button">Search Herbs</a>
-                </div>
+                    <button type="submit" class="search-bar__button">Search Herbs</button>
+                </form>
             </div>
         </section>
 
@@ -151,6 +151,7 @@
         </div>
     </footer>
 
+    <script src="/herb-search-index.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

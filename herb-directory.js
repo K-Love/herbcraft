@@ -1,95 +1,55 @@
-const herbs = [
-    { name: 'Ashwagandha', url: '../herbs/ashwagandha' },
-    { name: 'Basil', url: '../herbs/basil' },
-    { name: 'Calendula', url: '../herbs/calendula' },
-    { name: 'Chamomile', url: '../herbs/chamomile' },
-    { name: 'Cinnamon', url: '../herbs/cinnamon' },
-    { name: 'Dandelion', url: '../herbs/dandelion' },
-    { name: 'Echinacea', url: '../herbs/echinacea' },
-    { name: 'Elderberry', url: '../herbs/elderberry' },
-    { name: 'Fennel', url: '../herbs/fennel' },
-    { name: 'Garlic', url: '../herbs/garlic' },
-    { name: 'Ginger', url: '../herbs/ginger' },
-    { name: 'Ginkgo', url: '../herbs/ginkgo' },
-    { name: 'Ginseng', url: '../herbs/ginseng' },
-    { name: 'Lavender', url: '../herbs/lavender' },
-    { name: 'Lemon Balm', url: '../herbs/lemon-balm' },
-    { name: 'Licorice', url: '../herbs/licorice' },
-    { name: 'Peppermint', url: '../herbs/peppermint' },
-    { name: 'Rosemary', url: '../herbs/rosemary' },
-    { name: 'Sage', url: '../herbs/sage' },
-    { name: 'Turmeric', url: '../herbs/turmeric' }
-];
+// Progressive enhancement: the complete directory remains usable without JavaScript.
+(() => {
+    document.addEventListener('DOMContentLoaded', () => {
+        const grid = document.getElementById('herb-grid');
+        if (!grid) return;
+        const cards = Array.from(grid.querySelectorAll('.herb-card'));
+        const input = document.getElementById('directory-search');
+        const form = document.getElementById('directory-search-form');
+        const status = document.getElementById('search-results-message');
+        const empty = document.getElementById('directory-empty');
+        const buttons = document.querySelectorAll('.az-filter__button');
+        const clear = document.getElementById('directory-clear');
+        let letter = '';
+        const normalize = value => value.trim().toLocaleLowerCase().replace(/[’']/g, '');
+        input.value = new URLSearchParams(window.location.search).get('search') || '';
 
-function getSearchQuery() {
-    var params = new URLSearchParams(window.location.search);
-    return params.get('search') || '';
-}
-
-function renderHerbs(filterLetter, searchQuery) {
-    var grid = document.getElementById('herb-grid');
-    var template = document.getElementById('herb-card-template');
-    var resultsMsg = document.getElementById('search-results-message');
-
-    grid.innerHTML = '';
-
-    var filteredHerbs = herbs;
-
-    if (searchQuery) {
-        var q = searchQuery.toLowerCase();
-        filteredHerbs = filteredHerbs.filter(function(herb) {
-            return herb.name.toLowerCase().includes(q);
-        });
-    }
-
-    if (filterLetter) {
-        filteredHerbs = filteredHerbs.filter(function(herb) {
-            return herb.name.charAt(0).toUpperCase() === filterLetter.toUpperCase();
-        });
-    }
-
-    if (resultsMsg) {
-        if (searchQuery) {
-            resultsMsg.textContent = filteredHerbs.length + ' result' + (filteredHerbs.length !== 1 ? 's' : '') + " found for '" + searchQuery + "'";
-            resultsMsg.hidden = false;
-        } else {
-            resultsMsg.textContent = '';
-            resultsMsg.hidden = true;
+        function render() {
+            const query = normalize(input.value);
+            let count = 0;
+            cards.forEach(card => {
+                const name = card.dataset.name;
+                const matchesQuery = normalize(name + ' ' + card.dataset.scientific).includes(query);
+                card.hidden = !matchesQuery || (letter !== '' && !name.toUpperCase().startsWith(letter));
+                if (!card.hidden) count++;
+            });
+            // Query text must never be interpreted as HTML.
+            status.textContent = count + ' herb profile' + (count === 1 ? '' : 's') +
+                (query ? ' matching “' + input.value.trim() + '”' : '') +
+                (letter ? ' beginning with ' + letter : '');
+            empty.hidden = count !== 0;
+            clear.hidden = !query && !letter;
+            buttons.forEach(button => {
+                const active = button.dataset.letter === letter;
+                button.classList.toggle('active', active);
+                button.setAttribute('aria-pressed', String(active));
+            });
         }
-    }
-
-    filteredHerbs.forEach(function(herb) {
-        var card = template.content.cloneNode(true);
-        var link = card.querySelector('.herb-card');
-        var name = card.querySelector('.herb-card__name');
-
-        link.href = herb.url;
-        name.textContent = herb.name;
-
-        grid.appendChild(card);
-    });
-
-    if (filteredHerbs.length === 0) {
-        var msg = searchQuery
-            ? "No herbs found matching '" + searchQuery + "'"
-            : 'No herbs found starting with "' + filterLetter + '"';
-        grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--secondary-text); padding: var(--spacing-xl);">' + msg + '</p>';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    var filterButtons = document.querySelectorAll('.az-filter__button');
-    var searchQuery = getSearchQuery();
-    var activeFilter = '';
-
-    filterButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            filterButtons.forEach(function(btn) { btn.classList.remove('active'); });
-            this.classList.add('active');
-            activeFilter = this.getAttribute('data-letter');
-            renderHerbs(activeFilter, searchQuery);
+        function saveQuery() {
+            const url = new URL(window.location.href);
+            if (input.value.trim()) url.searchParams.set('search', input.value.trim());
+            else url.searchParams.delete('search');
+            window.history.replaceState(null, '', url);
+        }
+        input.addEventListener('input', () => { render(); saveQuery(); });
+        form.addEventListener('submit', event => { event.preventDefault(); render(); saveQuery(); });
+        buttons.forEach(button => button.addEventListener('click', () => {
+            letter = button.dataset.letter;
+            render();
+        }));
+        clear.addEventListener('click', () => {
+            input.value = ''; letter = ''; render(); saveQuery(); input.focus();
         });
+        render();
     });
-
-    renderHerbs(activeFilter, searchQuery);
-});
+})();
