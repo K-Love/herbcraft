@@ -14,3 +14,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_*.py' -v
       - name: Check generated output is up to date
         run: python3 build.py --check
+      - name: Test legacy bookmark redirects
+        run: node tests/test_legacy_redirect.js
