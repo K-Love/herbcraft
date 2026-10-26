@@ -45,13 +45,13 @@ class ProfileBuildTests(unittest.TestCase):
                 for field in build.REQUIRED_FIELDS[1:]: self.assertIn(herb[field], text)
                 self.assertEqual(len(page.scripts), 1)
                 self.assertEqual(sum(tag == 'h1' for tag, attrs in page.tags), 1)
-                self.assertIn('Source review pending.', text)
+                self.assertIn('Sources checked' if build.is_checked(herb) else 'Source review pending.', text)
                 self.assertNotIn('Author A.', text)
                 self.assertNotIn('Recommended Products', text)
                 article = next(x for x in page.scripts[0] if x['@type'] == 'Article')
-                self.assertNotIn('citation', article)
+                self.assertEqual('citation' in article, build.is_checked(herb))
                 self.assertNotIn('logo', article['publisher'])
-                self.assertNotIn('dateModified', article)
+                self.assertEqual(article.get('dateModified'), herb.get('date_modified'))
                 self.assertEqual(article['datePublished'], herb['date_published'])
 
     def test_html_and_json_are_escaped_in_every_context(self):
@@ -99,6 +99,7 @@ class ProfileBuildTests(unittest.TestCase):
 
     def fixture(self, root, herbs):
         (root/'build.py').write_text((ROOT/'build.py').read_text())
+        (root/'source_support.py').write_text((ROOT/'source_support.py').read_text())
         (root/'herb-template.html').write_text(self.template)
         (root/'herbs.json').write_text(json.dumps(herbs))
         (root/'herbs').mkdir()
