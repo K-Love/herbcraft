@@ -1,12 +1,15 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/herbs/:slug", "destination": "/herbs/index.html" }
-  ],
   "redirects": [
     {
       "source": "/herb-detail.html",
-      "has": [{ "type": "query", "key": "herb", "value": "(?<slug>.*)" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "herb",
+          "value": "(?<slug>[a-z0-9]+(?:-[a-z0-9]+)*)"
+        }
+      ],
       "destination": "/herbs/:slug",
       "statusCode": 301
     }
