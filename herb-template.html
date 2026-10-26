@@ -83,37 +83,37 @@
                     <dl class="key-facts-box__grid">
                         <div class="key-facts-box__item">
                             <dt>Scientific Name</dt>
-                            <dd><em>{{FACT_SCIENTIFIC_NAME}}</em></dd>
+                            <dd><em>{{FACT_SCIENTIFIC_NAME}}</em>{{FACT_SCIENTIFIC_NAME_CITATIONS}}</dd>
                         </div>
                         <div class="key-facts-box__item">
                             <dt>Plant Family</dt>
-                            <dd>{{FACT_PLANT_FAMILY}}</dd>
+                            <dd>{{FACT_PLANT_FAMILY}}{{FACT_PLANT_FAMILY_CITATIONS}}</dd>
                         </div>
                         <div class="key-facts-box__item">
                             <dt>Origin</dt>
-                            <dd>{{FACT_ORIGIN}}</dd>
+                            <dd>{{FACT_ORIGIN}}{{FACT_ORIGIN_CITATIONS}}</dd>
                         </div>
                         <div class="key-facts-box__item">
                             <dt>Primary Use</dt>
-                            <dd>{{FACT_PRIMARY_USE}}</dd>
+                            <dd>{{FACT_PRIMARY_USE}}{{FACT_PRIMARY_USE_CITATIONS}}</dd>
                         </div>
                     </dl>
                 </div>
 
                 <section class="herb-content">
                     <aside class="page-warning" aria-label="Source review status">
-                        <strong>Source review pending.</strong> This summary uses the existing HerbCraft dataset. Its source records have not yet been verified against individual claims. Do not use it to make treatment or supplement decisions.
+                        <strong>{{REVIEW_TITLE}}</strong> {{REVIEW_TEXT}}
                     </aside>
                     <h2>Overview</h2>
-                    <p>{{OVERVIEW}}</p>
+                    <p>{{OVERVIEW}}{{OVERVIEW_CITATIONS}}</p>
                     <h2>Traditional Uses</h2>
-                    <p>{{TRADITIONAL}}</p>
-                    <h2>Active Compounds</h2>
-                    <p>{{ACTIVE_COMPOUNDS}}</p>
-                    <h2>Potential Benefits — Unverified Summary</h2>
-                    <p>{{BENEFITS}}</p>
+                    <p>{{TRADITIONAL}}{{TRADITIONAL_CITATIONS}}</p>
+                    <h2>{{PREPARATION_HEADING}}</h2>
+                    <p>{{ACTIVE_COMPOUNDS}}{{ACTIVE_COMPOUNDS_CITATIONS}}</p>
+                    <h2>{{BENEFITS_HEADING}}</h2>
+                    <p>{{BENEFITS}}{{BENEFITS_CITATIONS}}</p>
                     <h2>Safety &amp; Side Effects</h2>
-                    <p>{{SAFETY_INFO}}</p>
+                    <p>{{SAFETY_INFO}}{{SAFETY_INFO_CITATIONS}}</p>
 
                     <div class="when-to-see-doctor">
                         <h3>When to See a Doctor</h3>
@@ -136,15 +136,15 @@
                     </div>
                 </section>
 
-                <!-- FAQ Section -->
+{{GROWING_HTML}}                <!-- FAQ Section -->
                 <section class="faq-section" aria-label="Frequently asked questions">
                     <h2>Frequently Asked Questions</h2>
                     {{FAQ_HTML}}
                 </section>
 
                 <section class="references-section">
-                    <h2>Source Records — Verification Pending</h2>
-                    <p>These identifiers were recorded in the original dataset. They are not complete citations or evidence that the claims above have been checked.</p>
+                    <h2>{{REFERENCES_HEADING}}</h2>
+                    <p>{{REFERENCES_NOTE}}</p>
                     {{REFERENCES_HTML}}
                 </section>
             </div>

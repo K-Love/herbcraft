@@ -19,6 +19,7 @@ import re
 from html import escape
 from datetime import date
 from pathlib import Path
+from source_support import is_checked, validate_sources, citations, references
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -62,7 +63,7 @@ def build_faq_schema(herb: dict) -> dict:
             },
             {
                 "@type": "Question",
-                "name": f"What are the active compounds in {name}?",
+                "name": (f"Why does preparation matter for {name}?" if is_checked(herb) else f"What are the active compounds in {name}?"),
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": herb["active_compounds"],
@@ -163,6 +164,8 @@ def build_article_schema(herb: dict) -> dict:
     for field, key in (("date_published", "datePublished"), ("date_modified", "dateModified")):
         if herb.get(field):
             article[key] = herb[field]
+    if is_checked(herb):
+        article["citation"] = [{"@type": "WebPage", "name": source["title"], "url": source["url"]} for source in herb["sources"]]
     return article
 
 
@@ -190,12 +193,14 @@ def generate_faq_html(herb: dict) -> str:
             for item in build_faq_schema(herb)["mainEntity"]]
 
     items_html = []
-    for question, answer in faqs:
+    for i, (question, answer) in enumerate(faqs):
+        field = ("benefits", "safety_info", "active_compounds", "scientific", "traditional", None)[i]
+        source_links = citations(herb, field) if field else ""
         items_html.append(
             f'                    <details class="faq-item">\n'
             f'                        <summary class="faq-item__question">{escape(question)}</summary>\n'
             f'                        <div class="faq-item__answer">\n'
-            f'                            <p>{escape(answer)}</p>\n'
+            f'                            <p>{escape(answer)}{source_links}</p>\n'
             f'                        </div>\n'
             f'                    </details>'
         )
@@ -245,6 +250,7 @@ def validate_page(html):
 def generate_herb_page(herb: dict, template: str) -> str:
     """Render plain-text data safely. Existing source identifiers are not verified citations."""
     validate_herb(herb)
+    validate_sources(herb)
     fields = {
         "HERB_ID": herb["id"], "HERB_NAME": herb["name"],
         "META_DESCRIPTION": f"{herb['name']} ({herb['scientific']}) — educational information on traditional uses, compounds and safety. Source review pending; not medical advice.",
@@ -265,6 +271,32 @@ def generate_herb_page(herb: dict, template: str) -> str:
             "".join("<li>" + escape(ref) + "</li>" for ref in refs) + "</ul>"
             if refs else "<p>No source records have been added for this profile.</p>"),
     })
+    for token, field in (("OVERVIEW", "overview"), ("TRADITIONAL", "traditional"),
+                         ("ACTIVE_COMPOUNDS", "active_compounds"), ("BENEFITS", "benefits"),
+                         ("SAFETY_INFO", "safety_info"), ("FACT_SCIENTIFIC_NAME", "scientific"),
+                         ("FACT_PLANT_FAMILY", "plant_family"), ("FACT_ORIGIN", "origin"), ("FACT_PRIMARY_USE", "category")):
+        replacements[token + "_CITATIONS"] = citations(herb, field)
+    replacements.update({
+        "REVIEW_TITLE": "Source review pending.",
+        "REVIEW_TEXT": "This summary uses the existing HerbCraft dataset. Its source records have not yet been verified against individual claims. Do not use it to make treatment or supplement decisions.",
+        "BENEFITS_HEADING": "Potential Benefits — Unverified Summary",
+        "PREPARATION_HEADING": "Active Compounds",
+        "REFERENCES_HEADING": "Source Records — Verification Pending",
+        "REFERENCES_NOTE": "These identifiers were recorded in the original dataset. They are not complete citations or evidence that the claims above have been checked.",
+        "GROWING_HTML": "",
+    })
+    if is_checked(herb):
+        replacements.update({
+            "REVIEW_TITLE": "Sources checked " + escape(herb["source_check"]["checked_on"]) + ".",
+            "REVIEW_TEXT": escape(herb["source_check"]["method"]) + " Evidence limitations and preparation differences are retained. This is not personal medical advice.",
+            "BENEFITS_HEADING": "What the Evidence Says",
+            "PREPARATION_HEADING": "Preparation Matters",
+            "REFERENCES_HEADING": "Sources and Further Reading",
+            "REFERENCES_NOTE": "Numbered links identify sources for each section. This is a focused educational summary, not a systematic review or an endorsement by the source organizations.",
+            "REFERENCES_HTML": references(herb),
+            "META_DESCRIPTION": escape(f"{herb['name']} ({herb['scientific']}): sourced information on growing, traditional uses, research limitations and safety. Not medical advice.", quote=True),
+            "GROWING_HTML": '<section class="herb-content"><h2>Growing Notes</h2><p>' + escape(herb["growing_notes"]) + citations(herb,"growing_notes") + '</p></section>\n',
+        })
     # Single pass: tokens in user-authored data are never interpreted as template code.
     html = re.sub(r"\{\{([A-Z_]+)\}\}",
                   lambda match: replacements.get(match[1], match[0]), template)
@@ -333,7 +365,7 @@ def main():
         return
     for slug, html in pages:
         (HERBS_DIR / f"{slug}.html").write_text(html, encoding="utf-8")
-    print(f"Built {len(pages)} profiles. Source verification remains pending.")
+    print(f"Built {len(pages)} profiles. See each profile for its source-check status.")
 
 
 if __name__ == "__main__":
