@@ -13,10 +13,10 @@ The script is idempotent — safe to run multiple times.
 """
 
 import json
-import os
 import sys
 import argparse
-import urllib.parse
+import re
+from html import escape
 from datetime import date
 from pathlib import Path
 
@@ -25,41 +25,17 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 BASE_URL = "https://herbcraft.app"
-TODAY = date.today().isoformat()  # YYYY-MM-DD
 
 REPO_DIR = Path(__file__).parent
 HERBS_JSON = REPO_DIR / "herbs.json"
 TEMPLATE_HTML = REPO_DIR / "herb-template.html"
 HERBS_DIR = REPO_DIR / "herbs"
 
-AMAZON_TAG = "herbcraft0a-20"  # Replace with real Associates tag when available
 
 
 # ---------------------------------------------------------------------------
 # Schema generation (Python port of components/schema.js)
 # ---------------------------------------------------------------------------
-
-def build_medical_entity_schema(herb: dict) -> dict:
-    """MedicalEntity schema for the herb."""
-    return {
-        "@context": "https://schema.org",
-        "@type": "MedicalEntity",
-        "name": herb["name"],
-        "alternateName": herb["scientific"],
-        "description": herb["overview"],
-        "medicineSystem": {
-            "@type": "MedicineSystem",
-            "name": "Traditional Medicine",
-        },
-        "relevantSpecialty": {
-            "@type": "MedicalSpecialty",
-            "name": "Herbal Medicine",
-        },
-        "activeIngredient": herb["active_compounds"],
-        "warning": herb["safety_info"],
-        "url": f"{BASE_URL}/herbs/{herb['id']}.html",
-    }
-
 
 def build_faq_schema(herb: dict) -> dict:
     """FAQPage schema with 6 standard Q&As derived from herb data."""
@@ -157,38 +133,26 @@ def build_breadcrumb_schema(herb: dict) -> dict:
 
 
 def build_article_schema(herb: dict) -> dict:
-    """Article schema with author, publisher, and citation list."""
-    citations = [
-        {"@type": "CreativeWork", "name": ref}
-        for ref in (herb.get("references") or [])
-    ]
-    date_published = herb.get("date_published", TODAY)
-    return {
+    """Article schema with recorded dates; unverified source IDs are not citations."""
+    article = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": f"{herb['name']} ({herb['scientific']}): Uses, Benefits & Safety",
         "description": herb["overview"],
         "author": {
             "@type": "Organization",
-            "name": "HerbCraft Editorial Team",
+            "name": "HerbCraft",
             "url": f"{BASE_URL}/about/",
         },
         "publisher": {
             "@type": "Organization",
             "name": "HerbCraft",
             "url": BASE_URL,
-            "logo": {
-                "@type": "ImageObject",
-                "url": f"{BASE_URL}/assets/logo.png",
-            },
         },
-        "datePublished": date_published,
-        "dateModified": TODAY,
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": f"{BASE_URL}/herbs/{herb['id']}.html",
         },
-        "citation": citations,
         "about": {
             "@type": "MedicalEntity",
             "name": herb["name"],
@@ -196,16 +160,20 @@ def build_article_schema(herb: dict) -> dict:
         },
     }
 
+    for field, key in (("date_published", "datePublished"), ("date_modified", "dateModified")):
+        if herb.get(field):
+            article[key] = herb[field]
+    return article
+
 
 def generate_schema_json(herb: dict) -> str:
-    """Generate the full JSON-LD array for a herb (all 4 schemas)."""
+    """Generate the full JSON-LD array for a herb (article, FAQ and breadcrumb schemas)."""
     schemas = [
-        build_medical_entity_schema(herb),
         build_faq_schema(herb),
         build_breadcrumb_schema(herb),
         build_article_schema(herb),
     ]
-    return json.dumps(schemas, indent=2, ensure_ascii=False)
+    return json.dumps(schemas, indent=2, ensure_ascii=False).replace("<", "\\u003c")
 
 
 # ---------------------------------------------------------------------------
@@ -217,50 +185,17 @@ def generate_faq_html(herb: dict) -> str:
     Generate the FAQ section HTML using <details>/<summary> pattern.
     Returns the inner HTML for the {{FAQ_HTML}} placeholder.
     """
-    name = herb["name"]
-
-    # Build the same 6 Q&As as the schema
-    faqs = [
-        (
-            f"What is {name} used for?",
-            herb["benefits"],
-        ),
-        (
-            f"Is {name} safe?",
-            herb["safety_info"],
-        ),
-        (
-            f"What are the active compounds in {name}?",
-            herb["active_compounds"],
-        ),
-        (
-            f"What is the scientific name of {name}?",
-            f"The scientific name of {name} is <em>{herb['scientific']}</em>.",
-        ),
-        (
-            f"What are the traditional uses of {name}?",
-            herb["traditional"],
-        ),
-        (
-            f"When should I see a doctor when using {name}?",
-            (
-                f"Always consult a qualified healthcare professional before using {name} "
-                "or any herbal supplement, especially if you are pregnant, nursing, taking "
-                "prescription medications, have a chronic health condition, or are scheduled "
-                "for surgery. Seek immediate medical attention if you experience severe "
-                "allergic reactions, chest pain, irregular heartbeat, severe digestive issues, "
-                "or any symptoms that worsen or do not improve."
-            ),
-        ),
-    ]
+    # Derive visible answers and structured data from exactly the same content.
+    faqs = [(item["name"], item["acceptedAnswer"]["text"])
+            for item in build_faq_schema(herb)["mainEntity"]]
 
     items_html = []
     for question, answer in faqs:
         items_html.append(
             f'                    <details class="faq-item">\n'
-            f'                        <summary class="faq-item__question">{question}</summary>\n'
+            f'                        <summary class="faq-item__question">{escape(question)}</summary>\n'
             f'                        <div class="faq-item__answer">\n'
-            f'                            <p>{answer}</p>\n'
+            f'                            <p>{escape(answer)}</p>\n'
             f'                        </div>\n'
             f'                    </details>'
         )
@@ -269,81 +204,71 @@ def generate_faq_html(herb: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Product cards generation
+# Profile validation and rendering
 # ---------------------------------------------------------------------------
 
-def generate_product_cards(herb: dict) -> str:
-    """
-    Generate 2 placeholder product cards with Amazon affiliate links.
-    Uses AMAZON_ASIN_PLACEHOLDER comments for future ASIN injection.
-    """
-    search_term = herb.get("amazon_search_term", f"{herb['name']} supplement")
-    encoded_term = urllib.parse.quote(search_term)
-    amazon_url = f"https://www.amazon.com/s?k={encoded_term}&tag={AMAZON_TAG}"
-
-    # Card 1: General supplement
-    card1_search = search_term
-    card1_url = f"https://www.amazon.com/s?k={urllib.parse.quote(card1_search)}&tag={AMAZON_TAG}"
-
-    # Card 2: Organic / premium variant
-    card2_search = f"organic {herb['name'].lower()} supplement"
-    card2_url = f"https://www.amazon.com/s?k={urllib.parse.quote(card2_search)}&tag={AMAZON_TAG}"
-
-    cards_html = (
-        f'<!-- AMAZON_ASIN_PLACEHOLDER: search term: {search_term} -->\n'
-        f'                        <div class="product-card">\n'
-        f'                            <div class="product-card__image-placeholder" aria-hidden="true">🌿</div>\n'
-        f'                            <div class="product-card__content">\n'
-        f'                                <h3 class="product-card__title">{herb["name"]} Supplement</h3>\n'
-        f'                                <p class="product-card__description">High-quality {herb["name"]} supplement. Search Amazon for top-rated options.</p>\n'
-        f'                                <a href="{card1_url}" class="product-card__link" target="_blank" rel="noopener noreferrer nofollow">Shop on Amazon</a>\n'
-        f'                            </div>\n'
-        f'                        </div>\n'
-        f'<!-- AMAZON_ASIN_PLACEHOLDER: search term: {card2_search} -->\n'
-        f'                        <div class="product-card">\n'
-        f'                            <div class="product-card__image-placeholder" aria-hidden="true">🌱</div>\n'
-        f'                            <div class="product-card__content">\n'
-        f'                                <h3 class="product-card__title">Organic {herb["name"]}</h3>\n'
-        f'                                <p class="product-card__description">Organic {herb["name"]} options for those seeking certified natural products.</p>\n'
-        f'                                <a href="{card2_url}" class="product-card__link" target="_blank" rel="noopener noreferrer nofollow">Shop on Amazon</a>\n'
-        f'                            </div>\n'
-        f'                        </div>'
-    )
-    return cards_html
+REQUIRED_FIELDS = ("id", "name", "scientific", "category", "overview", "traditional",
+                   "active_compounds", "benefits", "safety_info")
+PLACEHOLDER_PATTERNS = (
+    r"\{\{[^{}]+\}\}", r"\[(?:Herb Name|Scientific Name)\]",
+    r"This is a claim about an herb", r"Example paragraph", r"Author [A-Z]\.",
+    r"Title of the Study or Article", r"AMAZON_ASIN_PLACEHOLDER",
+)
 
 
-# ---------------------------------------------------------------------------
-# Page generation
-# ---------------------------------------------------------------------------
+def validate_herb(herb):
+    for key in REQUIRED_FIELDS:
+        if not isinstance(herb.get(key), str) or not herb[key].strip():
+            raise ValueError(f"Missing required text field: {key}")
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", herb["id"]):
+        raise ValueError("Invalid herb ID")
+    refs = herb.get("references", [])
+    if not isinstance(refs, list) or any(not isinstance(ref, str) or not ref.strip() for ref in refs):
+        raise ValueError("References must be a list of nonempty source identifiers")
+    for key in ("date_published", "date_modified"):
+        if herb.get(key):
+            if not isinstance(herb[key], str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", herb[key]):
+                raise ValueError(f"Invalid {key}")
+            date.fromisoformat(herb[key])
+    if herb.get("date_modified") and herb.get("date_published") and herb["date_modified"] < herb["date_published"]:
+        raise ValueError("Modification date precedes publication date")
+
+
+def validate_page(html):
+    for pattern in PLACEHOLDER_PATTERNS:
+        if re.search(pattern, html):
+            raise ValueError(f"Unresolved template/example content: {pattern}")
+    for script in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
+        json.loads(script)
+
 
 def generate_herb_page(herb: dict, template: str) -> str:
-    """
-    Replace all {{PLACEHOLDER}} tokens in the template with herb-specific content.
-    Returns the complete HTML string for the herb page.
-    """
-    meta_description = (
-        f"{herb['name']} ({herb['scientific']}) — educational research on uses, "
-        f"benefits, active compounds, and safety. Not medical advice."
-    )
-
-    # Generate all dynamic content
-    schema_json = generate_schema_json(herb)
-    faq_html = generate_faq_html(herb)
-    product_cards = generate_product_cards(herb)
-
-    # Perform all replacements
-    html = template
-    html = html.replace("{{HERB_ID}}", herb["id"])
-    html = html.replace("{{HERB_NAME}}", herb["name"])
-    html = html.replace("{{META_DESCRIPTION}}", meta_description)
-    html = html.replace("{{SCHEMA_JSON}}", schema_json)
-    html = html.replace("{{FACT_SCIENTIFIC_NAME}}", herb["scientific"])
-    html = html.replace("{{FACT_PLANT_FAMILY}}", herb.get("plant_family", "Unknown"))
-    html = html.replace("{{FACT_ORIGIN}}", herb.get("origin", "Unknown"))
-    html = html.replace("{{FACT_PRIMARY_USE}}", herb["category"])
-    html = html.replace("{{FAQ_HTML}}", faq_html)
-    html = html.replace("{{PRODUCT_CARDS}}", product_cards)
-
+    """Render plain-text data safely. Existing source identifiers are not verified citations."""
+    validate_herb(herb)
+    fields = {
+        "HERB_ID": herb["id"], "HERB_NAME": herb["name"],
+        "META_DESCRIPTION": f"{herb['name']} ({herb['scientific']}) — educational information on traditional uses, compounds and safety. Source review pending; not medical advice.",
+        "FACT_SCIENTIFIC_NAME": herb["scientific"],
+        "FACT_PLANT_FAMILY": herb.get("plant_family", "Not recorded"),
+        "FACT_ORIGIN": herb.get("origin", "Not recorded"),
+        "FACT_PRIMARY_USE": herb["category"],
+        "OVERVIEW": herb["overview"], "TRADITIONAL": herb["traditional"],
+        "ACTIVE_COMPOUNDS": herb["active_compounds"], "BENEFITS": herb["benefits"],
+        "SAFETY_INFO": herb["safety_info"],
+    }
+    replacements = {key: escape(str(value), quote=True) for key, value in fields.items()}
+    refs = herb.get("references", [])
+    replacements.update({
+        "SCHEMA_JSON": generate_schema_json(herb),
+        "FAQ_HTML": generate_faq_html(herb),
+        "REFERENCES_HTML": ("<ul class=\"references-list\">" +
+            "".join("<li>" + escape(ref) + "</li>" for ref in refs) + "</ul>"
+            if refs else "<p>No source records have been added for this profile.</p>"),
+    })
+    # Single pass: tokens in user-authored data are never interpreted as template code.
+    html = re.sub(r"\{\{([A-Z_]+)\}\}",
+                  lambda match: replacements.get(match[1], match[0]), template)
+    validate_page(html)
     return html
 
 
@@ -360,6 +285,7 @@ def main():
         metavar="HERB_ID",
         help="Regenerate a single herb page by ID (e.g. --herb chamomile)",
     )
+    parser.add_argument("--check", action="store_true", help="Validate committed output without writing files")
     args = parser.parse_args()
 
     # --- Load data ---
@@ -377,7 +303,8 @@ def main():
         template = f.read()
 
     # Ensure output directory exists
-    HERBS_DIR.mkdir(exist_ok=True)
+    if not args.check:
+        HERBS_DIR.mkdir(exist_ok=True)
 
     # --- Filter to single herb if --herb flag provided ---
     if args.herb:
@@ -387,39 +314,26 @@ def main():
             print(f"Available IDs: {[h['id'] for h in json.load(open(HERBS_JSON))]}")
             sys.exit(1)
 
-    # --- Build pages ---
-    generated = 0
-    errors = []
-
-    for herb in herbs:
-        herb_id = herb["id"]
-        output_path = HERBS_DIR / f"{herb_id}.html"
-
-        try:
-            html = generate_herb_page(herb, template)
-            with open(output_path, "w", encoding="utf-8") as f:
-                f.write(html)
-            print(f"  ✓  {herb_id}.html  ({herb['name']})")
-            generated += 1
-        except Exception as e:
-            msg = f"  ✗  {herb_id}.html — ERROR: {e}"
-            print(msg, file=sys.stderr)
-            errors.append(msg)
-
-    # --- Summary ---
-    print()
-    print("=" * 50)
-    print(f"Build complete: {generated} page(s) generated")
-    if errors:
-        print(f"Errors ({len(errors)}):")
-        for e in errors:
-            print(f"  {e}")
-    else:
-        print("No errors.")
-    print("=" * 50)
-
-    if errors:
+    # Render every selected page before writing any; fail closed on data/template errors.
+    try:
+        if len({h["id"] for h in herbs}) != len(herbs):
+            raise ValueError("Duplicate herb IDs")
+        pages = [(h["id"], generate_herb_page(h, template)) for h in herbs]
+    except (ValueError, KeyError, TypeError) as error:
+        print(f"ERROR: {error}", file=sys.stderr)
         sys.exit(1)
+    if args.check:
+        stale = [slug for slug, html in pages
+                 if not (HERBS_DIR / f"{slug}.html").exists()
+                 or (HERBS_DIR / f"{slug}.html").read_text(encoding="utf-8") != html]
+        if stale:
+            print("ERROR: Generated profiles differ: " + ", ".join(stale), file=sys.stderr)
+            sys.exit(1)
+        print(f"Validated {len(pages)} reproducible profiles.")
+        return
+    for slug, html in pages:
+        (HERBS_DIR / f"{slug}.html").write_text(html, encoding="utf-8")
+    print(f"Built {len(pages)} profiles. Source verification remains pending.")
 
 
 if __name__ == "__main__":

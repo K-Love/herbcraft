@@ -1,0 +1,16 @@
+name: Validate herb profiles
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  profiles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test generator and committed profiles
+        run: python3 -m unittest discover -s tests -p 'test_profile_build.py' -v
+      - name: Check generated output is up to date
+        run: python3 build.py --check
