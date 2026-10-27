@@ -14,3 +14,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+?)/?$ $1.html [END]
+
+# Local error document preserves the missing URL and HTTP 404 status.
+ErrorDocument 404 /404.html
