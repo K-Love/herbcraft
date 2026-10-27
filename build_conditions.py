@@ -263,18 +263,7 @@ def generate_herb_cards(condition: dict, herbs_by_id: dict) -> str:
     for herb_id in condition.get("herbs", []):
         herb = herbs_by_id.get(herb_id)
         if not herb:
-            # Herb not in herbs.json — create a placeholder card
-            icon = HERB_ICONS.get(herb_id, "🌿")
-            benefit = herb_benefits.get(herb_id, "Traditionally used for " + condition["name"].lower() + " support.")
-            card = (
-                '            <a href="../herbs/' + herb_id + '.html" class="herb-card">\n'
-                '                <div class="herb-card__icon">' + icon + '</div>\n'
-                '                <h3 class="herb-card__name">' + herb_id.replace("-", " ").title() + '</h3>\n'
-                '                <p class="herb-card__benefit">' + benefit + '</p>\n'
-                '                <span class="herb-card__link-text">Read full profile</span>\n'
-                '            </a>'
-            )
-            cards.append(card)
+            # Do not advertise a profile that has not been published.
             continue
 
         icon = HERB_ICONS.get(herb_id, "🌿")
