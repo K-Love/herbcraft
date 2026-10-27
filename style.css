@@ -723,3 +723,12 @@ body {
     .discovery-page .herb-card { transition: none; }
     .discovery-page .herb-card:hover { transform: none; }
 }
+
+/* Center the two homepage tools beneath their section heading. */
+@media (min-width: 769px) {
+    #interactive-tools .principles__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 800px;
+        margin-inline: auto;
+    }
+}
