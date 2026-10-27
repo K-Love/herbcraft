@@ -1,0 +1,22 @@
+name: Validate herb profiles
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  profiles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test generator and committed profiles
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Check generated output is up to date
+        run: python3 build.py --check
+      - name: Test legacy bookmark redirects
+        run: node tests/test_legacy_redirect.js
+      - name: Install DOM test dependency outside production source
+        run: npm install --prefix /tmp/herbcraft-test linkedom@0.18.14 --no-save --ignore-scripts
+      - name: Test search, directory, and navigation together
+        run: NODE_PATH=/tmp/herbcraft-test/node_modules node --test tests/discovery.test.cjs

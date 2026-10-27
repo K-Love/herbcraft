@@ -681,3 +681,54 @@ body {
         text-align: center;
     }
 }
+
+/* Discovery: preserve the existing palette while making search and navigation usable. */
+.discovery-page [hidden] { display: none !important; }
+.discovery-page :focus-visible { outline: 3px solid var(--botanical-green); outline-offset: 4px; }
+.discovery-page .header__menu-toggle { display: none; }
+.discovery-page .header__container { flex-wrap: wrap; gap: 1.5rem; }
+.discovery-page .nav__list { flex-wrap: wrap; gap: 1rem 1.5rem; }
+.discovery-page .search-section__container { padding: 0 1.5rem; }
+.discovery-page .search-bar__input { min-width: 0; }
+.discovery-page .search-bar__button { flex-shrink: 0; }
+.discovery-page .search-dropdown { max-height: 20rem; overflow-y: auto; }
+.discovery-page .search-dropdown__no-results { padding: 1rem; }
+.directory-search { margin-top: 2rem; }
+.directory-search label { display: block; margin-bottom: .5rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+.directory-search .search-bar { max-width: none; }
+.discovery-page .search-results-message { color: var(--botanical-green); margin: 1.5rem 0 .5rem; }
+.herb-card__scientific { margin-top: .5rem; font-size: 1rem; overflow-wrap: anywhere; }
+.directory-clear { border: 1px solid var(--botanical-green); background: transparent; color: var(--botanical-green); padding: .65rem 1rem; cursor: pointer; }
+#directory-empty { margin: 1.5rem 0; }
+.discovery-page .hero__container { padding: 0 1.5rem; }
+@media (max-width: 768px) {
+    .discovery-page .header__container { flex-direction: row; }
+    .discovery-page .logo { font-size: 1.25rem; }
+    .discovery-page .header__menu-toggle { display: block; border: 1px solid var(--botanical-green); background: transparent; color: var(--botanical-green); min-width: 44px; min-height: 44px; cursor: pointer; }
+    .discovery-page .header__menu-toggle::before { content: '☰'; font-size: 1.4rem; }
+    .discovery-page .header__menu-toggle[aria-expanded="true"]::before { content: '×'; }
+    .discovery-page .nav { width: 100%; }
+    .discovery-page .nav__list { flex-direction: column; gap: .5rem; }
+    .discovery-page .nav__link { display: block; padding: .5rem 0; }
+    /* Hide navigation only after its JavaScript handler is attached. */
+    .discovery-page .nav[data-enhanced="true"]:not(.nav--open) { display: none; }
+    .discovery-page .hero { padding: 3rem 0; }
+    .discovery-page .hero__title { font-size: 2.4rem; }
+    .discovery-page .search-bar { flex-direction: column; }
+    .discovery-page .search-bar__input, .discovery-page .search-bar__button { padding: 1rem; }
+    .discovery-page .herb-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: 2rem 0; }
+    .discovery-page .az-filter__button { min-width: 44px; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .discovery-page .herb-card { transition: none; }
+    .discovery-page .herb-card:hover { transform: none; }
+}
+
+/* Center the two homepage tools beneath their section heading. */
+@media (min-width: 769px) {
+    #interactive-tools .principles__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 800px;
+        margin-inline: auto;
+    }
+}

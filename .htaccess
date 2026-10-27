@@ -1,15 +1,19 @@
+Options -MultiViews
 RewriteEngine On
 
-# 301 redirect old query parameter URLs to clean URLs
-RewriteCond %{QUERY_STRING} ^herb=([^&]+)$
-RewriteRule ^herb-detail\.html$ /herbs/%1? [R=301,L]
+# Preserve old bookmarks. Slugs cannot contain URL control characters.
+RewriteCond %{QUERY_STRING} ^herb=([a-z0-9]+(?:-[a-z0-9]+)*)$ [NC]
+RewriteRule ^herb-detail(?:\.html)?$ /herbs/%1 [R=301,L,QSD]
 
-# 301 redirect any .html requests to extensionless URLs
-RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?]
-RewriteRule ^ /%1 [R=301,L]
+# Redirect only browser requests, not internal rewrites.
+RewriteCond %{THE_REQUEST} \s/+([^?\ ]+)\.html[?\ ]
+RewriteRule ^ /%1 [R=301,L,NE]
 
-
-# Rewrite /herbs/slug to /herbs/index.html (serve catch-all)
+# Serve existing generated HTML; missing profiles remain real 404s.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^herbs/(.+)$ /herbs/index.html [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [END]
+
+# Local error document preserves the missing URL and HTTP 404 status.
+ErrorDocument 404 /404.html
