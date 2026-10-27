@@ -15,12 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse our A-Z directory of herbs - Educational research aggregator for herbal information.">
     <title>Herb Directory | herbcraft.app</title>
+    <link rel="canonical" href="https://herbcraft.app/herb-directory">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="discovery-page">
     <div id="site-banner">
         <p><strong>For Educational Purposes Only.</strong> The information on herbcraft.app is aggregated from public sources and is not medical advice. It is not intended to diagnose, treat, cure, or prevent any disease. <strong>Always consult a qualified healthcare professional before making any decisions about your health.</strong></p>
     </div>
@@ -45,43 +46,145 @@
         <section class="directory-header">
             <div class="directory-header__container">
                 <h1>Herb Directory</h1>
-                <p>Explore our initial collection of aggregated research on common herbs.</p>
+                <p>Find an herb by its common or botanical name, or browse the A–Z directory.</p>
             </div>
         </section>
 
         <section class="directory-content">
             <div class="directory-content__container">
+                <form id="directory-search-form" class="directory-search" role="search" action="/herb-directory" method="get">
+                    <label for="directory-search">Search the herb directory</label>
+                    <div class="search-bar">
+                        <input id="directory-search" class="search-bar__input" type="search" name="search" placeholder="Try ginger or Zingiber" autocomplete="off">
+                        <button type="submit" class="search-bar__button">Search</button>
+                    </div>
+                </form>
                 <nav class="az-filter" aria-label="Alphabetical filter">
-                    <button class="az-filter__button active" data-letter="">All</button>
-                    <button class="az-filter__button" data-letter="A">A</button>
-                    <button class="az-filter__button" data-letter="B">B</button>
-                    <button class="az-filter__button" data-letter="C">C</button>
-                    <button class="az-filter__button" data-letter="D">D</button>
-                    <button class="az-filter__button" data-letter="E">E</button>
-                    <button class="az-filter__button" data-letter="F">F</button>
-                    <button class="az-filter__button" data-letter="G">G</button>
-                    <button class="az-filter__button" data-letter="H">H</button>
-                    <button class="az-filter__button" data-letter="I">I</button>
-                    <button class="az-filter__button" data-letter="J">J</button>
-                    <button class="az-filter__button" data-letter="K">K</button>
-                    <button class="az-filter__button" data-letter="L">L</button>
-                    <button class="az-filter__button" data-letter="M">M</button>
-                    <button class="az-filter__button" data-letter="N">N</button>
-                    <button class="az-filter__button" data-letter="O">O</button>
-                    <button class="az-filter__button" data-letter="P">P</button>
-                    <button class="az-filter__button" data-letter="Q">Q</button>
-                    <button class="az-filter__button" data-letter="R">R</button>
-                    <button class="az-filter__button" data-letter="S">S</button>
-                    <button class="az-filter__button" data-letter="T">T</button>
-                    <button class="az-filter__button" data-letter="U">U</button>
-                    <button class="az-filter__button" data-letter="V">V</button>
-                    <button class="az-filter__button" data-letter="W">W</button>
-                    <button class="az-filter__button" data-letter="X">X</button>
-                    <button class="az-filter__button" data-letter="Y">Y</button>
-                    <button class="az-filter__button" data-letter="Z">Z</button>
+                    <button class="az-filter__button active" aria-pressed="true" data-letter="">All</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="A">A</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="B">B</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="C">C</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="D">D</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="E">E</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="F">F</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="G">G</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="H">H</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="I">I</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="J">J</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="K">K</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="L">L</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="M">M</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="N">N</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="O">O</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="P">P</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="Q">Q</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="R">R</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="S">S</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="T">T</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="U">U</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="V">V</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="W">W</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="X">X</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="Y">Y</button>
+                    <button class="az-filter__button" aria-pressed="false" data-letter="Z">Z</button>
                 </nav>
 
-                <div id="herb-grid" class="herb-grid"></div>
+                <p id="search-results-message" class="search-results-message" role="status" aria-live="polite" aria-atomic="true">22 herb profiles</p>
+                <button id="directory-clear" class="directory-clear" type="button" hidden>Clear search and filters</button>
+                <p id="directory-empty" hidden>No matching profiles. Try a common or botanical name, or clear the filters.</p>
+                <noscript><p>Search and A–Z filtering require JavaScript. All available profiles are listed below.</p></noscript>
+                <div id="herb-grid" class="herb-grid">
+                <!-- HERB_CARDS_START -->
+                    <a class="herb-card" href="/herbs/ashwagandha" data-name="Ashwagandha" data-scientific="Withania somnifera">
+                        <h2 class="herb-card__name">Ashwagandha</h2>
+                        <p class="herb-card__scientific"><em>Withania somnifera</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/basil" data-name="Basil" data-scientific="Ocimum basilicum">
+                        <h2 class="herb-card__name">Basil</h2>
+                        <p class="herb-card__scientific"><em>Ocimum basilicum</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/calendula" data-name="Calendula" data-scientific="Calendula officinalis">
+                        <h2 class="herb-card__name">Calendula</h2>
+                        <p class="herb-card__scientific"><em>Calendula officinalis</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/chamomile" data-name="Chamomile" data-scientific="Matricaria chamomilla">
+                        <h2 class="herb-card__name">Chamomile</h2>
+                        <p class="herb-card__scientific"><em>Matricaria chamomilla</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/cinnamon" data-name="Cinnamon" data-scientific="Cinnamomum verum">
+                        <h2 class="herb-card__name">Cinnamon</h2>
+                        <p class="herb-card__scientific"><em>Cinnamomum verum</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/dandelion" data-name="Dandelion" data-scientific="Taraxacum officinale">
+                        <h2 class="herb-card__name">Dandelion</h2>
+                        <p class="herb-card__scientific"><em>Taraxacum officinale</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/echinacea" data-name="Echinacea" data-scientific="Echinacea purpurea">
+                        <h2 class="herb-card__name">Echinacea</h2>
+                        <p class="herb-card__scientific"><em>Echinacea purpurea</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/elderberry" data-name="Elderberry" data-scientific="Sambucus nigra">
+                        <h2 class="herb-card__name">Elderberry</h2>
+                        <p class="herb-card__scientific"><em>Sambucus nigra</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/fennel" data-name="Fennel" data-scientific="Foeniculum vulgare">
+                        <h2 class="herb-card__name">Fennel</h2>
+                        <p class="herb-card__scientific"><em>Foeniculum vulgare</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/garlic" data-name="Garlic" data-scientific="Allium sativum">
+                        <h2 class="herb-card__name">Garlic</h2>
+                        <p class="herb-card__scientific"><em>Allium sativum</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/ginger" data-name="Ginger" data-scientific="Zingiber officinale">
+                        <h2 class="herb-card__name">Ginger</h2>
+                        <p class="herb-card__scientific"><em>Zingiber officinale</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/ginkgo" data-name="Ginkgo Biloba" data-scientific="Ginkgo biloba">
+                        <h2 class="herb-card__name">Ginkgo Biloba</h2>
+                        <p class="herb-card__scientific"><em>Ginkgo biloba</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/ginseng" data-name="Ginseng" data-scientific="Panax ginseng / Panax quinquefolius">
+                        <h2 class="herb-card__name">Ginseng</h2>
+                        <p class="herb-card__scientific"><em>Panax ginseng / Panax quinquefolius</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/lavender" data-name="Lavender" data-scientific="Lavandula angustifolia">
+                        <h2 class="herb-card__name">Lavender</h2>
+                        <p class="herb-card__scientific"><em>Lavandula angustifolia</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/lemon-balm" data-name="Lemon Balm" data-scientific="Melissa officinalis">
+                        <h2 class="herb-card__name">Lemon Balm</h2>
+                        <p class="herb-card__scientific"><em>Melissa officinalis</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/licorice" data-name="Licorice Root" data-scientific="Glycyrrhiza glabra">
+                        <h2 class="herb-card__name">Licorice Root</h2>
+                        <p class="herb-card__scientific"><em>Glycyrrhiza glabra</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/peppermint" data-name="Peppermint" data-scientific="Mentha × piperita">
+                        <h2 class="herb-card__name">Peppermint</h2>
+                        <p class="herb-card__scientific"><em>Mentha × piperita</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/rosemary" data-name="Rosemary" data-scientific="Salvia rosmarinus">
+                        <h2 class="herb-card__name">Rosemary</h2>
+                        <p class="herb-card__scientific"><em>Salvia rosmarinus</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/sage" data-name="Sage" data-scientific="Salvia officinalis">
+                        <h2 class="herb-card__name">Sage</h2>
+                        <p class="herb-card__scientific"><em>Salvia officinalis</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/st-johns-wort" data-name="St. John&#x27;s Wort" data-scientific="Hypericum perforatum">
+                        <h2 class="herb-card__name">St. John&#x27;s Wort</h2>
+                        <p class="herb-card__scientific"><em>Hypericum perforatum</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/turmeric" data-name="Turmeric" data-scientific="Curcuma longa">
+                        <h2 class="herb-card__name">Turmeric</h2>
+                        <p class="herb-card__scientific"><em>Curcuma longa</em></p>
+                    </a>
+                    <a class="herb-card" href="/herbs/valerian" data-name="Valerian Root" data-scientific="Valeriana officinalis">
+                        <h2 class="herb-card__name">Valerian Root</h2>
+                        <p class="herb-card__scientific"><em>Valeriana officinalis</em></p>
+                    </a>
+                <!-- HERB_CARDS_END -->
+                </div>
             </div>
         </section>
     </main>
@@ -112,12 +215,7 @@
         </div>
     </footer>
 
-    <template id="herb-card-template">
-        <a href="" class="herb-card">
-            <h3 class="herb-card__name"></h3>
-        </a>
-    </template>
-
-    <script src="herb-directory.js"></script>
+    <script src="/script.js"></script>
+    <script src="/herb-directory.js"></script>
 </body>
 </html>
