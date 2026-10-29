@@ -7,7 +7,7 @@ const test = require('node:test');
 
 function page(path, search = '') {
     const { document, window } = parseHTML(fs.readFileSync(path, 'utf8'));
-    const location = { href: 'https://herbcraft.app/' + path + search, search };
+    const location = { href: 'https://wildthesis.com/' + path + search, search };
     const context = vm.createContext({ document, window: {
         document, location, innerWidth: 375,
         history: { replaceState(_state, _title, url) { location.href = String(url); } },
