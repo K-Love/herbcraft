@@ -10,9 +10,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Check for known herb-herb and herb-drug interactions. Select up to 5 herbs and see safety warnings. Educational tool from HerbCraft.">
-    <title>Herb Interaction Checker — Is It Safe to Combine? | HerbCraft</title>
-    <link rel="canonical" href="https://herbcraft.app/interaction-checker/">
+    <meta name="description" content="Check for known herb-herb and herb-drug interactions. Select up to 5 herbs and see safety warnings. Educational tool from Wild Thesis.">
+    <title>Herb Interaction Checker — Is It Safe to Combine? | Wild Thesis</title>
+    <link rel="canonical" href="https://wildthesis.com/interaction-checker/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -61,24 +61,24 @@
             .ic-herb-list{max-height:250px}
         }
     </style>
+    <link rel="stylesheet" href="/site-header.css">
+    <script src="/site-header.js" defer></script>
 </head>
 <body>
     <div id="site-banner">
-        <p><strong>For Educational Purposes Only.</strong> The information on herbcraft.app is aggregated from public sources and is not medical advice. It is not intended to diagnose, treat, cure, or prevent any disease. <strong>Always consult a qualified healthcare professional before making any decisions about your health.</strong></p>
+        <p><strong>For Educational Purposes Only.</strong> The information on Wild Thesis is aggregated from public sources and is not medical advice. It is not intended to diagnose, treat, cure, or prevent any disease. <strong>Always consult a qualified healthcare professional before making any decisions about your health.</strong></p>
     </div>
     <header class="header">
         <div class="header__container">
-            <div class="logo"><a href="../">herbcraft.app</a></div>
-            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="header__menu-toggle-icon"></span>
-            </button>
-            <nav class="nav" aria-label="Main navigation">
+            <a class="logo" href="/" aria-label="Wild Thesis home">Wild Thesis</a>
+            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation"></button>
+            <nav class="nav" id="site-navigation" aria-label="Main navigation">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../herb-directory/" class="nav__link">Herb Directory</a></li>
-                    <li class="nav__item"><a href="../herb-explorer/" class="nav__link">Herb Explorer</a></li>
-                    <li class="nav__item"><a href="../safety-finder/" class="nav__link">Safety Notes</a></li>
-                    <li class="nav__item"><a href="../quiz/" class="nav__link">Herb Quiz</a></li>
-                    <li class="nav__item"><a href="../interaction-checker/" class="nav__link">Interactions</a></li>
+                    <li class="nav__item"><a href="/herb-directory/" class="nav__link">Herb Directory</a></li>
+                    <li class="nav__item"><a href="/herb-explorer/" class="nav__link">Herb Explorer</a></li>
+                    <li class="nav__item"><a href="/safety-notes/" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="/quiz/" class="nav__link">Herb Quiz</a></li>
+                    <li class="nav__item"><a href="/interaction-checker/" class="nav__link">Interactions</a></li>
                 </ul>
             </nav>
         </div>
@@ -136,9 +136,9 @@
             </nav>
             <div class="footer__disclaimer">
                 <h3 class="footer__disclaimer-title">Legal Disclaimer (DSHEA Compliance)</h3>
-                <p class="footer__disclaimer-text">The information provided on this website is for educational and informational purposes only and is not intended as medical advice. herbcraft.app does not provide medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+                <p class="footer__disclaimer-text">The information provided on this website is for educational and informational purposes only and is not intended as medical advice. Wild Thesis does not provide medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
             </div>
-            <div class="footer__copyright">&#169; 2026 herbcraft.app. All rights reserved.</div>
+            <div class="footer__copyright">&#169; 2026 Wild Thesis. All rights reserved.</div>
         </div>
     </footer>
     <script src="interaction-checker.js"></script>

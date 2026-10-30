@@ -297,12 +297,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="../herb-directory/" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary-green); color: white; text-decoration: none; border-radius: 4px;">Back to Herb Directory</a>
             </div>
         `;
-        document.title = 'Herb Not Found | herbcraft.app';
+        document.title = 'Herb Not Found | Wild Thesis';
         return;
     }
 
     const herb = herbData[herbSlug];
-    document.title = `${herb.name} | herbcraft.app`;
+    document.title = `${herb.name} | Wild Thesis`;
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
