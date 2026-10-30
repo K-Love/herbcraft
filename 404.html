@@ -7,13 +7,27 @@
   <meta name="theme-color" content="#3D5A40">
   <title>Page Not Found · Wild Thesis</title>
   <link rel="stylesheet" href="/404.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-header.css">
+    <script src="/site-header.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="masthead">
-    <a class="wordmark" href="/" aria-label="Wild Thesis home">Wild <span>Thesis</span></a>
-    <a class="header-link" href="/herb-directory/">Herb directory <span aria-hidden="true">↗</span></a>
-  </header>
+  <header class="header">
+        <div class="header__container">
+            <a class="logo" href="/" aria-label="Wild Thesis home">Wild Thesis</a>
+            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation"></button>
+            <nav class="nav" id="site-navigation" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/herb-directory/" class="nav__link">Herb Directory</a></li>
+                    <li class="nav__item"><a href="/herb-explorer/" class="nav__link">Herb Explorer</a></li>
+                    <li class="nav__item"><a href="/safety-notes/" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="/quiz/" class="nav__link">Herb Quiz</a></li>
+                    <li class="nav__item"><a href="/interaction-checker/" class="nav__link">Interactions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
   <main id="main">
     <section class="lost" aria-labelledby="title">
       <div class="illustration" aria-hidden="true">

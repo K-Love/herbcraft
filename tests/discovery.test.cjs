@@ -30,7 +30,7 @@ for (const path of ['herb-directory.html', 'herb-directory/index.html']) {
     test(path + ': static links, scientific search, combined filters and reset', () => {
         const p = page(path, '?search=Zingiber');
         assert.equal(p.document.querySelectorAll('#herb-grid a').length, 22);
-        p.run('script.js'); p.run('herb-directory.js'); p.ready();
+        p.run('site-header.js'); p.run('script.js'); p.run('herb-directory.js'); p.ready();
         const visible = () => [...p.document.querySelectorAll('#herb-grid a')].filter(a => !a.hidden);
         assert.equal(visible().length, 1);
         assert.equal(visible()[0].dataset.name, 'Ginger');
@@ -45,7 +45,7 @@ for (const path of ['herb-directory.html', 'herb-directory/index.html']) {
     test(path + ': hostile query stays text and navigation is connected', () => {
         const attack = '<img src=x onerror=alert(1)>';
         const p = page(path, '?search=' + encodeURIComponent(attack));
-        p.run('script.js'); p.run('herb-directory.js'); p.ready();
+        p.run('site-header.js'); p.run('script.js'); p.run('herb-directory.js'); p.ready();
         assert.equal(p.document.querySelectorAll('img').length, 0);
         assert(p.document.getElementById('search-results-message').textContent.includes(attack));
         const toggle = p.document.querySelector('.header__menu-toggle');
@@ -66,7 +66,7 @@ test('home: form submits query without JS; autocomplete covers supported scienti
     assert.equal(form.querySelector('button').getAttribute('type'), 'submit');
     let submitted = false;
     form.requestSubmit = () => { submitted = true; };
-    p.run('herb-search-index.js'); p.run('script.js'); p.ready();
+    p.run('herb-search-index.js'); p.run('site-header.js'); p.run('script.js'); p.ready();
     input.value = '  Valeriana  '; p.event(input, 'input');
     assert.equal(p.document.querySelectorAll('[role="option"]').length, 1);
     assert.equal(input.getAttribute('aria-expanded'), 'true');
@@ -89,3 +89,18 @@ test('generated catalogue equals the explicit published discovery list', () => {
     assert.deepEqual(generated.map(h => h.id).sort(), ids);
     for (const herb of generated) assert(fs.existsSync('herbs/' + herb.id + '.html'));
 });
+
+for (const path of ['herbs/ginger.html', 'about/index.html', 'quiz/index.html', '404.html']) {
+    test(path + ': shared navigation works without discovery-page styling', () => {
+        const p = page(path);
+        assert.equal(p.document.querySelectorAll('.header .nav__link').length, 5);
+        assert.equal(p.document.querySelector('.logo').getAttribute('href'), '/');
+        p.run('site-header.js'); p.ready();
+        const toggle = p.document.querySelector('.header__menu-toggle');
+        p.event(toggle, 'click');
+        assert.equal(toggle.getAttribute('aria-expanded'), 'true');
+        assert.notEqual(p.document.body.style.overflow, 'hidden');
+        p.event(p.document.querySelector('.nav__link'), 'click');
+        assert.equal(toggle.getAttribute('aria-expanded'), 'false');
+    });
+}

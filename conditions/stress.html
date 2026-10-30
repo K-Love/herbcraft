@@ -346,6 +346,8 @@
         .breadcrumb a:hover { text-decoration: underline; }
         .breadcrumb span { margin: 0 0.4rem; }
     </style>
+    <link rel="stylesheet" href="/site-header.css">
+    <script src="/site-header.js" defer></script>
 </head>
 <body>
     <div id="site-banner">
@@ -354,15 +356,15 @@
 
     <header class="header">
         <div class="header__container">
-            <div class="logo">Wild Thesis</div>
-            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="header__menu-toggle-icon"></span>
-            </button>
-            <nav class="nav" aria-label="Main navigation">
+            <a class="logo" href="/" aria-label="Wild Thesis home">Wild Thesis</a>
+            <button class="header__menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation"></button>
+            <nav class="nav" id="site-navigation" aria-label="Main navigation">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../index.html#herb-directory" class="nav__link">Herb Directory</a></li>
-                    <li class="nav__item"><a href="../index.html#herb-explorer" class="nav__link">Herb Explorer</a></li>
-                    <li class="nav__item"><a href="../safety-finder/" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="/herb-directory/" class="nav__link">Herb Directory</a></li>
+                    <li class="nav__item"><a href="/herb-explorer/" class="nav__link">Herb Explorer</a></li>
+                    <li class="nav__item"><a href="/safety-notes/" class="nav__link">Safety Notes</a></li>
+                    <li class="nav__item"><a href="/quiz/" class="nav__link">Herb Quiz</a></li>
+                    <li class="nav__item"><a href="/interaction-checker/" class="nav__link">Interactions</a></li>
                 </ul>
             </nav>
         </div>

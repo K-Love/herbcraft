@@ -37,37 +37,6 @@ body {
     text-transform: uppercase;
 }
 
-.header { border-bottom: 1px double var(--border-sepia); padding: 2rem 0; }
-.header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.logo {
-    font-family: 'Source Serif Pro', serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--botanical-green);
-    font-variant: small-caps;
-    border: 2px solid var(--botanical-green);
-    padding: 0.2rem 1rem;
-    letter-spacing: 0.1em;
-}
-
-.nav__list { display: flex; gap: 2.5rem; }
-.nav__link {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--botanical-green);
-}
-
 .hero { text-align: center; padding: 5rem 0; }
 .hero__title { font-size: 3.5rem; font-style: italic; color: var(--botanical-green); margin-bottom: 1rem; }
 .hero__subtitle { font-size: 1.3rem; max-width: 700px; margin: 0 auto; font-style: italic; }
@@ -467,7 +436,6 @@ body {
 @media (max-width: 768px) {
     .principles__grid { grid-template-columns: 1fr; }
     .safety-notes__list { grid-template-columns: 1fr; }
-    .header__container { flex-direction: column; gap: 1.5rem; padding: 0 1.5rem; }
     .search-bar__input-wrapper { width: 100%; }
     .explorer-form__select { max-width: 100%; }
     .safety-form__input { max-width: 100%; }
@@ -685,9 +653,6 @@ body {
 /* Discovery: preserve the existing palette while making search and navigation usable. */
 .discovery-page [hidden] { display: none !important; }
 .discovery-page :focus-visible { outline: 3px solid var(--botanical-green); outline-offset: 4px; }
-.discovery-page .header__menu-toggle { display: none; }
-.discovery-page .header__container { flex-wrap: wrap; gap: 1.5rem; }
-.discovery-page .nav__list { flex-wrap: wrap; gap: 1rem 1.5rem; }
 .discovery-page .search-section__container { padding: 0 1.5rem; }
 .discovery-page .search-bar__input { min-width: 0; }
 .discovery-page .search-bar__button { flex-shrink: 0; }
@@ -702,16 +667,7 @@ body {
 #directory-empty { margin: 1.5rem 0; }
 .discovery-page .hero__container { padding: 0 1.5rem; }
 @media (max-width: 768px) {
-    .discovery-page .header__container { flex-direction: row; }
-    .discovery-page .logo { font-size: 1.25rem; }
-    .discovery-page .header__menu-toggle { display: block; border: 1px solid var(--botanical-green); background: transparent; color: var(--botanical-green); min-width: 44px; min-height: 44px; cursor: pointer; }
-    .discovery-page .header__menu-toggle::before { content: '☰'; font-size: 1.4rem; }
-    .discovery-page .header__menu-toggle[aria-expanded="true"]::before { content: '×'; }
-    .discovery-page .nav { width: 100%; }
-    .discovery-page .nav__list { flex-direction: column; gap: .5rem; }
-    .discovery-page .nav__link { display: block; padding: .5rem 0; }
     /* Hide navigation only after its JavaScript handler is attached. */
-    .discovery-page .nav[data-enhanced="true"]:not(.nav--open) { display: none; }
     .discovery-page .hero { padding: 3rem 0; }
     .discovery-page .hero__title { font-size: 2.4rem; }
     .discovery-page .search-bar { flex-direction: column; }
