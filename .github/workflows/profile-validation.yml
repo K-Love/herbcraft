@@ -16,6 +16,8 @@ jobs:
         run: python3 build.py --check
       - name: Test legacy bookmark redirects
         run: node tests/test_legacy_redirect.js
+      - name: Test contact form and published contact details
+        run: node tests/test_contact_form.js
       - name: Install DOM test dependency outside production source
         run: npm install --prefix /tmp/herbcraft-test linkedom@0.18.14 --no-save --ignore-scripts
       - name: Test search, directory, and navigation together
