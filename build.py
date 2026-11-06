@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-HerbCraft Build Script
+Wild Thesis Build Script
 ======================
 Reads herbs.json + herb-template.html and generates a complete HTML page
 for each herb in the herbs/ directory.
@@ -25,7 +25,7 @@ from source_support import is_checked, validate_sources, citations, references
 # Configuration
 # ---------------------------------------------------------------------------
 
-BASE_URL = "https://herbcraft.app"
+BASE_URL = "https://wildthesis.com"
 
 REPO_DIR = Path(__file__).parent
 HERBS_JSON = REPO_DIR / "herbs.json"
@@ -142,12 +142,12 @@ def build_article_schema(herb: dict) -> dict:
         "description": herb["overview"],
         "author": {
             "@type": "Organization",
-            "name": "HerbCraft",
+            "name": "Wild Thesis",
             "url": f"{BASE_URL}/about/",
         },
         "publisher": {
             "@type": "Organization",
-            "name": "HerbCraft",
+            "name": "Wild Thesis",
             "url": BASE_URL,
         },
         "mainEntityOfPage": {
@@ -278,7 +278,7 @@ def generate_herb_page(herb: dict, template: str) -> str:
         replacements[token + "_CITATIONS"] = citations(herb, field)
     replacements.update({
         "REVIEW_TITLE": "Source review pending.",
-        "REVIEW_TEXT": "This summary uses the existing HerbCraft dataset. Its source records have not yet been verified against individual claims. Do not use it to make treatment or supplement decisions.",
+        "REVIEW_TEXT": "This summary uses the existing Wild Thesis dataset. Its source records have not yet been verified against individual claims. Do not use it to make treatment or supplement decisions.",
         "BENEFITS_HEADING": "Potential Benefits — Unverified Summary",
         "PREPARATION_HEADING": "Active Compounds",
         "REFERENCES_HEADING": "Source Records — Verification Pending",
@@ -310,7 +310,7 @@ def generate_herb_page(herb: dict, template: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="HerbCraft build script — generates herb HTML pages from template."
+        description="Wild Thesis build script — generates herb HTML pages from template."
     )
     parser.add_argument(
         "--herb",

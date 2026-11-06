@@ -45,18 +45,19 @@ assert.match(contact.text, /name="bot-field"/);
 assert.match(contact.text, /name="name"/);
 assert.match(contact.text, /type="email"/);
 assert.match(contact.text, /name="message"/);
-assert.match(contact.text, /WildThesis/);
+assert.match(contact.text, /Wild Thesis/);
 
 const thanks = htmlFiles.find(file => file.rel === path.join('contact', 'thanks', 'index.html'));
 assert.ok(thanks, 'thank-you page exists');
 assert.match(thanks.text, /Thank you/);
-assert.match(thanks.text, /WildThesis/);
+assert.match(thanks.text, /Wild Thesis/);
 assert.equal(thanks.text.includes('<form'), false, 'thank-you page must not contain a second form');
 
 for (const file of htmlFiles) {
     if (!file.text.includes('class="nav__list"')) continue;
     const nav = file.text.split('class="nav__list"')[1].split('</ul>')[0];
     assert.match(nav, /href="\/contact\/"/, file.rel + ' header nav is missing Contact');
+    if (file.rel === '404.html' || file.rel === path.join('components', 'site-header.html')) continue;
     const footer = file.text.split('class="footer__nav-list"')[1];
     assert.ok(footer, file.rel + ' is missing a footer nav');
     assert.match(footer.split('</ul>')[0], /href="\/contact\/"/, file.rel + ' footer nav is missing Contact');

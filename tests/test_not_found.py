@@ -51,8 +51,8 @@ class InternalLinkTests(unittest.TestCase):
             for href in parser.links:
                 if not href or href.startswith('#'):
                     continue
-                url = urlsplit(urljoin('https://herbcraft.app/' + page.relative_to(ROOT).as_posix(), href))
-                if url.scheme not in ('http', 'https') or url.netloc != 'herbcraft.app':
+                url = urlsplit(urljoin('https://wildthesis.com/' + page.relative_to(ROOT).as_posix(), href))
+                if url.scheme not in ('http', 'https') or url.netloc != 'wildthesis.com':
                     continue
                 target = ROOT / unquote(url.path).strip('/')
                 if not (target.is_file() or (target / 'index.html').is_file() or Path(str(target) + '.html').is_file()):

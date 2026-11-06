@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-HerbCraft Condition Pages Build Script
+Wild Thesis Condition Pages Build Script
 =======================================
 Reads conditions.json + herbs.json + conditions/template.html and generates
 a complete HTML page for each condition in the conditions/ directory.
@@ -24,7 +24,7 @@ from pathlib import Path
 # Configuration
 # ---------------------------------------------------------------------------
 
-BASE_URL = "https://herbcraft.app"
+BASE_URL = "https://wildthesis.com"
 TODAY = date.today().isoformat()  # YYYY-MM-DD
 
 REPO_DIR = Path(__file__).parent
@@ -222,12 +222,12 @@ def build_article_schema(condition: dict) -> dict:
         "description": condition["intro"],
         "author": {
             "@type": "Organization",
-            "name": "HerbCraft Editorial Team",
+            "name": "Wild Thesis Editorial Team",
             "url": f"{BASE_URL}/about/",
         },
         "publisher": {
             "@type": "Organization",
-            "name": "HerbCraft",
+            "name": "Wild Thesis",
             "url": BASE_URL,
             "logo": {"@type": "ImageObject", "url": f"{BASE_URL}/assets/logo.png"},
         },
@@ -340,7 +340,7 @@ def generate_condition_page(condition: dict, template: str, herbs_by_id: dict) -
 
 def main():
     parser = argparse.ArgumentParser(
-        description="HerbCraft condition pages build script."
+        description="Wild Thesis condition pages build script."
     )
     parser.add_argument(
         "--condition",
