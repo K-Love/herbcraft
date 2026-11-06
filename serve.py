@@ -5,9 +5,67 @@ from pathlib import Path
 import re
 from urllib.parse import parse_qs, quote, urlsplit
 
+ROOT = Path(__file__).resolve().parent
+PRIMARY_ORIGIN = "https://wildthesis.com"
+
+
+def redirect_rules(text):
+    """Return redirect rules as (sources, destination, status) tuples.
+
+    Comment lines are ignored. Host rules are only valid as a leading block,
+    matching Netlify's first-match order.
+    """
+    rules = []
+    for raw in text.splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if not line:
+            continue
+        parts = line.split()
+        if len(parts) < 3:
+            raise ValueError("redirect rule needs from, to, and status: " + line)
+        rules.append((parts[:-2], parts[-2], parts[-1]))
+    return rules
+
+
+def old_host_names(rules):
+    """Hosts with a forced 301 to the primary origin, path and query preserved."""
+    hosts = []
+    for sources, destination, status in rules:
+        source = sources[0]
+        if "://" not in source:
+            break
+        if sources[1:] or status != "301!" or destination != PRIMARY_ORIGIN + "/:splat":
+            raise ValueError("old-host rule must be a forced splat redirect: " + source)
+        scheme, _, rest = source.partition("://")
+        host, separator, path = rest.partition("/")
+        if scheme not in ("http", "https") or separator != "/" or path != "*" or not host:
+            raise ValueError("old-host rule must match an entire http(s) host: " + source)
+        if host not in hosts:
+            hosts.append(host)
+    return frozenset(hosts)
+
+
+OLD_HOSTS = old_host_names(redirect_rules((ROOT / "_redirects").read_text()))
+
 
 class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
+    def old_host_target(self):
+        host = (self.headers.get("Host") or "").split(":", 1)[0].strip().lower().rstrip(".")
+        if host not in OLD_HOSTS:
+            return None
+        url = urlsplit(self.path)
+        path = url.path or "/"
+        if not path.startswith("/"):
+            path = "/" + path
+        target = PRIMARY_ORIGIN + path
+        if url.query:
+            target += "?" + url.query
+        return target
+
     def send_head(self):
+        target = self.old_host_target()
+        if target:
+            return self.redirect(target)
         url = urlsplit(self.path)
         path = url.path.rstrip('/') or '/'
         if path in ('/herb-detail', '/herb-detail.html'):
