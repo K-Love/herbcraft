@@ -1,4 +1,4 @@
-// HerbCraft Herb Finder Quiz
+// Wild Thesis Herb Finder Quiz
 // Loads herbs.json and scores each herb against quiz answers
 
 const QUESTIONS = [

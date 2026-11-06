@@ -1,10 +1,10 @@
 /**
- * HerbCraft Schema.js
+ * Wild Thesis Schema.js
  * Generates structured JSON-LD schema markup for herb pages.
  * Exports: generateHerbSchema(herb) → JSON string
  */
 
-const BASE_URL = 'https://herbcraft.app';
+const BASE_URL = 'https://wildthesis.com';
 const TODAY = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
 /**
@@ -155,12 +155,12 @@ function buildArticleSchema(herb) {
     description: herb.overview,
     author: {
       '@type': 'Organization',
-      name: 'HerbCraft Editorial Team',
+      name: 'Wild Thesis Editorial Team',
       url: `${BASE_URL}/about/`,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'HerbCraft',
+      name: 'Wild Thesis',
       url: BASE_URL,
       logo: {
         '@type': 'ImageObject',

@@ -1,4 +1,4 @@
-// HerbCraft Herb Interaction Checker
+// Wild Thesis Herb Interaction Checker
 // Static interaction database + dynamic herb list from herbs.json
 
 // ─── Interaction Database ────────────────────────────────────────────────────
