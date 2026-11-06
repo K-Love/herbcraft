@@ -1,16 +1,31 @@
 # Wild Thesis launch
 
-This PR prepares the rebrand for preview. It does not change Netlify's primary domain or enable cross-domain redirects.
+`wildthesis.com` is the Netlify primary domain. `www.wildthesis.com` already redirects there. `herbcraft.app` and `www.herbcraft.app` remain attached as aliases.
 
-## Review and launch
+## Old-host redirects
 
-1. Review the deploy preview on desktop and phone: homepage, directory search, a profile, navigation, footer, the contact form, the thank-you page, and a missing URL.
-2. Confirm HTTPS works for both `wildthesis.com` and `www.wildthesis.com` in Netlify. Keep the existing HerbCraft domain attached and renewed.
-3. After approval, merge this PR and confirm the production deploy succeeds. Set `wildthesis.com` as the primary domain on the existing Netlify project in the same launch window, so canonical URLs and the primary domain agree.
-4. Verify the old domain and `www` redirect to the new primary, retaining paths and queries. Check `/herbs/ginger`, `/herb-detail.html?herb=ginger`, `/herb-directory?search=mint`, `/contact/`, and an unknown URL (which must retain a real 404 status).
-5. Do not add a forced old-to-new redirect while the old domain remains primary: Netlify's primary-domain redirect could create a loop. If automatic alias redirects are insufficient, investigate the actual response chain before adding rules.
-6. Confirm the Netlify Forms `contact` form is detected on the production deploy and that its existing notification settings still reach the operator. Leave the public pages without a published mailbox.
-7. Verify the new property in Search Console, submit `https://wildthesis.com/sitemap.xml`, and complete the domain-move workflow as appropriate. Monitor indexing and 404 reports after launch.
+Those aliases were still returning HTTP 200. Netlify serves an existing file ahead of a shadowable redirect, so a domain alias does not leave the old host unless the rule is forced. `_redirects` now starts with forced 301s for `http` and `https` on `herbcraft.app` and `www.herbcraft.app` only. The splat keeps the path, and Netlify appends the original query string on a 301.
+
+The rules do not match `wildthesis.com`, `www.wildthesis.com`, or a deploy preview. They cannot loop with Netlify's primary-domain redirect. Do not replace them with an unscoped `/*` rule, and do not add them again while an old host is primary.
+
+A missing path on the primary domain stays a genuine 404. The same path on an old host is a 301 to that path on `https://wildthesis.com`, and the second response is the 404. One response cannot both move the host and report the missing canonical path. Missing URLs are not rewritten to the homepage.
+
+The legacy path rules are unchanged and apply after the request reaches the primary host. `/herb-detail.html?herb=ginger` first moves to that same path and query on `https://wildthesis.com`. The existing rule then rewrites the path to `/herbs/ginger` and Netlify keeps the query string, which is the current primary-host behavior.
+
+## Check after this deploy
+
+1. `https://herbcraft.app/herbs/ginger` and `https://www.herbcraft.app/herbs/ginger` return 301 to `https://wildthesis.com/herbs/ginger`.
+2. `https://herbcraft.app/herb-detail.html?herb=ginger` returns 301 to `https://wildthesis.com/herb-detail.html?herb=ginger`. The next response rewrites the path to `/herbs/ginger` and keeps the query, same as a request that already started on the primary host.
+3. `https://herbcraft.app/herb-directory?search=mint` returns 301 to the same path and query on `https://wildthesis.com`.
+4. `https://herbcraft.app/contact/thanks/` returns 301 to `https://wildthesis.com/contact/thanks/`.
+5. `https://wildthesis.com/not-a-real-page` returns 404 with no Location header. `https://herbcraft.app/not-a-real-page` returns 301 to that URL, which then returns 404.
+6. `https://wildthesis.com/herbs/ginger` stays on the primary host. `https://www.wildthesis.com/herbs/ginger` may 301 to the apex, and must not point at an old host.
+
+Deploy-preview hostnames are not the old domains, so this preview will not show the host redirect. The rules are covered by the local host tests.
+
+Confirm the Netlify Forms `contact` form is detected on the production deploy and that its existing notification settings still reach the operator. Leave the public pages without a published mailbox.
+
+Verify the new property in Search Console, submit `https://wildthesis.com/sitemap.xml`, and complete the domain-move workflow as appropriate. Monitor indexing and 404 reports after launch.
 
 ## Deliberately preserved
 
@@ -22,4 +37,4 @@ This PR prepares the rebrand for preview. It does not change Netlify's primary d
 
 ## Rollback
 
-If launch fails, restore the previous Netlify production deploy and restore `herbcraft.app` as primary together. Leave both new domain aliases attached while diagnosing; do not delete DNS records or the original domain.
+If launch fails, restore the previous Netlify production deploy and restore `herbcraft.app` as primary together. This deploy's host rules point at `wildthesis.com`; leaving them published while an old host is primary can loop. Leave both new domain aliases attached while diagnosing; do not delete DNS records or the original domain.
